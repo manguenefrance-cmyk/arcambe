@@ -63,6 +63,18 @@
         ::-webkit-scrollbar-thumb:hover { background: #0f4d3b; }
         
         h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Outfit', sans-serif; }
+
+        /* ── RESPONSIVE GLOBAL ── */
+        @media (max-width: 767px) {
+            /* Sections: reduce padding on mobile */
+            section { padding-left: 1.25rem !important; padding-right: 1.25rem !important; }
+            /* Prevent horizontal overflow */
+            body { overflow-x: hidden; }
+            /* Grids: force single column on mobile unless specified */
+            .md\:grid-cols-2, .md\:grid-cols-3, .md\:grid-cols-4 { grid-template-columns: 1fr !important; }
+            /* Footer grid fix */
+            .lg\:grid-cols-4 { grid-template-columns: 1fr 1fr !important; }
+        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800 scroll-smooth font-sans">
@@ -106,8 +118,72 @@
                     <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-arcambeClaro to-arcambeVerde opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a></li>
             </ul>
+
+            <!-- Hamburger Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-[5px] p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200 z-50" aria-label="Abrir menu">
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb1"></span>
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300" id="hb2"></span>
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb3"></span>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl shadow-xl">
+            <div class="px-5 py-4 flex flex-col gap-1">
+                <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-house text-arcambeVerde w-5 text-center"></i> Home
+                </a>
+                <a href="sobre.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-circle-info text-arcambeVerde w-5 text-center"></i> Sobre
+                </a>
+                <a href="servicos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-briefcase text-arcambeVerde w-5 text-center"></i> Serviços
+                </a>
+                <a href="blog.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-newspaper text-arcambeVerde w-5 text-center"></i> Blog
+                </a>
+                <a href="treinamentos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-orange-600 font-semibold text-sm hover:bg-orange-50 transition-all duration-200">
+                    <i class="fa-solid fa-graduation-cap text-orange-500 w-5 text-center"></i> Treinamentos
+                </a>
+                <div class="h-px bg-gray-100 my-2"></div>
+                <a href="contacto.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-arcambeVerde to-emerald-500 text-white py-3 px-6 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="fa-solid fa-envelope"></i> Contacto
+                </a>
+            </div>
         </div>
     </nav>
+    <script>
+        // Mobile menu toggle
+        (function(){
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var hb1 = document.getElementById('hb1');
+            var hb2 = document.getElementById('hb2');
+            var hb3 = document.getElementById('hb3');
+            if(!btn) return;
+            btn.addEventListener('click', function(){
+                var isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                if(!isOpen){
+                    hb1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    hb2.style.opacity = '0';
+                    hb3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                } else {
+                    hb1.style.transform = '';
+                    hb2.style.opacity = '';
+                    hb3.style.transform = '';
+                }
+            });
+            menu.querySelectorAll('a').forEach(function(a){
+                a.addEventListener('click', function(){
+                    menu.classList.add('hidden');
+                    hb1.style.transform = '';
+                    hb2.style.opacity = '';
+                    hb3.style.transform = '';
+                });
+            });
+        })();
+    </script>
 
     <!-- ═══════════════════════════════════════════ -->
     <!--  HERO SECTION — Redesenhado Premium        -->
@@ -139,7 +215,7 @@
             </div>
 
             <!-- Título Principal — grande, bold, sem painel -->
-            <h1 class="text-5xl md:text-7xl lg:text-[88px] font-heading font-black leading-[0.95] uppercase tracking-tight max-w-4xl mb-8">
+            <h1 class="text-[2.4rem] sm:text-5xl md:text-7xl lg:text-[88px] font-heading font-black leading-[0.95] uppercase tracking-tight max-w-4xl mb-8">
                 Inteligência<br>
                 <span class="bg-clip-text text-transparent bg-gradient-to-r from-arcambeClaro via-emerald-400 to-arcambeClaro bg-[length:200%_auto] animate-[shimmer_3s_linear_infinite]">Geográfica</span><br>
                 para
@@ -169,9 +245,9 @@
             </div>
 
             <!-- Barra de Stats / Credibilidade -->
-            <div class="flex flex-wrap gap-8 items-center">
+            <div class="grid grid-cols-2 sm:flex sm:flex-wrap gap-4 sm:gap-8 items-center">
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center shrink-0">
                         <i class="fa-solid fa-map-location-dot text-arcambeClaro text-sm"></i>
                     </div>
                     <div>
@@ -179,9 +255,8 @@
                         <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Projetos Entregues</p>
                     </div>
                 </div>
-                <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
                 <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center">
+                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center shrink-0">
                         <i class="fa-solid fa-users text-arcambeClaro text-sm"></i>
                     </div>
                     <div>
@@ -189,9 +264,8 @@
                         <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold">Alunos Formados</p>
                     </div>
                 </div>
-                <div class="w-px h-10 bg-white/10 hidden sm:block"></div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center">
+                <div class="flex items-center gap-3 col-span-2 sm:col-span-1">
+                    <div class="w-10 h-10 rounded-lg bg-arcambeVerde/20 flex items-center justify-center shrink-0">
                         <i class="fa-solid fa-building text-arcambeClaro text-sm"></i>
                     </div>
                     <div>
