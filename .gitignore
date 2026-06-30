@@ -1,0 +1,23 @@
+# Ficheiros do sistema Windows
+Thumbs.db
+desktop.ini
+*.lnk
+
+# Ficheiros do editor
+.vscode/
+*.swp
+*.swo
+
+# Ficheiros temporários
+*.tmp
+*.log
+*.bak
+
+# Node (se usar no futuro)
+node_modules/
+npm-debug.log
+
+# Ficheiros sensíveis (NÃO enviar para o GitHub)
+*.env
+config.php
+credenciais.php

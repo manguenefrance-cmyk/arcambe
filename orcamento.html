@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Solicite um orçamento para os serviços da ARCAMBE em SIG, AIA e Consultoria Ambiental.">
+    <title>Solicitar Orçamento | ARCAMBE</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        arcambeVerde: '#1b7a5d',
+                        arcambeClaro: '#2ecc71',
+                        arcambeEscuro: '#0a3628',
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .glass-panel-dark { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #1b7a5d; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #0f4d3b; }
+        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Outfit', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-4 group">
+                <div class="relative">
+                    <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                    <img src="logo.png" alt="ARCAMBE Logo" class="h-16 md:h-20 relative z-10 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl md:text-3xl font-heading font-black text-arcambeEscuro tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde">ARCAMBE</span>
+                    <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG & Soluções Ambientais, LDA</span>
+                </div>
+            </a>
+            
+            <a href="index.html" class="flex items-center gap-2 bg-gray-50 hover:bg-gray-100 border border-gray-200 text-gray-600 font-heading font-bold text-xs uppercase tracking-widest px-6 py-3 rounded-full transition-all duration-300 hover:text-arcambeVerde hover:border-arcambeVerde group shadow-sm">
+                <i class="fa-solid fa-arrow-left transform group-hover:-translate-x-1 transition-transform"></i> Voltar ao Site
+            </a>
+        </div>
+    </nav>
+    <main class="py-24 px-6 relative overflow-hidden bg-gray-50 min-h-screen flex items-center">
+        <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-arcambeVerde/5 rounded-full blur-[100px] -z-0"></div>
+        <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-arcambeClaro/5 rounded-full blur-[80px] -z-0"></div>
+        
+        <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100 grid md:grid-cols-3 relative z-10 w-full">
+            
+            <div class="bg-gradient-to-br from-[#0a1a14] to-gray-900 p-12 text-white relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-32 h-32 bg-arcambeVerde rounded-full blur-[50px] opacity-20"></div>
+                <div class="relative z-10 flex flex-col h-full justify-between">
+                    <div>
+                        <h2 class="text-3xl font-heading font-black uppercase tracking-tight leading-tight">Vamos trabalhar <span class="text-arcambeClaro">juntos?</span></h2>
+                        <p class="text-gray-400 text-sm mt-4 leading-relaxed font-light">Conte-nos sobre o seu projeto. A nossa equipa técnica responderá com uma proposta detalhada em até 48h.</p>
+                    </div>
+                    
+                    <div class="space-y-6 mt-12 mb-12">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <span class="text-sm font-light">comercial@arcambe.com</span>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="text-sm font-light">+258 84 417 2237</span>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="text-xs font-bold uppercase tracking-widest text-arcambeClaro">Maputo, Moçambique</span>
+                        </div>
+                    </div>
+
+                    <div class="pt-8 border-t border-white/10 italic text-[11px] text-gray-500 leading-relaxed font-light">
+                        "Soluções geoespaciais e ambientais com rigor científico e inovação tecnológica."
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 p-10 md:p-14 bg-white">
+                <form action="enviar_orcamento.php" method="POST" class="space-y-8">
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Nome / Empresa</label>
+                            <input type="text" name="cliente" required placeholder="Sua Empresa" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">E-mail Corporativo</label>
+                            <input type="email" name="email" required placeholder="contato@empresa.com" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light">
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Serviço Desejado</label>
+                        <div class="relative">
+                            <select name="servico" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all appearance-none font-light">
+                                <option value="mapeamento">Mapeamento e Drones (UAV)</option>
+                                <option value="monitoramento">Monitoramento Ambiental</option>
+                                <option value="aia">Avaliação de Impacto Ambiental (AIA)</option>
+                                <option value="sig">Implementação de SIG Corporativo</option>
+                                <option value="outro">Outros Serviços Ambientais</option>
+                            </select>
+                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-xs"></i>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Descrição do Projeto / Localização</label>
+                        <textarea name="detalhes" rows="5" placeholder="Descreva brevemente a área e o objetivo do serviço..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light resize-none"></textarea>
+                    </div>
+
+                    <div class="pt-4">
+                        <button type="submit" class="w-full bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white py-5 rounded-xl font-heading font-black uppercase tracking-widest text-sm shadow-[0_10px_30px_rgba(46,204,113,0.3)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(46,204,113,0.4)] transition-all duration-300 flex justify-center items-center gap-3">
+                            Enviar Solicitação <i class="fa-regular fa-paper-plane text-lg"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <img src="logo.png" alt="ARCAMBE" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
+                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
+                    ARCAMBE SIG & Soluções Ambientais, LDA.
+                </p>
+            </div>
+            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">© 2026 ARCAMBE. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
