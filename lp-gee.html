@@ -102,8 +102,69 @@
                     <div class="absolute inset-0 h-full w-full bg-gradient-to-r from-arcambeClaro to-arcambeVerde opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </a></li>
             </ul>
+
+            <!-- Hamburger Mobile -->
+            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-[5px] p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200 z-50" aria-label="Abrir menu">
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb1"></span>
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300" id="hb2"></span>
+                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb3"></span>
+            </button>
+        </div>
+
+        <!-- Menu Mobile Dropdown -->
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl shadow-xl">
+            <div class="px-5 py-4 flex flex-col gap-1">
+                <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-house text-arcambeVerde w-5 text-center"></i> Home
+                </a>
+                <a href="sobre.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-circle-info text-arcambeVerde w-5 text-center"></i> Sobre
+                </a>
+                <a href="servicos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
+                    <i class="fa-solid fa-briefcase text-arcambeVerde w-5 text-center"></i> Serviços
+                </a>
+                <a href="treinamentos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-orange-600 font-semibold text-sm hover:bg-orange-50 transition-all duration-200">
+                    <i class="fa-solid fa-graduation-cap text-orange-500 w-5 text-center"></i> Treinamentos
+                </a>
+                <div class="h-px bg-gray-100 my-2"></div>
+                <a href="inscricao.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-arcambeVerde to-emerald-500 text-white py-3 px-6 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+                    <i class="fa-solid fa-pen-to-square"></i> Inscrever Agora
+                </a>
+            </div>
         </div>
     </nav>
+    <script>
+        (function(){
+            var btn = document.getElementById('mobile-menu-btn');
+            var menu = document.getElementById('mobile-menu');
+            var hb1 = document.getElementById('hb1');
+            var hb2 = document.getElementById('hb2');
+            var hb3 = document.getElementById('hb3');
+            if(!btn) return;
+            btn.addEventListener('click', function(){
+                var isOpen = !menu.classList.contains('hidden');
+                menu.classList.toggle('hidden');
+                if(!isOpen){
+                    hb1.style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    hb2.style.opacity = '0';
+                    hb3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
+                } else {
+                    hb1.style.transform = '';
+                    hb2.style.opacity = '';
+                    hb3.style.transform = '';
+                }
+            });
+            menu.querySelectorAll('a').forEach(function(a){
+                a.addEventListener('click', function(){
+                    menu.classList.add('hidden');
+                    hb1.style.transform = '';
+                    hb2.style.opacity = '';
+                    hb3.style.transform = '';
+                });
+            });
+        })();
+    </script>
+
 
     <section class="bg-arcambeEscuro pt-20 pb-32 px-6 text-white overflow-hidden">
         <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
