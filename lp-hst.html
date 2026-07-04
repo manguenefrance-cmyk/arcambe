@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A ARCAMBE implementa sistemas HST (Higiene, Segurança e Saúde no Trabalho) que protegem os seus colaboradores, reduzem responsabilidades legais e garantem conformidade com a legislação moçambicana.">
+    <meta name="keywords" content="HST Moçambique, Segurança no Trabalho, HIRA, Saúde Ocupacional, SSO, Higiene, ARCAMBE">
+    <meta property="og:title" content="Saúde, Segurança & HST em Moçambique | ARCAMBE">
+    <meta property="og:description" content="A ARCAMBE implementa sistemas HST que protegem os seus colaboradores e garantem conformidade com a legislação moçambicana.">
+    <title>Saúde, Segurança &amp; HST em Moçambique | ARCAMBE</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
+                    colors: { arcambeVerde: '#1b7a5d', arcambeClaro: '#2ecc71', arcambeEscuro: '#0a3628' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
+        .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
+        ::-webkit-scrollbar-thumb{background:#1b7a5d;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#0f4d3b}
+        h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
+        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(46,204,113,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+        .btn-pulsar{animation:pulse-green 2s infinite}
+        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(27,122,93,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,0)}}
+        .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
+        .btn-arcambe-pulsar:hover{background-color:#0f4d3b;transform:scale(1.05)}
+        .hero-hst{background:#050e09;background-image:radial-gradient(ellipse at 10% 50%,rgba(27,122,93,.3) 0%,transparent 60%),radial-gradient(ellipse at 90% 20%,rgba(46,204,113,.08) 0%,transparent 50%)}
+        .grid-overlay{background-image:linear-gradient(rgba(27,122,93,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(27,122,93,.06) 1px,transparent 1px);background-size:60px 60px}
+        .step-card{transition:all .4s ease}.step-card:hover{transform:translateY(-6px)}
+        .risk-card{transition:all .5s ease}.risk-card:hover{transform:scale(1.03)}
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans scroll-smooth">
+
+<!-- NAV -->
+<nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-4 group">
+            <div class="relative">
+                <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <img src="logo.png" alt="ARCAMBE Logo" class="h-14 md:h-16 relative z-10 transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl md:text-3xl font-black tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde" style="font-family:Outfit,sans-serif">ARCAMBE</span>
+                <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG &amp; Soluções Ambientais, LDA</span>
+            </div>
+        </a>
+        <ul class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm tracking-wide">
+            <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="servicos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Serviços<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="sobre.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Sobre<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="orcamento.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(46,204,113,0.4)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Solicitar Orçamento</a></li>
+        </ul>
+        <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mm" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+        <a href="index.html" class="block py-2 text-gray-700 font-semibold">Home</a>
+        <a href="servicos.html" class="block py-2 text-gray-700 font-semibold">Serviços</a>
+        <a href="sobre.html" class="block py-2 text-gray-700 font-semibold">Sobre</a>
+        <a href="orcamento.html" class="block py-3 text-center bg-arcambeVerde text-white rounded-full font-bold text-sm">Solicitar Orçamento</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-hst grid-overlay pt-24 pb-36 px-6 text-white relative overflow-hidden">
+    <div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[160px] opacity-20 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-arcambeClaro rounded-full blur-[180px] opacity-8 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div>
+                    <span class="inline-flex items-center gap-2 bg-arcambeVerde/40 border border-arcambeVerde/50 text-arcambeClaro px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 block w-fit">
+                        <i class="fa-solid fa-helmet-safety"></i> Consultoria HST &amp; Segurança Ocupacional
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter">
+                        A Sua Empresa Protege<br><span class="text-arcambeClaro italic">os Seus Colaboradores?</span>
+                    </h1>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    A ARCAMBE implementa sistemas <strong class="text-white">HST (Higiene, Segurança e Saúde no Trabalho)</strong> que protegem as suas equipas,
+                    reduzem responsabilidades legais e melhoram a produtividade — em conformidade com a
+                    <strong class="text-arcambeClaro">legislação laboral moçambicana</strong>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>HIRA — Avaliação de riscos profissional</span>
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Formação e sensibilização de equipas</span>
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Conformidade com legislação laboral</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="orcamento.html" id="hero-cta-orcamento" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-invoice"></i> Solicitar Orçamento
+                    </a>
+                    <a href="https://wa.me/258844172237?text=Olá!+Preciso+de+apoio+com+HST+para+a+minha+empresa.+Podem+ajudar?" class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Falar Connosco
+                    </a>
+                </div>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-5">
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-shield-halved text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">HIRA</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Avaliação de riscos</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-users text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">+200</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Trabalhadores formados</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-building text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">+10</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Empresas protegidas</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-circle-check text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">ISO</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Normas internacionais</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RISK SECTION -->
+<section class="py-24 px-6 bg-gray-950 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-red-950/20 to-transparent pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-3 bg-red-600/20 border border-red-500/30 text-red-400 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+                <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> Atenção: O Custo Real dos Acidentes de Trabalho
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">
+                Sem Sistema HST Implementado,<br>a Sua Empresa Arrisca:
+            </h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Em Moçambique, a Lei do Trabalho (Lei n.º 23/2007) e o Regulamento de HST impõem obrigações claras às empresas. O incumprimento tem consequências sérias e imediatas.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="risk-card bg-red-950/40 border border-red-500/30 rounded-3xl p-8 text-center group hover:border-red-400/60">
+                <div class="w-20 h-20 rounded-full bg-red-600/20 border border-red-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/30 transition-colors">
+                    <i class="fa-solid fa-gavel text-3xl text-red-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-red-300 mb-3">Responsabilidade Legal</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">A ocorrência de acidentes de trabalho sem sistema HST implementado expõe a empresa a processos judiciais, coimas pesadas e até responsabilidade criminal do gestor, conforme a Lei do Trabalho.</p>
+                <div class="mt-6 bg-red-900/30 rounded-xl p-3"><p class="text-red-300 text-xs font-bold uppercase tracking-widest">Lei do Trabalho n.º 23/2007 · Reg. HST</p></div>
+            </div>
+            <div class="risk-card bg-orange-950/40 border border-orange-500/30 rounded-3xl p-8 text-center group hover:border-orange-400/60">
+                <div class="w-20 h-20 rounded-full bg-orange-600/20 border border-orange-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-600/30 transition-colors">
+                    <i class="fa-solid fa-money-bill-wave text-3xl text-orange-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-orange-300 mb-3">Custos de Acidentes</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Um único acidente de trabalho grave pode custar dezenas de milhares de meticais em indemnizações, tratamentos, substituição de pessoal, perda de produção e danos à reputação da empresa.</p>
+                <div class="mt-6 bg-orange-900/30 rounded-xl p-3"><p class="text-orange-300 text-xs font-bold uppercase tracking-widest">Custo médio: muito superior ao HST preventivo</p></div>
+            </div>
+            <div class="risk-card bg-yellow-950/40 border border-yellow-500/30 rounded-3xl p-8 text-center group hover:border-yellow-400/60">
+                <div class="w-20 h-20 rounded-full bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600/30 transition-colors">
+                    <i class="fa-solid fa-briefcase-slash text-3xl text-yellow-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-yellow-300 mb-3">Perda de Contratos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Empresas internacionais, projetos financiados por doadores e contratos governamentais exigem certificação HST e evidências de conformidade. Sem isso, a sua empresa perde oportunidades de negócio.</p>
+                <div class="mt-6 bg-yellow-900/30 rounded-xl p-3"><p class="text-yellow-300 text-xs font-bold uppercase tracking-widest">Impacto: exclusão de concursos e contratos</p></div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="text-gray-300 text-lg mb-6">Não espere por um acidente para agir. <strong class="text-white">A prevenção é sempre mais barata do que as consequências.</strong></p>
+            <a href="orcamento.html" id="risk-cta" class="btn-arcambe-pulsar inline-block bg-arcambeVerde text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl">
+                <i class="fa-solid fa-shield-halved mr-2"></i>Proteger os Meus Colaboradores Agora
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Como trabalhamos</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">
+                Implementação HST em <span class="text-arcambeVerde">5 Etapas</span>
+            </h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Do diagnóstico inicial ao sistema HST plenamente operacional — acompanhamos todo o processo com metodologia rigorosa e orientada a resultados.</p>
+        </div>
+        <div class="relative">
+            <div class="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-arcambeVerde via-arcambeClaro to-arcambeVerde opacity-30"></div>
+            <div class="grid lg:grid-cols-5 gap-6">
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-magnifying-glass text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">1</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Diagnóstico Inicial</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Inspeção das instalações e processos de trabalho, identificação de hazards existentes e avaliação do nível de conformidade HST atual da empresa.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-list-check text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">2</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">HIRA</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Identificação e avaliação de riscos ocupacionais (Hazard Identification & Risk Assessment) — com classificação de severidade e prioridade de intervenção.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeVerde border-4 border-arcambeClaro flex items-center justify-center mx-auto shadow-lg shadow-arcambeClaro/30">
+                            <i class="fa-solid fa-file-pen text-2xl text-white"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeEscuro text-arcambeClaro rounded-full text-xs font-black flex items-center justify-center">3</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Plano de Ação</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Elaboração de procedimentos de segurança, políticas HST, fichas de dados de segurança e planos de emergência adaptados à realidade da empresa.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-chalkboard-teacher text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">4</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Formação</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Sessões de formação e sensibilização para todos os colaboradores — desde gestores a operários de campo — sobre boas práticas de segurança e uso de EPIs.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-circle-check text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">5</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Monitorização</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Visitas de campo periódicas, relatórios de conformidade HST e revisão do sistema para garantia contínua de um ambiente de trabalho seguro.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="py-24 px-6 bg-arcambeEscuro text-white relative overflow-hidden">
+    <div class="absolute -top-40 right-0 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Tudo incluído no serviço</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">O Que Recebe com o <span class="text-arcambeClaro">Serviço HST ARCAMBE</span></h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Um serviço HST completo, sem custos ocultos, adaptado à legislação moçambicana e às normas ISO internacionais.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-file-shield text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Política HST Empresarial</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Elaboração da Política de Saúde, Higiene e Segurança no Trabalho da empresa, conforme os requisitos da Lei do Trabalho moçambicana e boas práticas internacionais.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-triangle-exclamation text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">HIRA Completo</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Identificação e avaliação de todos os riscos ocupacionais, com matriz de risco, plano de controlo e medidas de prevenção e mitigação para cada posto de trabalho.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-helmet-safety text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Procedimentos de Segurança</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Procedimentos operacionais de segurança (SOP) para cada área de risco, incluindo trabalho em altura, espaços confinados, manuseamento de químicos e operação de maquinaria.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-fire-extinguisher text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Plano de Emergência</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Plano de resposta a emergências (incêndios, derrames, acidentes graves), com simulacros, rotas de evacuação, pontos de encontro e contactos de emergência.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-chalkboard-user text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Formação de Equipas</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Programas de formação HST certificados para gestores, supervisores e trabalhadores — com manual de formação, avaliação de conhecimentos e certificado de participação.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-clipboard-check text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Relatórios Periódicos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Relatórios de monitorização HST, registo de incidentes e quase-acidentes, indicadores de desempenho e recomendações de melhoria contínua para a gestão.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTORS -->
+<section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">O nosso serviço serve para si?</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Sectores que <span class="text-arcambeVerde">Precisam de HST</span></h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Qualquer empresa com trabalhadores tem obrigações HST. Mas alguns setores têm riscos mais elevados e exigências mais rigorosas.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-hard-hat text-2xl text-orange-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Construção Civil</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Um dos setores com maior risco de acidentes graves. Trabalho em altura, maquinaria pesada, estruturas instáveis e exposição a materiais perigosos exigem HST rigoroso.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST obrigatório</span>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-gem text-2xl text-gray-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Mineração &amp; Extração</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Explosivos, poeiras, gases tóxicos, equipamentos pesados e trabalho subterrâneo tornam a mineração o setor com maior necessidade de sistemas HST especializados.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST obrigatório</span>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-industry text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Indústria Manufactureira</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Linhas de produção, maquinaria industrial, exposição a químicos e ruído elevado criam riscos ocupacionais que requerem avaliação e controlo sistemático.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST obrigatório</span>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-bolt text-2xl text-yellow-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Energia &amp; Utilities</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Trabalho com eletricidade de alta tensão, combustíveis, gás natural e equipamentos sob pressão exige procedimentos HST estritos e formação especializada.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST obrigatório</span>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-wheat-awn text-2xl text-green-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Agronegócio</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Maquinaria agrícola, exposição a pesticidas e fertilizantes, trabalho ao sol e em condições de campo requerem proteção específica para os trabalhadores rurais.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST recomendado</span>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-hospital text-2xl text-red-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Saúde &amp; Farmacêutica</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Exposição a agentes biológicos, químicos e radiações ionizantes em contexto hospitalar e laboratorial exige sistemas HST rigorosos e formação específica.</p>
+                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>HST obrigatório</span>
+            </div>
+        </div>
+        <div class="mt-12 bg-arcambeVerde/10 border border-arcambeVerde/20 rounded-3xl p-8 text-center">
+            <i class="fa-solid fa-circle-question text-arcambeVerde text-3xl mb-4 block"></i>
+            <h3 class="font-black text-arcambeEscuro text-xl mb-3">Não tem a certeza do nível de conformidade HST da sua empresa?</h3>
+            <p class="text-gray-600 text-sm mb-6">Contacte-nos gratuitamente para uma auditoria HST gratuita. Em 24 horas identificamos as lacunas e o que é preciso fazer.</p>
+            <a href="https://wa.me/258844172237?text=Olá!+Gostava+de+uma+auditoria+HST+gratuita+para+a+minha+empresa." class="inline-flex items-center gap-2 bg-arcambeVerde text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-arcambeEscuro transition-colors shadow-lg" target="_blank">
+                <i class="fa-brands fa-whatsapp text-lg"></i>Solicitar Auditoria HST Gratuita
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-28 px-6 bg-gradient-to-br from-arcambeEscuro via-[#0f3d26] to-gray-950 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/50 to-transparent"></div>
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-arcambeClaro rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <span class="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-300 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 animate-pulse">
+            <i class="fa-solid fa-triangle-exclamation"></i>Cada dia sem HST é um dia de risco para os seus trabalhadores
+        </span>
+        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6">
+            Proteja os Seus<br><span class="text-arcambeClaro">Colaboradores</span><br>Hoje Mesmo
+        </h2>
+        <p class="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            Prevenir é sempre mais barato do que tratar as consequências de um acidente. A ARCAMBE responde orçamentos em menos de <strong class="text-white">48 horas</strong>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+            <a href="orcamento.html" id="final-cta" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-12 py-6 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-3">
+                <i class="fa-solid fa-file-invoice text-xl"></i>
+                Solicitar Orçamento Gratuito
+            </a>
+            <a href="https://wa.me/258844172237?text=Olá!+Preciso+urgente+de+implementar+um+sistema+HST+na+minha+empresa." class="border-2 border-white/30 text-white px-12 py-6 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-3" target="_blank">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Falar por WhatsApp
+            </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-xs uppercase tracking-widest font-bold text-gray-500">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Orçamento sem compromisso</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Resposta em 48 horas</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Equipa moçambicana</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Normas ISO internacionais</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gradient-to-br from-gray-950 via-[#0a1a14] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
+        <div>
+            <img src="logo.png" class="h-16 mb-8 brightness-200 grayscale opacity-80 hover:opacity-100 transition-opacity duration-300">
+            <p class="text-gray-400 text-sm leading-relaxed font-light">ARCAMBE SIG &amp; Soluções Ambientais, LDA.<br>Especialistas em HST, segurança ocupacional e sustentabilidade em Moçambique.</p>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>Contactos</h4>
+            <ul class="space-y-5 text-sm text-gray-300">
+                <li class="flex items-center gap-4"><i class="fa-solid fa-envelope text-arcambeVerde text-lg"></i><a href="mailto:info@arcambe.com" class="hover:text-white transition-colors">info@arcambe.com</a></li>
+                <li class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-arcambeVerde text-lg"></i><a href="https://wa.me/258844172237" class="hover:text-white">+258 844 172 237</a></li>
+                <li class="flex items-start gap-4"><i class="fa-solid fa-map-marker-alt text-arcambeVerde text-lg mt-1"></i><span>Maputo, Moçambique</span></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Redes Sociais</h4>
+            <div class="flex gap-4">
+                <a href="https://linkedin.com/company/arcambe-ambiental/" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#0077b5] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-gray-300"></i></a>
+                <a href="https://instagram.com/arcambe.oficial" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-gray-300"></i></a>
+                <a href="https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-youtube text-gray-300"></i></a>
+                <a href="https://facebook.com/profile.php?id=61582065789260" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-gray-300"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Newsletter</h4>
+            <form action="newsletter.php" method="POST" class="flex flex-col gap-3">
+                <div class="relative"><i class="fa-regular fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i><input type="email" name="email_newsletter" required placeholder="O teu melhor e-mail" class="w-full bg-white/5 border border-white/10 p-4 pl-12 rounded-xl focus:border-arcambeClaro outline-none transition-all text-sm text-white placeholder-gray-500"></div>
+                <button type="submit" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white p-4 rounded-xl font-black uppercase text-xs tracking-widest hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"><span>Subscrever</span><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold relative z-10">
+        <p>&#169; 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
+        <p class="mt-4 md:mt-0 flex items-center gap-2">Moçambique <span class="w-1 h-1 bg-arcambeClaro rounded-full"></span> Precisão Digital</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/258844172237?text=Olá!+Preciso+de+implementar+HST+na+minha+empresa." class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+</body>
+</html>

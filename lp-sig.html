@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="pt-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A ARCAMBE transforma dados brutos em inteligência geográfica acionável. Ortomosaicos, dashboards SIG, WebMaps e automação com Python e GEE em Moçambique.">
+    <meta name="keywords" content="SIG Moçambique, Mapeamento, QGIS, Google Earth Engine, Drone UAV, Ortomosaico, NDVI, Geodados, ARCAMBE">
+    <meta property="og:title" content="Mapeamento & SIG Profissional em Moçambique | ARCAMBE">
+    <meta property="og:description" content="Transformamos dados brutos em inteligência geográfica acionável. Ortomosaicos, dashboards SIG e automação com Python e GEE.">
+    <title>Mapeamento & SIG Profissional em Moçambique | ARCAMBE</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
+                    colors: { arcambeVerde: '#1b7a5d', arcambeClaro: '#2ecc71', arcambeEscuro: '#0a3628' }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
+        .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
+        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
+        ::-webkit-scrollbar-thumb{background:#1b7a5d;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#0f4d3b}
+        h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
+        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(46,204,113,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+        .btn-pulsar{animation:pulse-green 2s infinite}
+        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(27,122,93,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,0)}}
+        .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
+        .btn-arcambe-pulsar:hover{background-color:#0f4d3b;transform:scale(1.05)}
+        .hero-sig{background:#050e09;background-image:radial-gradient(ellipse at 15% 50%,rgba(27,122,93,.35) 0%,transparent 60%),radial-gradient(ellipse at 85% 20%,rgba(46,204,113,.1) 0%,transparent 50%)}
+        .grid-overlay{background-image:linear-gradient(rgba(27,122,93,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(27,122,93,.06) 1px,transparent 1px);background-size:60px 60px}
+        .step-card{transition:all .4s ease}.step-card:hover{transform:translateY(-6px)}
+        .feature-card{transition:all .5s ease}.feature-card:hover{transform:scale(1.03)}
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans scroll-smooth">
+
+<!-- NAV -->
+<nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-4 group">
+            <div class="relative">
+                <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
+                <img src="logo.png" alt="ARCAMBE Logo" class="h-14 md:h-16 relative z-10 transition-transform duration-500 group-hover:scale-105">
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl md:text-3xl font-black tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde" style="font-family:Outfit,sans-serif">ARCAMBE</span>
+                <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG &amp; Soluções Ambientais, LDA</span>
+            </div>
+        </a>
+        <ul class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm tracking-wide">
+            <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="servicos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Serviços<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="sobre.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Sobre<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
+            <li><a href="orcamento.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(46,204,113,0.4)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Solicitar Orçamento</a></li>
+        </ul>
+        <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
+    </div>
+    <div id="mm" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
+        <a href="index.html" class="block py-2 text-gray-700 font-semibold">Home</a>
+        <a href="servicos.html" class="block py-2 text-gray-700 font-semibold">Serviços</a>
+        <a href="sobre.html" class="block py-2 text-gray-700 font-semibold">Sobre</a>
+        <a href="orcamento.html" class="block py-3 text-center bg-arcambeVerde text-white rounded-full font-bold text-sm">Solicitar Orçamento</a>
+    </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-sig grid-overlay pt-24 pb-36 px-6 text-white relative overflow-hidden">
+    <div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[160px] opacity-20 pointer-events-none"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-arcambeClaro rounded-full blur-[180px] opacity-8 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <div>
+                    <span class="inline-flex items-center gap-2 bg-arcambeVerde/40 border border-arcambeVerde/50 text-arcambeClaro px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 block w-fit">
+                        <i class="fa-solid fa-satellite-dish"></i> Serviço SIG &amp; Geodados
+                    </span>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter">
+                        O Seu Negócio Precisa de<br><span class="text-arcambeClaro italic">Dados Geoespaciais Precisos?</span>
+                    </h1>
+                </div>
+                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                    A ARCAMBE transforma dados brutos em <strong class="text-white">inteligência geográfica acionável</strong> —
+                    ortomosaicos de drone, dashboards SIG interativos e automação com
+                    <strong class="text-arcambeClaro">Python &amp; Google Earth Engine</strong>.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Processamento de imagens de satélite e drone</span>
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>WebMaps e dashboards profissionais</span>
+                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Análise geoespacial avançada com GEE</span>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="orcamento.html" id="hero-cta-orcamento" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-file-invoice"></i> Solicitar Orçamento
+                    </a>
+                    <a href="https://wa.me/258844172237?text=Olá!+Preciso+de+um+serviço+de+SIG+e+Mapeamento.+Podem+ajudar?" class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
+                        <i class="fa-brands fa-whatsapp"></i> Falar Connosco
+                    </a>
+                </div>
+            </div>
+            <!-- Stats -->
+            <div class="grid grid-cols-2 gap-5">
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-satellite text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">+50</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Projetos SIG entregues</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-drone text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">UAV</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Drones profissionais</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-map text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">+5</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Sectores atendidos</p>
+                </div>
+                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
+                    <i class="fa-solid fa-code text-4xl text-arcambeClaro mb-4 block"></i>
+                    <span class="text-4xl font-black text-white">GEE</span>
+                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Análise em nuvem</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROBLEM SECTION -->
+<section class="py-24 px-6 bg-gray-950 text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-blue-950/20 to-transparent pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center gap-3 bg-yellow-600/20 border border-yellow-500/30 text-yellow-400 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest mb-6">
+                <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> Atenção: O que Está a Custar ao Seu Negócio
+            </div>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">
+                Sem Dados Geoespaciais Precisos,<br>a Sua Empresa Perde:
+            </h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Decisões baseadas em dados desatualizados ou imprecisos custam tempo, dinheiro e credibilidade. Em Moçambique, isso é ainda mais crítico em setores como mineração, agronegócio e infraestrutura.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+            <div class="feature-card bg-yellow-950/40 border border-yellow-500/30 rounded-3xl p-8 text-center group hover:border-yellow-400/60">
+                <div class="w-20 h-20 rounded-full bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600/30 transition-colors">
+                    <i class="fa-solid fa-money-bill-wave text-3xl text-yellow-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-yellow-300 mb-3">Decisões Caras</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Investir em projetos sem análise geoespacial prévia pode resultar em localização errada, falhas de planeamento e custos de correção muito superiores ao custo do mapeamento.</p>
+                <div class="mt-6 bg-yellow-900/30 rounded-xl p-3"><p class="text-yellow-300 text-xs font-bold uppercase tracking-widest">Risco: investimento mal alocado</p></div>
+            </div>
+            <div class="feature-card bg-orange-950/40 border border-orange-500/30 rounded-3xl p-8 text-center group hover:border-orange-400/60">
+                <div class="w-20 h-20 rounded-full bg-orange-600/20 border border-orange-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-600/30 transition-colors">
+                    <i class="fa-solid fa-clock text-3xl text-orange-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-orange-300 mb-3">Relatórios Fracos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Relatórios sem cartografia profissional e análise SIG perdem credibilidade perante clientes, investidores e organismos públicos — comprometendo aprovações e financiamentos.</p>
+                <div class="mt-6 bg-orange-900/30 rounded-xl p-3"><p class="text-orange-300 text-xs font-bold uppercase tracking-widest">Risco: perda de contratos e aprovações</p></div>
+            </div>
+            <div class="feature-card bg-red-950/40 border border-red-500/30 rounded-3xl p-8 text-center group hover:border-red-400/60">
+                <div class="w-20 h-20 rounded-full bg-red-600/20 border border-red-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/30 transition-colors">
+                    <i class="fa-solid fa-eye-slash text-3xl text-red-400"></i>
+                </div>
+                <h3 class="text-2xl font-black text-red-300 mb-3">Monitorização Cega</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Sem monitorização geoespacial contínua (NDVI, cobertura do solo, erosão), as alterações ambientais passam despercebidas até causarem prejuízos irreversíveis e multas de não-conformidade.</p>
+                <div class="mt-6 bg-red-900/30 rounded-xl p-3"><p class="text-red-300 text-xs font-bold uppercase tracking-widest">Risco: danos ambientais e sanções</p></div>
+            </div>
+        </div>
+        <div class="text-center">
+            <p class="text-gray-300 text-lg mb-6">Não deixe que dados imprecisos comprometam o seu projeto. <strong class="text-white">A ARCAMBE tem a solução.</strong></p>
+            <a href="orcamento.html" id="problem-cta" class="btn-arcambe-pulsar inline-block bg-arcambeVerde text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl">
+                <i class="fa-solid fa-satellite-dish mr-2"></i>Quero Dados Geoespaciais Precisos
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS STEPS -->
+<section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-20">
+            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Como trabalhamos</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">
+                O Nosso Processo SIG em <span class="text-arcambeVerde">5 Etapas</span>
+            </h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Do briefing ao produto final entregue — gerimos todo o processo técnico para si, com total transparência e prazos rigorosos.</p>
+        </div>
+        <div class="relative">
+            <div class="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-arcambeVerde via-arcambeClaro to-arcambeVerde opacity-30"></div>
+            <div class="grid lg:grid-cols-5 gap-6">
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-comments text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">1</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Briefing</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Reunião de levantamento de necessidades, definição do âmbito do projeto e área geográfica de interesse.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-helicopter text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">2</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Aquisição de Dados</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Voos de drone UAV, download de imagens de satélite (Sentinel, Landsat, Planet) ou integração de dados existentes.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeVerde border-4 border-arcambeClaro flex items-center justify-center mx-auto shadow-lg shadow-arcambeClaro/30">
+                            <i class="fa-solid fa-gears text-2xl text-white"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeEscuro text-arcambeClaro rounded-full text-xs font-black flex items-center justify-center">3</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Processamento</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Processamento em QGIS, ArcGIS, Google Earth Engine ou Python — ortomosaicos, MDT, classificação e análise.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-chart-pie text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">4</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Análise &amp; Visualização</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Criação de mapas temáticos, dashboards interativos, WebMaps e atlas cartográficos prontos a publicar.</p>
+                </div>
+                <div class="step-card text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
+                            <i class="fa-solid fa-circle-check text-2xl text-arcambeClaro"></i>
+                        </div>
+                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">5</span>
+                    </div>
+                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Entrega &amp; Suporte</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Entrega de todos os ficheiros SIG, relatório técnico e suporte pós-projeto para integração dos dados.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="py-24 px-6 bg-arcambeEscuro text-white relative overflow-hidden">
+    <div class="absolute -top-40 right-0 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
+    <div class="max-w-6xl mx-auto relative z-10">
+        <div class="text-center mb-16">
+            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Tudo incluído no serviço</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">O Que Recebe com o <span class="text-arcambeClaro">Serviço ARCAMBE</span></h2>
+            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Soluções SIG completas, sem custos ocultos, adaptadas à realidade moçambicana.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-image text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Ortomosaicos &amp; MDT</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Modelos digitais de terreno e ortomosaicos de alta resolução gerados a partir de voos UAV, com precisão centimétrica para toda a área do projeto.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-leaf text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Análise NDVI &amp; Cobertura</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Mapeamento da vegetação, uso e cobertura do solo, índices de saúde vegetal (NDVI) e monitorização ambiental multitemporal por satélite.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-globe text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">WebMaps Interativos</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Plataformas WebGIS acessíveis por browser, com camadas temáticas, filtros dinâmicos e exportação de dados — prontas para partilha institucional.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-chart-bar text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Dashboards SIG</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Painéis de controlo geoespaciais com gráficos, mapas dinâmicos e indicadores de performance territorial para apoiar decisões estratégicas.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-code text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Automação com Python &amp; GEE</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Scripts de automação SIG com Python e análises em larga escala na plataforma Google Earth Engine — processamento de anos de dados em minutos.</p>
+            </div>
+            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
+                <i class="fa-solid fa-map text-3xl text-arcambeClaro mb-5 block"></i>
+                <h3 class="font-black text-white text-lg mb-3">Atlas Cartográfico</h3>
+                <p class="text-gray-400 text-sm leading-relaxed">Mapas temáticos profissionais para relatórios institucionais, processos de licenciamento e publicações científicas — com escala, legenda e normas cartográficas.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WHO NEEDS IT -->
+<section class="py-24 px-6 bg-gray-50">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">O nosso serviço serve para si?</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Sectores que <span class="text-arcambeVerde">Usam os Nossos Serviços SIG</span></h2>
+            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">A análise geoespacial é transversal a qualquer setor que envolva territórios, recursos naturais, infraestruturas ou monitorização ambiental.</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-hard-hat text-2xl text-orange-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Construção &amp; Infraestrutura</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Topografia, implantação de projetos, análise de conflitos de uso do solo e monitorização de obras em grandes projetos de construção civil.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-gray-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-gem text-2xl text-gray-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Mineração &amp; Pedreiras</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Delimitação de concessões mineiras, cálculo de volumes de extração, monitorização de tailings e análise de impacto territorial.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-wheat-awn text-2xl text-green-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Agronegócio &amp; Irrigação</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Mapeamento de aptidão agrícola, NDVI para saúde das culturas, análise de bacias hidrográficas e planeamento de sistemas de irrigação.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-landmark text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Governo &amp; Autarquias</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Planos diretores municipais, cadastro urbano, monitorização de desflorestação e sistemas de informação territorial para gestão pública.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-teal-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-leaf text-2xl text-teal-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">ONGs &amp; Projetos Ambientais</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Monitorização de ecossistemas, mapeamento de habitats, análise de desflorestação e relatórios geoespaciais para financiadores internacionais.</p>
+            </div>
+            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
+                <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
+                    <i class="fa-solid fa-bolt text-2xl text-yellow-600 group-hover:text-white transition-colors"></i>
+                </div>
+                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Energia &amp; Utilities</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-4">Análise de potencial solar e eólico, rotas de linhas de transmissão, gestão de redes de distribuição e monitorização de infraestruturas energéticas.</p>
+            </div>
+        </div>
+        <div class="mt-12 bg-arcambeVerde/10 border border-arcambeVerde/20 rounded-3xl p-8 text-center">
+            <i class="fa-solid fa-circle-question text-arcambeVerde text-3xl mb-4 block"></i>
+            <h3 class="font-black text-arcambeEscuro text-xl mb-3">Não tem a certeza se o nosso SIG resolve o seu problema?</h3>
+            <p class="text-gray-600 text-sm mb-6">Contacte-nos gratuitamente para uma conversa técnica. Em menos de 24 horas dizemos-lhe exatamente o que é possível fazer e quanto custa.</p>
+            <a href="https://wa.me/258844172237?text=Olá!+Gostava+de+saber+mais+sobre+os+serviços+SIG+da+ARCAMBE." class="inline-flex items-center gap-2 bg-arcambeVerde text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-arcambeEscuro transition-colors shadow-lg" target="_blank">
+                <i class="fa-brands fa-whatsapp text-lg"></i>Falar Gratuitamente com um Especialista
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- DIFFERENTIALS -->
+<section class="py-24 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Por que a ARCAMBE</p>
+            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">O Que nos Diferencia <span class="text-arcambeVerde">da Concorrência</span></h2>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+            <div class="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-lg transition-all duration-400 group">
+                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-graduation-cap text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-arcambeEscuro text-lg mb-2">Equipa Técnica Especializada</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">A nossa equipa é formada por geógrafos SIG, engenheiros ambientais e programadores Python — todos com experiência em projetos reais em Moçambique.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-lg transition-all duration-400 group">
+                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-microchip text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-arcambeEscuro text-lg mb-2">Tecnologia de Ponta</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Usamos QGIS, ArcGIS Pro, Google Earth Engine, drones DJI e Python — as ferramentas mais avançadas do setor geoespacial, aplicadas com metodologia rigorosa.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-lg transition-all duration-400 group">
+                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-map-location-dot text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-arcambeEscuro text-lg mb-2">Conhecimento Local de Moçambique</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Conhecemos o território, a legislação e os dados disponíveis para Moçambique. Isso acelera os projetos e garante resultados adaptados à realidade local.</p>
+                </div>
+            </div>
+            <div class="flex items-start gap-6 p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-lg transition-all duration-400 group">
+                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fa-solid fa-clock-rotate-left text-white text-xl"></i>
+                </div>
+                <div>
+                    <h3 class="font-black text-arcambeEscuro text-lg mb-2">Prazos Rigorosos</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Entregamos dentro dos prazos acordados, com relatórios técnicos completos e ficheiros SIG prontos a usar — sem surpresas nem atrasos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-28 px-6 bg-gradient-to-br from-arcambeEscuro via-[#0f3d26] to-gray-950 text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/50 to-transparent"></div>
+    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
+    <div class="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-arcambeClaro rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+        <span class="inline-flex items-center gap-2 bg-arcambeVerde/20 border border-arcambeVerde/40 text-arcambeClaro px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 animate-pulse">
+            <i class="fa-solid fa-satellite-dish"></i>Pronto para ter dados que fazem a diferença?
+        </span>
+        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6">
+            Transforme os Seus<br><span class="text-arcambeClaro">Dados em Decisões</span><br>Inteligentes
+        </h2>
+        <p class="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
+            Cada projeto merece dados geoespaciais precisos e profissionais. A ARCAMBE responde orçamentos em menos de <strong class="text-white">48 horas</strong>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-5 justify-center mb-10">
+            <a href="orcamento.html" id="final-cta-orcamento" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-12 py-6 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-3">
+                <i class="fa-solid fa-file-invoice text-xl"></i>
+                Solicitar Orçamento Gratuito
+            </a>
+            <a href="https://wa.me/258844172237?text=Olá!+Preciso+de+um+serviço+SIG+para+o+meu+projeto." class="border-2 border-white/30 text-white px-12 py-6 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-3" target="_blank">
+                <i class="fa-brands fa-whatsapp text-xl"></i>
+                Falar por WhatsApp
+            </a>
+        </div>
+        <div class="flex flex-wrap justify-center gap-8 text-xs uppercase tracking-widest font-bold text-gray-500">
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Orçamento sem compromisso</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Resposta em 48 horas</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Equipa moçambicana</span>
+            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Tecnologia de ponta</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-gradient-to-br from-gray-950 via-[#0a1a14] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
+    <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
+    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
+        <div>
+            <img src="logo.png" class="h-16 mb-8 brightness-200 grayscale opacity-80 hover:opacity-100 transition-opacity duration-300">
+            <p class="text-gray-400 text-sm leading-relaxed font-light">ARCAMBE SIG &amp; Soluções Ambientais, LDA.<br>Especialistas em inteligência geoespacial e sustentabilidade em Moçambique.</p>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>Contactos</h4>
+            <ul class="space-y-5 text-sm text-gray-300">
+                <li class="flex items-center gap-4"><i class="fa-solid fa-envelope text-arcambeVerde text-lg"></i><a href="mailto:info@arcambe.com" class="hover:text-white transition-colors">info@arcambe.com</a></li>
+                <li class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-arcambeVerde text-lg"></i><a href="https://wa.me/258844172237" class="hover:text-white">+258 844 172 237</a></li>
+                <li class="flex items-start gap-4"><i class="fa-solid fa-map-marker-alt text-arcambeVerde text-lg mt-1"></i><span>Maputo, Moçambique</span></li>
+            </ul>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Redes Sociais</h4>
+            <div class="flex gap-4">
+                <a href="https://linkedin.com/company/arcambe-ambiental/" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#0077b5] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-gray-300"></i></a>
+                <a href="https://instagram.com/arcambe.oficial" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-gray-300"></i></a>
+                <a href="https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-youtube text-gray-300"></i></a>
+                <a href="https://facebook.com/profile.php?id=61582065789260" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-gray-300"></i></a>
+            </div>
+        </div>
+        <div>
+            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Newsletter</h4>
+            <form action="newsletter.php" method="POST" class="flex flex-col gap-3">
+                <div class="relative"><i class="fa-regular fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i><input type="email" name="email_newsletter" required placeholder="O teu melhor e-mail" class="w-full bg-white/5 border border-white/10 p-4 pl-12 rounded-xl focus:border-arcambeClaro outline-none transition-all text-sm text-white placeholder-gray-500"></div>
+                <button type="submit" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white p-4 rounded-xl font-black uppercase text-xs tracking-widest hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"><span>Subscrever</span><i class="fa-solid fa-arrow-right"></i></button>
+            </form>
+        </div>
+    </div>
+    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold relative z-10">
+        <p>&#169; 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
+        <p class="mt-4 md:mt-0 flex items-center gap-2">Moçambique <span class="w-1 h-1 bg-arcambeClaro rounded-full"></span> Precisão Digital</p>
+    </div>
+</footer>
+
+<a href="https://wa.me/258844172237?text=Olá!+Preciso+de+um+serviço+SIG+e+Mapeamento." class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar" target="_blank">
+    <i class="fa-brands fa-whatsapp"></i>
+</a>
+</body>
+</html>
