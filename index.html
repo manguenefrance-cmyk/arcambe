@@ -376,7 +376,50 @@
         <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
             <div class="relative group">
                 <div class="absolute inset-0 bg-gradient-to-tr from-arcambeVerde to-emerald-400 rounded-[3rem] transform rotate-3 scale-105 opacity-20 group-hover:rotate-6 transition-transform duration-500"></div>
-                <img src="foto-equipa.jpeg" alt="Equipa ARCAMBE" class="rounded-[3rem] shadow-2xl relative z-10 w-full object-cover h-[500px] transition-transform duration-500 group-hover:-translate-y-2">
+                <!-- Premium Animated Geo-Data Hub (Replaces static photo) -->
+                <div class="relative z-10 w-full h-[500px] rounded-[3rem] bg-gradient-to-br from-gray-900 via-[#0a1914] to-arcambeEscuro overflow-hidden shadow-2xl border border-white/10 group">
+                    <!-- Grid Pattern -->
+                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30 group-hover:scale-105 transition-transform duration-1000"></div>
+                    
+                    <!-- Radar Sweep Effect -->
+                    <div class="absolute inset-0 bg-[conic-gradient(from_90deg_at_50%_50%,transparent_0%,rgba(27,122,93,0.15)_25%,transparent_50%)] animate-[spin_6s_linear_infinite] opacity-70"></div>
+                    
+                    <!-- Central Node -->
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-arcambeVerde/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-40 h-40 border-2 border-arcambeVerde/40 rounded-full flex items-center justify-center backdrop-blur-md bg-white/5 shadow-[0_0_50px_rgba(27,122,93,0.3)]">
+                        <i class="fa-solid fa-earth-africa text-6xl text-transparent bg-clip-text bg-gradient-to-br from-white to-arcambeClaro animate-float"></i>
+                        
+                        <!-- Orbiting Ring -->
+                        <div class="absolute inset-0 border border-arcambeClaro/20 rounded-full animate-[spin_10s_linear_infinite] rounded-full border-t-arcambeClaro border-r-transparent"></div>
+                    </div>
+                    
+                    <!-- Floating Nodes -->
+                    <div class="absolute top-[20%] left-[15%] w-14 h-14 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center animate-bounce shadow-xl" style="animation-duration: 4s;">
+                        <i class="fa-solid fa-satellite text-arcambeClaro text-xl"></i>
+                    </div>
+                    <div class="absolute bottom-[30%] right-[15%] w-16 h-16 rounded-full bg-arcambeVerde/20 backdrop-blur-md border border-arcambeVerde/40 flex items-center justify-center animate-bounce shadow-xl" style="animation-duration: 5s;">
+                        <i class="fa-solid fa-layer-group text-white text-2xl"></i>
+                    </div>
+                    <div class="absolute top-[35%] right-[20%] w-10 h-10 rounded-lg bg-white/5 backdrop-blur-md border border-white/10 flex items-center justify-center animate-pulse shadow-lg">
+                        <i class="fa-solid fa-satellite-dish text-arcambeClaro/70 text-sm"></i>
+                    </div>
+                    
+                    <!-- Glass Panel Overlay -->
+                    <div class="absolute bottom-8 left-8 right-8 p-6 rounded-3xl bg-white/10 backdrop-blur-lg border border-white/20 shadow-2xl">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <div class="flex items-center gap-2 mb-2">
+                                    <span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>
+                                    <p class="text-[10px] text-arcambeClaro uppercase tracking-[0.2em] font-bold">Processamento Global</p>
+                                </div>
+                                <p class="text-white font-heading font-black text-2xl leading-none">Inteligência Geoespacial</p>
+                            </div>
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-arcambeVerde to-emerald-600 flex items-center justify-center shadow-[0_0_20px_rgba(27,122,93,0.5)] group-hover:scale-110 transition-transform duration-500">
+                                <i class="fa-solid fa-chart-network text-white text-lg"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="absolute -bottom-8 -right-8 bg-gradient-to-br from-arcambeVerde to-arcambeEscuro p-8 rounded-[2rem] text-white shadow-2xl hidden md:block z-20 border border-white/20 backdrop-blur-md animate-float">
                     <div class="flex items-center gap-4">
