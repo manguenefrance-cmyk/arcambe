@@ -18,6 +18,8 @@ node_modules/
 npm-debug.log
 
 # Ficheiros sensíveis (NÃO enviar para o GitHub)
-*.env
+.env
+.env.*
+!.env.example
 config.php
 credenciais.php

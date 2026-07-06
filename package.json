@@ -1,0 +1,13 @@
+{
+  "name": "arcambe-site",
+  "version": "2.0.0",
+  "private": true,
+  "description": "ARCAMBE premium bilingual website with Vercel serverless email handlers.",
+  "scripts": {
+    "check": "node scripts/check-site.js"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.14"
+  },
+  "devDependencies": {}
+}

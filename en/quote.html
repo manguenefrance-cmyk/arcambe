@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Request a Quote | ARCAMBE</title>
+  <meta name="description" content="Request a quote for GIS, environmental licensing, EIA, HSE, waste management or technical training services in Mozambique.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://arcambe.com/en/quote.html">
+  <link rel="alternate" hreflang="pt-MZ" href="https://arcambe.com/orcamento.html">
+  <link rel="alternate" hreflang="en" href="https://arcambe.com/en/quote.html">
+  <link rel="icon" type="image/png" href="/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body>
+  <header class="site-header solid" data-header>
+    <a class="brand" href="/en/"><img src="/logo.png" alt="ARCAMBE" width="64" height="64"><span><strong>ARCAMBE</strong><small>GIS & Environmental Solutions</small></span></a>
+    <button class="nav-toggle" type="button" data-nav-toggle aria-label="Open menu">Menu</button>
+    <nav class="site-nav" data-nav><a href="/en/">Home</a><a href="/servicos.html">Services</a><a href="/treinamentos.html">Training</a><a href="/orcamento.html">Portugues</a></nav>
+  </header>
+  <main class="form-page">
+    <section class="form-hero"><p class="eyebrow">Commercial request</p><h1>Request a technical quote.</h1><p>Send your project details. ARCAMBE receives your request by email and you receive an automatic professional confirmation.</p></section>
+    <section class="quote-shell">
+      <form class="quote-form" data-form="contact" action="/api/contact" method="post">
+        <input type="hidden" name="source" value="Quote Page EN">
+        <input class="hp-field" type="text" name="website" tabindex="-1" autocomplete="off">
+        <div class="form-grid">
+          <label>Full name<input name="name" required autocomplete="name"></label>
+          <label>Email<input type="email" name="email" required autocomplete="email"></label>
+          <label>Phone / WhatsApp<input name="phone" autocomplete="tel" placeholder="+258"></label>
+          <label>Company / Institution<input name="company" autocomplete="organization"></label>
+          <label>Requested service<select name="service" required><option value="">Choose an option</option><option>GIS and geoprocessing</option><option>Environmental licensing / EIA</option><option>HSE and occupational safety</option><option>Waste management</option><option>Technical training</option><option>Other service</option></select></label>
+          <label>Project location<input name="location" placeholder="City, province or coordinates"></label>
+        </div>
+        <label>Request summary<textarea name="message" required rows="7" placeholder="Describe the objective, deadline, location, existing documents and key requirements."></textarea></label>
+        <button class="button primary wide" type="submit">Send request</button>
+        <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+      </form>
+      <aside class="quote-aside"><h2>What happens next?</h2><ol><li>ARCAMBE receives your request in the commercial inbox.</li><li>You receive an automatic confirmation email.</li><li>The team reviews scope, urgency and required documents.</li><li>You receive a technical response with next steps.</li></ol><a href="https://wa.me/258844172237" class="button ghost dark-ghost">Talk on WhatsApp</a></aside>
+    </section>
+  </main>
+  <script src="/assets/js/site.js" defer></script>
+</body>
+</html>
