@@ -55,21 +55,35 @@ async function readBody(req) {
   }
 }
 
-function emailLayout(title, body) {
+function emailLayout(title, body, headerSubtitle = "") {
   return `
-    <div style="margin:0;padding:28px;background:#f6f4ed;font-family:Inter,Arial,sans-serif;color:#102019">
-      <div style="max-width:640px;margin:auto;background:#ffffff;border:1px solid #dfe6df;border-radius:12px;overflow:hidden">
-        <div style="background:#082d22;color:#ffffff;padding:24px 28px">
-          <div style="font-size:22px;font-weight:800;letter-spacing:.04em">ARCAMBE</div>
-          <div style="font-size:12px;color:#7ee0ae;text-transform:uppercase;letter-spacing:.16em">SIG & Solucoes Ambientais</div>
+    <div style="margin:0;padding:40px 20px;background:#f3f4f6;font-family:Inter,Arial,sans-serif;color:#374151">
+      <div style="max-width:600px;margin:auto;background:#ffffff;overflow:hidden;border:1px solid #e5e7eb;border-radius:8px">
+        
+        <!-- Header with Logo/Brand -->
+        <div style="text-align:center;padding:30px 20px;background:#ffffff">
+          <div style="font-size:28px;font-weight:900;color:#102019;letter-spacing:2px">ARCAMBE</div>
+          <div style="font-size:11px;color:#059669;text-transform:uppercase;letter-spacing:3px;margin-top:4px">SIG & Soluções Ambientais</div>
         </div>
-        <div style="padding:28px">
-          <h1 style="font-size:26px;line-height:1.15;margin:0 0 16px;color:#102019">${escapeHtml(title)}</h1>
+        
+        <!-- Hero Section (Blue/Green block) -->
+        <div style="background:#059669;color:#ffffff;padding:40px 30px;text-align:center">
+          <h1 style="font-size:24px;line-height:1.3;margin:0;font-weight:700">${escapeHtml(title)}</h1>
+          ${headerSubtitle ? `<p style="margin:16px 0 0;font-size:16px;color:#e5e7eb;line-height:1.5">${escapeHtml(headerSubtitle)}</p>` : ''}
+        </div>
+        
+        <!-- Body Section -->
+        <div style="padding:40px 30px;line-height:1.6;font-size:15px;color:#374151">
           ${body}
         </div>
-        <div style="padding:20px 28px;background:#f0f5f0;color:#61706a;font-size:13px">
-          ARCAMBE SIG & Solucoes Ambientais, LDA | Maputo, Mocambique | info@arcambe.com
+        
+        <!-- Footer -->
+        <div style="padding:30px;background:#f9fafb;color:#6b7280;font-size:12px;text-align:center;border-top:1px solid #e5e7eb">
+          <p style="margin:0 0 8px;font-weight:bold;color:#374151">ARCAMBE SIG & Soluções Ambientais, LDA.</p>
+          <p style="margin:0 0 8px">Maputo, Moçambique</p>
+          <p style="margin:0">Este e-mail foi gerado automaticamente.<br>Caso tenha alguma dúvida, contacte <a href="mailto:info@arcambe.com" style="color:#059669;text-decoration:none">info@arcambe.com</a></p>
         </div>
+        
       </div>
     </div>`;
 }

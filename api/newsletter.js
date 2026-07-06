@@ -25,18 +25,26 @@ module.exports = async function handler(req, res) {
       from: brandFrom(),
       to: salesInbox(),
       replyTo: email,
-      subject: "Nova subscricao da newsletter ARCAMBE",
-      html: emailLayout("Nova subscricao da newsletter", `<p><strong>E-mail:</strong><br>${escapeHtml(email)}</p>`),
-      text: `Nova subscricao da newsletter ARCAMBE\n\nE-mail: ${email}`
+      subject: "Nova subscrição da newsletter ARCAMBE",
+      html: emailLayout(
+        "Nova subscrição da newsletter", 
+        `<p><strong>E-mail:</strong><br>${escapeHtml(email)}</p>`,
+        "Um novo utilizador subscreveu a newsletter."
+      ),
+      text: `Nova subscrição da newsletter ARCAMBE\n\nE-mail: ${email}`
     });
 
     await transporter.sendMail({
       from: brandFrom(),
       to: email,
       replyTo: salesInbox(),
-      subject: "Subscricao confirmada | ARCAMBE",
-      html: emailLayout("Subscricao confirmada", "<p>Obrigado por subscrever a newsletter da ARCAMBE.</p><p>A partir de agora poderemos partilhar notas tecnicas, novidades de cursos e oportunidades ligadas a SIG, ambiente e sustentabilidade.</p>"),
-      text: "Obrigado por subscrever a newsletter da ARCAMBE. Vamos partilhar notas tecnicas, novidades de cursos e oportunidades."
+      subject: "Bem-vindo à ARCAMBE! | Subscrição confirmada",
+      html: emailLayout(
+        "Bem-vindo à ARCAMBE!",
+        `<p style="margin-top:0;font-size:16px">Olá,</p><p>Muito obrigado por subscrever a newsletter da ARCAMBE.</p><p>A partir de agora poderemos partilhar notas técnicas, novidades de cursos e oportunidades ligadas a SIG, licenciamento ambiental e sustentabilidade directamente na sua caixa de entrada.</p><br><p style="margin:0">Com os melhores cumprimentos,<br><strong>A Equipa ARCAMBE</strong></p>`,
+        "A sua subscrição foi confirmada com sucesso."
+      ),
+      text: "Olá! Obrigado por subscrever a newsletter da ARCAMBE. Vamos partilhar notas técnicas, novidades de cursos e oportunidades."
     });
 
     res.writeHead(302, { Location: req.headers.referer || '/' });

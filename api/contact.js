@@ -27,8 +27,8 @@ module.exports = async function handler(req, res) {
       ["E-mail", email],
       ["Telefone", body.phone],
       ["Empresa", body.company],
-      ["Servico", body.service],
-      ["Localizacao", body.location],
+      ["Serviço", body.service],
+      ["Localização", body.location],
       ["Origem", body.source],
       ["Mensagem", message]
     ].filter(([, value]) => value).map(([label, value]) => `<p><strong>${label}:</strong><br>${escapeHtml(value)}</p>`).join("");
@@ -38,9 +38,13 @@ module.exports = async function handler(req, res) {
       from: brandFrom(),
       to: salesInbox(),
       replyTo: email,
-      subject: `Novo pedido de orcamento - ${name}`,
-      html: emailLayout("Novo pedido de orcamento", details),
-      text: `Novo pedido de orcamento\n\nNome: ${name}\nE-mail: ${email}\nServico: ${body.service || ""}\nTelefone: ${body.phone || ""}\nEmpresa: ${body.company || ""}\nLocalizacao: ${body.location || ""}\nOrigem: ${body.source || ""}\n\n${message}`
+      subject: `Novo pedido de orçamento - ${name}`,
+      html: emailLayout(
+        "Novo pedido de orçamento", 
+        details,
+        "Recebemos uma nova solicitação através do website."
+      ),
+      text: `Novo pedido de orçamento\n\nNome: ${name}\nE-mail: ${email}\nServiço: ${body.service || ""}\nTelefone: ${body.phone || ""}\nEmpresa: ${body.company || ""}\nLocalização: ${body.location || ""}\nOrigem: ${body.source || ""}\n\n${message}`
     });
 
     await transporter.sendMail({
@@ -49,10 +53,11 @@ module.exports = async function handler(req, res) {
       replyTo: salesInbox(),
       subject: "Recebemos o seu pedido | ARCAMBE",
       html: emailLayout(
-        "Recebemos o seu pedido",
-        `<p>Ola ${escapeHtml(name)},</p><p>Obrigado por contactar a ARCAMBE. A sua solicitacao foi recebida com sucesso e sera analisada pela nossa equipa tecnica.</p><p>Responderemos com os proximos passos assim que avaliarmos o escopo, a localizacao e os requisitos do projecto.</p><p style="margin-top:22px"><strong>Resumo recebido:</strong><br>${escapeHtml(body.service || "Servico ARCAMBE")}<br>${escapeHtml(message)}</p>`
+        `Olá ${escapeHtml(name)},<br>Obrigado pelo seu contacto.`,
+        `<p style="margin-top:0">A sua solicitação foi recebida com sucesso e será analisada pela nossa equipa técnica.</p><p>Responderemos com os próximos passos assim que avaliarmos o escopo, a localização e os requisitos do projecto.</p><div style="margin-top:30px;padding:20px;background:#f3f4f6;border-radius:8px"><h3 style="margin:0 0 10px;font-size:14px;color:#102019">Resumo do Pedido:</h3><p style="margin:0;font-size:13px"><strong>Serviço:</strong> ${escapeHtml(body.service || "Serviço ARCAMBE")}<br><strong>Mensagem:</strong> ${escapeHtml(message)}</p></div><br><p style="margin:0">Com os melhores cumprimentos,<br><strong>A Equipa ARCAMBE</strong></p>`,
+        "Estamos a analisar o seu pedido e entraremos em contacto em breve."
       ),
-      text: `Ola ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa tecnica vai responder com os proximos passos.\n\nResumo: ${body.service || "Servico ARCAMBE"}\n${message}`
+      text: `Olá ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa técnica vai responder com os próximos passos.\n\nResumo: ${body.service || "Serviço ARCAMBE"}\n${message}`
     });
 
     res.writeHead(302, { Location: req.headers.referer || '/' });
