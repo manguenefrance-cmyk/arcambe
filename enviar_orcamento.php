@@ -7,7 +7,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $detalhes = strip_tags(trim($_POST["detalhes"]));
 
     // 2. Configuração do E-mail de destino (O TEU E-MAIL)
-    $destinatario = "comercial@arcambe.com"; // OU f.manguene@arcambe.com
+    $destinatario = "geral@arcambe.com"; // OU f.manguene@arcambe.com
     $assunto = "NOVA SOLICITAÇÃO DE ORÇAMENTO: " . strtoupper($servico);
 
     // 3. Montagem do corpo da mensagem
