@@ -518,5 +518,57 @@
 <a href="https://wa.me/258844172237?text=Olá!+Tenho+interesse+no+Curso+de+AIA+da+ARCAMBE." class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar" target="_blank">
     <i class="fa-brands fa-whatsapp"></i>
 </a>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    if(document.getElementById("days")) {
+        // Check if a target date is already saved in localStorage to persist the 30-day countdown
+        let targetDateStr = localStorage.getItem('arcambe_countdown_target');
+        let countdownDate;
+        
+        if (targetDateStr) {
+            countdownDate = new Date(parseInt(targetDateStr));
+            // If the date is in the past, reset it
+            if (countdownDate.getTime() < new Date().getTime()) {
+                countdownDate = new Date();
+                countdownDate.setDate(countdownDate.getDate() + 30);
+                localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
+            }
+        } else {
+            countdownDate = new Date();
+            countdownDate.setDate(countdownDate.getDate() + 30);
+            localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
+        }
+        
+        let timer = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countdownDate.getTime() - now;
+            
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("days").innerHTML = "00";
+                document.getElementById("hours").innerHTML = "00";
+                document.getElementById("minutes").innerHTML = "00";
+                document.getElementById("seconds").innerHTML = "00";
+                return;
+            }
+            
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            let daysEl = document.getElementById("days");
+            if (daysEl) {
+                daysEl.innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            }
+        }, 1000);
+    }
+});
+</script>
 </body>
+
 </html>

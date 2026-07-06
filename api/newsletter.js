@@ -39,7 +39,9 @@ module.exports = async function handler(req, res) {
       text: "Obrigado por subscrever a newsletter da ARCAMBE. Vamos partilhar notas tecnicas, novidades de cursos e oportunidades."
     });
 
-    return json(res, 200, { ok: true });
+    res.writeHead(302, { Location: req.headers.referer || '/' });
+    res.end();
+    return;
   } catch (error) {
     console.error(error);
     return json(res, 500, { ok: false, error: "Email delivery failed" });

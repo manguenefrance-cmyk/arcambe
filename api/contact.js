@@ -55,7 +55,9 @@ module.exports = async function handler(req, res) {
       text: `Ola ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa tecnica vai responder com os proximos passos.\n\nResumo: ${body.service || "Servico ARCAMBE"}\n${message}`
     });
 
-    return json(res, 200, { ok: true });
+    res.writeHead(302, { Location: req.headers.referer || '/' });
+    res.end();
+    return;
   } catch (error) {
     console.error(error);
     return json(res, 500, { ok: false, error: "Email delivery failed" });
