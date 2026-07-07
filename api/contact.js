@@ -15,22 +15,23 @@ module.exports = async function handler(req, res) {
     const body = await readBody(req);
     if (body.website) return json(res, 200, { ok: true });
 
-    const name = String(body.name || "").trim();
+    const name = String(body.name || body.cliente || body.nome_completo || body.nome || "").trim();
     const email = String(body.email || "").trim();
-    const message = String(body.message || "").trim();
-    if (!name || !email || !message || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    const message = String(body.message || body.detalhes || body.mensagem || "Nova submissão").trim();
+    
+    if (!name || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
       return json(res, 400, { ok: false, error: "Invalid request" });
     }
 
     const details = [
-      ["Nome", name],
+      ["Nome/Empresa", name],
       ["E-mail", email],
-      ["Telefone", body.phone],
-      ["Empresa", body.company],
-      ["Serviço", body.service],
-      ["Localização", body.location],
-      ["Origem", body.source],
-      ["Mensagem", message]
+      ["Telefone/WhatsApp", body.phone || body.whatsapp || body.telefone],
+      ["Serviço/Curso", body.service || body.curso],
+      ["Localização", body.location || body.localizacao],
+      ["Instituição", body.instituicao],
+      ["Pagamento", body.pagamento],
+      ["Mensagem/Detalhes", message !== "Nova submissão" ? message : null]
     ].filter(([, value]) => value).map(([label, value]) => `<p><strong>${label}:</strong><br>${escapeHtml(value)}</p>`).join("");
 
     const transporter = createTransport();
@@ -38,13 +39,13 @@ module.exports = async function handler(req, res) {
       from: brandFrom(),
       to: salesInbox(),
       replyTo: email,
-      subject: `Novo pedido de orçamento - ${name}`,
+      subject: `Novo pedido/inscrição - ${name}`,
       html: emailLayout(
-        "Novo pedido de orçamento", 
+        "Novo pedido / inscrição", 
         details,
         "Recebemos uma nova solicitação através do website."
       ),
-      text: `Novo pedido de orçamento\n\nNome: ${name}\nE-mail: ${email}\nServiço: ${body.service || ""}\nTelefone: ${body.phone || ""}\nEmpresa: ${body.company || ""}\nLocalização: ${body.location || ""}\nOrigem: ${body.source || ""}\n\n${message}`
+      text: `Novo pedido/inscrição\n\nNome: ${name}\nE-mail: ${email}\nDetalhes:\n${message}`
     });
 
     await transporter.sendMail({
