@@ -61,7 +61,9 @@ module.exports = async function handler(req, res) {
       text: `Olá ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa técnica vai responder com os próximos passos.\n\nResumo: ${body.service || "Serviço ARCAMBE"}\n${message}`
     });
 
-    res.writeHead(302, { Location: req.headers.referer || '/' });
+    const referer = req.headers.referer || '/';
+    const baseUrl = referer.split('?')[0];
+    res.writeHead(302, { Location: baseUrl + '?success=true' });
     res.end();
     return;
   } catch (error) {

@@ -47,7 +47,9 @@ module.exports = async function handler(req, res) {
       text: "Olá! Obrigado por subscrever a newsletter da ARCAMBE. Vamos partilhar notas técnicas, novidades de cursos e oportunidades."
     });
 
-    res.writeHead(302, { Location: req.headers.referer || '/' });
+    const referer = req.headers.referer || '/';
+    const baseUrl = referer.split('?')[0];
+    res.writeHead(302, { Location: baseUrl + '?success=true' });
     res.end();
     return;
   } catch (error) {
