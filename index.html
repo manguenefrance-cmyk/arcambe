@@ -383,13 +383,43 @@
         
         <div class="grid md:grid-cols-2 gap-16 lg:gap-24 items-center relative z-10">
             <div class="relative group">
-                <!-- Clean professional image card -->
-                <div class="relative z-10 w-full rounded-2xl overflow-hidden shadow-2xl">
-                    <img src="img/sobre-arcambe.jpg" onerror="this.onerror=null;this.parentElement.innerHTML='<div class=\'w-full h-[400px] bg-gradient-to-br from-gray-900 to-arcambeEscuro rounded-2xl flex flex-col items-center justify-center gap-6\'><i class=\'fa-solid fa-earth-africa text-8xl text-arcambeClaro opacity-60\'></i><p class=\'text-white font-heading font-bold text-xl uppercase tracking-widest\'>ARCAMBE · Moçambique</p></div>'" alt="Sobre a ARCAMBE" class="w-full h-[420px] object-cover">
-                    <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-arcambeEscuro to-transparent">
-                        <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-1">ARCAMBE SIG</p>
-                        <p class="text-white font-heading font-black text-xl">Inteligência Geoespacial em Moçambique</p>
+                <!-- Clean minimal animated card -->
+                <div class="relative z-10 w-full h-[420px] rounded-2xl bg-gradient-to-br from-arcambeEscuro via-[#0a1914] to-gray-950 overflow-hidden shadow-2xl border border-white/10 flex flex-col items-center justify-center">
+
+                    <!-- Subtle grid background -->
+                    <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+
+                    <!-- Central globe -->
+                    <div class="relative z-10 flex flex-col items-center gap-6">
+                        <div class="w-28 h-28 rounded-full border-2 border-arcambeVerde/40 flex items-center justify-center bg-arcambeVerde/10 shadow-[0_0_60px_rgba(27,122,93,0.25)]">
+                            <i class="fa-solid fa-globe text-5xl text-arcambeClaro"></i>
+                        </div>
+                        <div class="text-center">
+                            <p class="text-arcambeClaro font-bold uppercase tracking-[0.3em] text-xs mb-2">Moçambique</p>
+                            <p class="text-white font-heading font-black text-2xl">Inteligência Geoespacial</p>
+                        </div>
+
+                        <!-- Stats row -->
+                        <div class="flex gap-8 mt-2">
+                            <div class="text-center">
+                                <p class="text-white font-black text-2xl font-heading">+50</p>
+                                <p class="text-gray-400 text-[10px] uppercase tracking-widest">Projectos</p>
+                            </div>
+                            <div class="w-px bg-white/10"></div>
+                            <div class="text-center">
+                                <p class="text-white font-black text-2xl font-heading">100%</p>
+                                <p class="text-gray-400 text-[10px] uppercase tracking-widest">Rigor</p>
+                            </div>
+                            <div class="w-px bg-white/10"></div>
+                            <div class="text-center">
+                                <p class="text-white font-black text-2xl font-heading">8+</p>
+                                <p class="text-gray-400 text-[10px] uppercase tracking-widest">Anos</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- Bottom brand bar -->
+                    <div class="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-arcambeVerde to-transparent opacity-60"></div>
                 </div>
             </div>
             
@@ -447,7 +477,7 @@
                 <div class="bg-white p-10 rounded-[2.5rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-50 hover:-translate-y-3 hover:shadow-[0_20px_40px_rgba(27,122,93,0.1)] transition-all duration-500 group relative overflow-hidden z-10">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-arcambeVerde/5 rounded-bl-full -z-10 group-hover:scale-150 transition-transform duration-700"></div>
                     <div class="w-16 h-16 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center mb-8 group-hover:bg-arcambeVerde transition-colors duration-300">
-                        <i class="fa-solid fa-satellite-dish text-2xl text-arcambeVerde group-hover:text-white transition-colors"></i>
+                        <i class="fa-solid fa-broadcast-tower text-2xl text-arcambeVerde group-hover:text-white transition-colors"></i>
                     </div>
                     <h3 class="text-2xl font-heading font-black mb-4 text-gray-900">Mapeamento & SIG</h3>
                     <p class="text-gray-500 text-sm leading-relaxed font-light mb-8">Processamento de ortomosaicos, sensoriamento remoto, modelagem 3D e análise espacial avançada com precisão milimétrica.</p>
