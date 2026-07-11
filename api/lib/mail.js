@@ -68,8 +68,8 @@ function emailLayout(title, body, headerSubtitle = "") {
         
         <!-- Hero Section (Blue/Green block) -->
         <div style="background:#059669;color:#ffffff;padding:40px 30px;text-align:center">
-          <h1 style="font-size:24px;line-height:1.3;margin:0;font-weight:700">${escapeHtml(title)}</h1>
-          ${headerSubtitle ? `<p style="margin:16px 0 0;font-size:16px;color:#e5e7eb;line-height:1.5">${escapeHtml(headerSubtitle)}</p>` : ''}
+          <h1 style="font-size:24px;line-height:1.3;margin:0;font-weight:700">${title}</h1>
+          ${headerSubtitle ? `<p style="margin:16px 0 0;font-size:16px;color:#e5e7eb;line-height:1.5">${headerSubtitle}</p>` : ''}
         </div>
         
         <!-- Body Section -->
