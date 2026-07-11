@@ -48,17 +48,33 @@ module.exports = async function handler(req, res) {
       text: `Novo pedido/inscrição\n\nNome: ${name}\nE-mail: ${email}\nDetalhes:\n${message}`
     });
 
+    let autoReplyTitle = `Olá ${escapeHtml(name)},<br>Obrigado pelo seu contacto.`;
+    let autoReplySubtitle = "Estamos a analisar o seu pedido e entraremos em contacto em breve.";
+    let autoReplyBodyHtml = `<p style="margin-top:0">A sua solicitação foi recebida com sucesso e será analisada pela nossa equipa.</p><p>Responderemos com os próximos passos assim que avaliarmos os detalhes do seu contacto.</p>`;
+    let autoReplyBodyText = `Olá ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa vai responder com os próximos passos.\n\n`;
+
+    if (body.curso) {
+      autoReplyTitle = `Parabéns pela inscrição, ${escapeHtml(name)}!`;
+      autoReplySubtitle = `A sua inscrição no curso ${escapeHtml(body.curso)} foi recebida.`;
+      autoReplyBodyHtml = `<p style="margin-top:0">Muito obrigado por escolher a ARCAMBE para a sua formação profissional.</p><p>A sua vaga está pré-reservada. A nossa equipa de formação entrará em contacto nas próximas 24 a 48 horas úteis com os detalhes de pagamento e para finalização da sua inscrição.</p>`;
+      autoReplyBodyText = `Olá ${name},\n\nMuito obrigado por escolher a ARCAMBE para a sua formação profissional. A sua inscrição no curso ${body.curso} foi recebida e a vaga está pré-reservada. A nossa equipa entrará em contacto nas próximas 24 a 48 horas úteis com os detalhes.\n\n`;
+    } else if (body.service) {
+      autoReplyTitle = `Olá ${escapeHtml(name)},<br>Obrigado pelo pedido.`;
+      autoReplySubtitle = `O seu pedido para ${escapeHtml(body.service)} está sob análise.`;
+      autoReplyBodyHtml = `<p style="margin-top:0">Agradecemos o seu interesse nos serviços da ARCAMBE.</p><p>A nossa equipa técnica já recebeu o seu pedido e está a analisar os requisitos. Entraremos em contacto brevemente com mais informações ou uma proposta técnico-comercial.</p>`;
+      autoReplyBodyText = `Olá ${name},\n\nObrigado por contactar a ARCAMBE. O seu pedido para ${body.service} foi recebido e a nossa equipa técnica vai responder com os próximos passos em breve.\n\n`;
+    }
+
+    const summaryHtml = `<div style="margin-top:30px;padding:20px;background:#f3f4f6;border-radius:8px"><h3 style="margin:0 0 10px;font-size:14px;color:#102019">Resumo do Pedido:</h3><p style="margin:0;font-size:13px"><strong>Serviço/Curso:</strong> ${escapeHtml(body.service || body.curso || "Contacto Geral")}<br><strong>Mensagem:</strong> ${escapeHtml(message)}</p></div><br><p style="margin:0">Com os melhores cumprimentos,<br><strong>A Equipa ARCAMBE</strong></p>`;
+    const summaryText = `Resumo:\nServiço/Curso: ${body.service || body.curso || "Contacto Geral"}\nMensagem: ${message}`;
+
     await transporter.sendMail({
       from: brandFrom(),
       to: email,
       replyTo: salesInbox(),
-      subject: "Recebemos o seu pedido | ARCAMBE",
-      html: emailLayout(
-        `Olá ${escapeHtml(name)},<br>Obrigado pelo seu contacto.`,
-        `<p style="margin-top:0">A sua solicitação foi recebida com sucesso e será analisada pela nossa equipa técnica.</p><p>Responderemos com os próximos passos assim que avaliarmos o escopo, a localização e os requisitos do projecto.</p><div style="margin-top:30px;padding:20px;background:#f3f4f6;border-radius:8px"><h3 style="margin:0 0 10px;font-size:14px;color:#102019">Resumo do Pedido:</h3><p style="margin:0;font-size:13px"><strong>Serviço:</strong> ${escapeHtml(body.service || "Serviço ARCAMBE")}<br><strong>Mensagem:</strong> ${escapeHtml(message)}</p></div><br><p style="margin:0">Com os melhores cumprimentos,<br><strong>A Equipa ARCAMBE</strong></p>`,
-        "Estamos a analisar o seu pedido e entraremos em contacto em breve."
-      ),
-      text: `Olá ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa técnica vai responder com os próximos passos.\n\nResumo: ${body.service || "Serviço ARCAMBE"}\n${message}`
+      subject: body.curso ? `Confirmação de Inscrição | ARCAMBE` : "Recebemos o seu pedido | ARCAMBE",
+      html: emailLayout(autoReplyTitle, autoReplyBodyHtml + summaryHtml, autoReplySubtitle),
+      text: autoReplyBodyText + summaryText
     });
 
     const referer = req.headers.referer || '/';

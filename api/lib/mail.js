@@ -62,8 +62,7 @@ function emailLayout(title, body, headerSubtitle = "") {
         
         <!-- Header with Logo/Brand -->
         <div style="text-align:center;padding:30px 20px;background:#ffffff">
-          <div style="font-size:28px;font-weight:900;color:#102019;letter-spacing:2px">ARCAMBE</div>
-          <div style="font-size:11px;color:#059669;text-transform:uppercase;letter-spacing:3px;margin-top:4px">SIG & Soluções Ambientais</div>
+          <img src="https://www.arcambe.com/logo.png" alt="ARCAMBE" style="max-height:60px;margin:auto;display:block">
         </div>
         
         <!-- Hero Section (Blue/Green block) -->
