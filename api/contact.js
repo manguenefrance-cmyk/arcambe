@@ -53,11 +53,14 @@ module.exports = async function handler(req, res) {
     let autoReplyBodyHtml = `<p style="margin-top:0">A sua solicitação foi recebida com sucesso e será analisada pela nossa equipa.</p><p>Responderemos com os próximos passos assim que avaliarmos os detalhes do seu contacto.</p>`;
     let autoReplyBodyText = `Olá ${name},\n\nObrigado por contactar a ARCAMBE. Recebemos o seu pedido e a nossa equipa vai responder com os próximos passos.\n\n`;
 
-    if (body.curso) {
+    const isCurso = body.curso || (body.service && body.service.toLowerCase().includes("inscriç"));
+    const nomeCurso = body.curso || (body.service ? body.service.replace(/inscrição:\s*/i, '') : '');
+
+    if (isCurso) {
       autoReplyTitle = `Parabéns pela inscrição, ${escapeHtml(name)}!`;
-      autoReplySubtitle = `A sua inscrição no curso ${escapeHtml(body.curso)} foi recebida.`;
+      autoReplySubtitle = `A sua inscrição no curso ${escapeHtml(nomeCurso)} foi recebida.`;
       autoReplyBodyHtml = `<p style="margin-top:0">Muito obrigado por escolher a ARCAMBE para a sua formação profissional.</p><p>A sua vaga está pré-reservada. A nossa equipa de formação entrará em contacto nas próximas 24 a 48 horas úteis com os detalhes de pagamento e para finalização da sua inscrição.</p>`;
-      autoReplyBodyText = `Olá ${name},\n\nMuito obrigado por escolher a ARCAMBE para a sua formação profissional. A sua inscrição no curso ${body.curso} foi recebida e a vaga está pré-reservada. A nossa equipa entrará em contacto nas próximas 24 a 48 horas úteis com os detalhes.\n\n`;
+      autoReplyBodyText = `Olá ${name},\n\nMuito obrigado por escolher a ARCAMBE para a sua formação profissional. A sua inscrição no curso ${nomeCurso} foi recebida e a vaga está pré-reservada. A nossa equipa entrará em contacto nas próximas 24 a 48 horas úteis com os detalhes.\n\n`;
     } else if (body.service) {
       autoReplyTitle = `Olá ${escapeHtml(name)},<br>Obrigado pelo pedido.`;
       autoReplySubtitle = `O seu pedido para ${escapeHtml(body.service)} está sob análise.`;
@@ -72,7 +75,7 @@ module.exports = async function handler(req, res) {
       from: brandFrom(),
       to: email,
       replyTo: salesInbox(),
-      subject: body.curso ? `Confirmação de Inscrição | ARCAMBE` : "Recebemos o seu pedido | ARCAMBE",
+      subject: isCurso ? `Confirmação de Inscrição | ARCAMBE` : "Recebemos o seu pedido | ARCAMBE",
       html: emailLayout(autoReplyTitle, autoReplyBodyHtml + summaryHtml, autoReplySubtitle),
       text: autoReplyBodyText + summaryText
     });

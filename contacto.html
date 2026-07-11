@@ -236,33 +236,33 @@
                 <h3 class="text-3xl font-heading font-black text-gray-900 uppercase mb-3 relative z-10">Envie uma Mensagem</h3>
                 <p class="text-gray-500 text-sm mb-10 font-light relative z-10">Preencha os dados abaixo para garantir a sua vaga em treinamentos ou solicitar um orçamento detalhado.</p>
 
-                <form action="#" class="space-y-6 relative z-10">
+                <form action="/api/contact" method="POST" class="space-y-6 relative z-10">
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">Nome Completo</label>
-                            <input type="text" placeholder="Seu Nome" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
+                            <input type="text" name="name" required placeholder="Seu Nome" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
                         </div>
                         <div>
                             <label class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">E-mail</label>
-                            <input type="email" placeholder="exemplo@email.com" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
+                            <input type="email" name="email" required placeholder="exemplo@email.com" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
                         </div>
                     </div>
 
                     <div class="grid md:grid-cols-2 gap-6">
                         <div>
                             <label class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">Contacto (WhatsApp)</label>
-                            <input type="text" placeholder="+258" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
+                            <input type="text" name="whatsapp" required placeholder="+258" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light">
                         </div>
                         <div>
                             <label class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">Assunto / Motivo</label>
                             <div class="relative">
-                                <select class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light appearance-none">
-                                    <option>Solicitar Orçamento de Serviço</option>
-                                    <option>Inscrição: Mapeamento com QGIS</option>
-                                    <option>Inscrição: Sensoriamento Remoto</option>
-                                    <option>Inscrição: Avaliação de Impacto Ambiental</option>
-                                    <option>Inscrição: Saúde e Segurança (FSSO)</option>
-                                    <option>Outros Assuntos</option>
+                                <select name="service" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light appearance-none">
+                                    <option value="Orçamento de Serviço">Solicitar Orçamento de Serviço</option>
+                                    <option value="Inscrição: Mapeamento com QGIS">Inscrição: Mapeamento com QGIS</option>
+                                    <option value="Inscrição: Sensoriamento Remoto">Inscrição: Sensoriamento Remoto</option>
+                                    <option value="Inscrição: Avaliação de Impacto Ambiental">Inscrição: Avaliação de Impacto Ambiental</option>
+                                    <option value="Inscrição: Saúde e Segurança (FSSO)">Inscrição: Saúde e Segurança (FSSO)</option>
+                                    <option value="Outros Assuntos">Outros Assuntos</option>
                                 </select>
                                 <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-xs"></i>
                             </div>
@@ -271,7 +271,7 @@
 
                     <div>
                         <label class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-2 block">Sua Mensagem</label>
-                        <textarea rows="5" placeholder="Como podemos ajudar o seu projeto?" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light resize-none"></textarea>
+                        <textarea name="mensagem" required rows="5" placeholder="Como podemos ajudar o seu projeto?" class="w-full bg-gray-50 border border-gray-200 p-4 rounded-xl focus:border-arcambeVerde focus:bg-white focus:ring-4 focus:ring-arcambeVerde/10 outline-none transition-all font-light resize-none"></textarea>
                     </div>
 
                     <button type="submit" class="w-full bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white font-heading font-black uppercase py-5 rounded-xl hover:shadow-[0_10px_30px_rgba(46,204,113,0.3)] hover:-translate-y-1 transition-all tracking-widest text-sm flex justify-center items-center gap-3">
