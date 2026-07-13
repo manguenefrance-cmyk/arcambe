@@ -18,6 +18,11 @@
   }
 
   var current = window.location.pathname.split("/").pop() || "index.html";
+  var isLanding = current.indexOf("lp-") === 0;
+  if (isLanding) {
+    body.classList.add("is-landing");
+  }
+
   document.querySelectorAll("nav a[href]").forEach(function (link) {
     var href = link.getAttribute("href");
     if (!href) return;
@@ -69,4 +74,13 @@
       }, 6500);
     });
   });
+
+  if (isLanding && !document.querySelector(".arc-floating-cta")) {
+    var cta = document.createElement("a");
+    cta.className = "arc-floating-cta";
+    cta.href = "orcamento.html";
+    cta.setAttribute("aria-label", "Solicitar proposta para este servico");
+    cta.innerHTML = '<i class="fa-solid fa-file-signature" aria-hidden="true"></i><span>Solicitar proposta</span>';
+    document.body.appendChild(cta);
+  }
 })();

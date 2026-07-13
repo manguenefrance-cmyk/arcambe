@@ -41,7 +41,7 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #1b7a5d; border-radius: 10px; }
     </style>
-    <link rel="canonical" href="https://www.arcambe.com/sala-de-aula.php">
+    <link rel="canonical" href="https://arcambe.com/sala-de-aula.php">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0b4a39">
     <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
@@ -49,23 +49,23 @@
     <meta property="og:site_name" content="ARCAMBE">
     <meta property="og:title" content="Sala de Aula ARCAMBE | Área do Aluno">
     <meta property="og:description" content="Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.">
-    <meta property="og:url" content="https://www.arcambe.com/sala-de-aula.php">
+    <meta property="og:url" content="https://arcambe.com/sala-de-aula.php">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://www.arcambe.com/slide_1.png">
+    <meta property="og:image" content="https://arcambe.com/slide_1.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Sala de Aula ARCAMBE | Área do Aluno">
     <meta name="twitter:description" content="Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.">
-    <meta name="twitter:image" content="https://www.arcambe.com/slide_1.png">
+    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.arcambe.com/#organization",
+      "@id": "https://arcambe.com/#organization",
       "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://www.arcambe.com/",
-      "logo": "https://www.arcambe.com/logo.png",
+      "url": "https://arcambe.com/",
+      "logo": "https://arcambe.com/logo.png",
       "email": "info@arcambe.com",
       "telephone": "+258844172237",
       "address": {
@@ -82,29 +82,29 @@
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.arcambe.com/#website",
+      "@id": "https://arcambe.com/#website",
       "name": "ARCAMBE",
-      "url": "https://www.arcambe.com/",
+      "url": "https://arcambe.com/",
       "publisher": {
-        "@id": "https://www.arcambe.com/#organization"
+        "@id": "https://arcambe.com/#organization"
       },
       "inLanguage": "pt-PT"
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.arcambe.com/sala-de-aula.php#webpage",
-      "url": "https://www.arcambe.com/sala-de-aula.php",
+      "@id": "https://arcambe.com/sala-de-aula.php#webpage",
+      "url": "https://arcambe.com/sala-de-aula.php",
       "name": "Sala de Aula ARCAMBE | Área do Aluno",
       "description": "Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.",
       "isPartOf": {
-        "@id": "https://www.arcambe.com/#website"
+        "@id": "https://arcambe.com/#website"
       },
       "about": {
-        "@id": "https://www.arcambe.com/#organization"
+        "@id": "https://arcambe.com/#organization"
       },
       "primaryImageOfPage": {
         "@type": "ImageObject",
-        "url": "https://www.arcambe.com/slide_1.png"
+        "url": "https://arcambe.com/slide_1.png"
       },
       "inLanguage": "pt-PT"
     }
