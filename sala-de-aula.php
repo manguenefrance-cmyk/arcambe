@@ -1,6 +1,6 @@
-<?php 
-  require_once('auth.php'); 
-  verificarAcesso(); 
+<?php
+  require_once('auth.php');
+  verificarAcesso();
 ?>
 
 <!DOCTYPE html>
@@ -8,12 +8,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SALA PRO | ARCAMBE SIG</title>
-    
+    <meta name="description" content="Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.">
+    <title>Sala de Aula ARCAMBE | Área do Aluno</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <script>
@@ -24,10 +25,10 @@
                         sans: ['Inter', 'sans-serif'],
                         heading: ['Outfit', 'sans-serif'],
                     },
-                    colors: { 
-                        arcambeVerde: '#1b7a5d', 
-                        arcambeEscuro: '#0a3628', 
-                        arcambeClaro: '#2ecc71' 
+                    colors: {
+                        arcambeVerde: '#1b7a5d',
+                        arcambeEscuro: '#0a3628',
+                        arcambeClaro: '#2ecc71'
                     }
                 }
             }
@@ -40,8 +41,79 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #1b7a5d; border-radius: 10px; }
     </style>
+    <link rel="canonical" href="https://www.arcambe.com/sala-de-aula.php">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#0b4a39">
+    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
+    <meta property="og:locale" content="pt_PT">
+    <meta property="og:site_name" content="ARCAMBE">
+    <meta property="og:title" content="Sala de Aula ARCAMBE | Área do Aluno">
+    <meta property="og:description" content="Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.">
+    <meta property="og:url" content="https://www.arcambe.com/sala-de-aula.php">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://www.arcambe.com/slide_1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sala de Aula ARCAMBE | Área do Aluno">
+    <meta name="twitter:description" content="Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.">
+    <meta name="twitter:image" content="https://www.arcambe.com/slide_1.png">
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.arcambe.com/#organization",
+      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
+      "url": "https://www.arcambe.com/",
+      "logo": "https://www.arcambe.com/logo.png",
+      "email": "info@arcambe.com",
+      "telephone": "+258844172237",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Maputo",
+        "addressCountry": "MZ"
+      },
+      "sameAs": [
+        "https://linkedin.com/company/arcambe-ambiental/",
+        "https://instagram.com/arcambe.oficial",
+        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
+        "https://facebook.com/profile.php?id=61582065789260"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.arcambe.com/#website",
+      "name": "ARCAMBE",
+      "url": "https://www.arcambe.com/",
+      "publisher": {
+        "@id": "https://www.arcambe.com/#organization"
+      },
+      "inLanguage": "pt-PT"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.arcambe.com/sala-de-aula.php#webpage",
+      "url": "https://www.arcambe.com/sala-de-aula.php",
+      "name": "Sala de Aula ARCAMBE | Área do Aluno",
+      "description": "Área privada para alunos da ARCAMBE acompanharem aulas, materiais de apoio e suporte técnico.",
+      "isPartOf": {
+        "@id": "https://www.arcambe.com/#website"
+      },
+      "about": {
+        "@id": "https://www.arcambe.com/#organization"
+      },
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://www.arcambe.com/slide_1.png"
+      },
+      "inLanguage": "pt-PT"
+    }
+  ]
+}
+    </script>
+    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
 </head>
-<body class="bg-gray-100 font-sans overflow-hidden">
+<body class="arcambe-refresh bg-gray-100 font-sans overflow-hidden">
     <script>
     // Se quiseres uma proteção extra rápida, podes pedir uma senha ao carregar a página
     const acesso = prompt("Introduza o Código de Acesso à Aula:");
@@ -65,15 +137,15 @@
     </nav>
 
     <div class="flex h-[calc(100vh-60px)] flex-col md:flex-row">
-        
+
         <main class="flex-1 bg-black flex flex-col relative">
-            
+
             <div class="w-full aspect-video bg-black shadow-2xl">
-                <iframe 
-                    src="https://www.youtube.com/embed/ID_DA_SUA_LIVE?autoplay=1&rel=0" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                    allowfullscreen 
+                <iframe
+                    src="https://www.youtube.com/embed/ID_DA_SUA_LIVE?autoplay=1&rel=0"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
                     class="w-full h-full">
                 </iframe>
             </div>
@@ -81,8 +153,8 @@
             <div class="flex-1 bg-[#121212] border-t border-white/10 relative">
                 <div class="absolute inset-0 p-4">
                     <h4 class="text-[10px] font-black uppercase text-gray-500 mb-2 tracking-widest">Chat em Tempo Real</h4>
-                    <iframe 
-                        src="https://www.youtube.com/live_chat?v=ID_DA_SUA_LIVE&embed_domain=127.0.0.1" 
+                    <iframe
+                        src="https://www.youtube.com/live_chat?v=ID_DA_SUA_LIVE&embed_domain=127.0.0.1"
                         class="w-full h-[calc(100%-20px)] rounded-lg">
                     </iframe>
                 </div>
@@ -90,9 +162,9 @@
         </main>
 
         <aside class="w-full md:w-[350px] bg-white border-l border-gray-200 flex flex-col shadow-inner">
-            
+
             <div class="p-6 overflow-y-auto flex-1 space-y-8">
-                
+
                 <section>
                     <h3 class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-4 flex items-center gap-2">
                         <i class="fa-solid fa-file-arrow-down text-arcambeVerde text-sm"></i> Recursos da Aula
@@ -142,5 +214,6 @@
         </aside>
     </div>
 
+<script src="/assets/js/arcambe-2026.js" defer></script>
 </body>
 </html>
