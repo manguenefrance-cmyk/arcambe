@@ -1,6 +1,7 @@
 :root {
   --arc-green: #107048;
-  --arc-light: #108820;
+  --arc-light: #107048;
+  --arc-soft-green: #b8d9c6;
   --arc-dark: #063f2b;
   --arc-ink: #12211c;
   --arc-muted: #60736c;
@@ -130,16 +131,47 @@ body.arcambe-refresh,
 }
 
 .arcambe-refresh .text-arcambeVerde,
-.arcambe-refresh .text-arcambeClaro,
 .arcambe-refresh h1 span,
 .arcambe-refresh h2 span {
-  color: var(--arc-light) !important;
+  color: var(--arc-green) !important;
+}
+
+.arcambe-refresh .text-arcambeClaro {
+  color: var(--arc-green) !important;
 }
 
 .arcambe-refresh .bg-clip-text {
   background: none !important;
   -webkit-text-fill-color: initial !important;
-  color: var(--arc-light) !important;
+  color: var(--arc-green) !important;
+}
+
+.arcambe-refresh [class~="bg-arcambeClaro"] {
+  background-color: var(--arc-green) !important;
+}
+
+.arcambe-refresh [class*="bg-arcambeClaro/"] {
+  background-color: rgba(16, 112, 72, 0.14) !important;
+}
+
+.arcambe-refresh [class*="border-arcambeClaro"] {
+  border-color: rgba(16, 112, 72, 0.42) !important;
+}
+
+.arcambe-refresh [class*="hover:bg-arcambeClaro"]:hover {
+  background-color: var(--arc-dark) !important;
+}
+
+.arcambe-refresh [class*="hover:text-arcambeClaro"]:hover {
+  color: var(--arc-green) !important;
+}
+
+.arcambe-refresh header .text-arcambeClaro,
+.arcambe-refresh footer .text-arcambeClaro,
+.arcambe-refresh .arc-naklo-hero .text-arcambeClaro,
+.arcambe-refresh .arc-naklo-hero h1 span,
+.arcambe-refresh .arc-naklo-hero h2 span {
+  color: var(--arc-soft-green) !important;
 }
 
 .arcambe-refresh .rounded-xl,
