@@ -26,9 +26,9 @@
                         heading: ['Outfit', 'sans-serif'],
                     },
                     colors: {
-                        arcambeVerde: '#1b7a5d',
-                        arcambeEscuro: '#0a3628',
-                        arcambeClaro: '#2ecc71'
+                        arcambeVerde: '#107048',
+                        arcambeEscuro: '#063f2b',
+                        arcambeClaro: '#10a010'
                     }
                 }
             }
@@ -39,7 +39,7 @@
         .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #1b7a5d; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background: #107048; border-radius: 10px; }
     </style>
     <link rel="canonical" href="https://arcambe.com/sala-de-aula.php">
     <meta name="robots" content="noindex, nofollow">
@@ -123,7 +123,7 @@
     }
 </script>
 
-    <nav class="bg-gradient-to-r from-gray-950 via-[#0a1a14] to-gray-900 h-[60px] px-6 flex justify-between items-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-50 border-b border-white/10">
+    <nav class="bg-gradient-to-r from-gray-950 via-[#063f2b] to-gray-900 h-[60px] px-6 flex justify-between items-center shadow-[0_10px_30px_rgba(0,0,0,0.5)] relative z-50 border-b border-white/10">
         <div class="flex items-center gap-3 group">
             <div class="w-8 h-8 bg-arcambeVerde rounded flex items-center justify-center font-heading font-black text-white shadow-lg group-hover:scale-105 transition-transform">A</div>
             <span class="text-white font-heading font-bold uppercase text-xs tracking-[0.2em]">Painel do Aluno | <span class="text-arcambeClaro">ARCAMBE</span></span>

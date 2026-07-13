@@ -1,13 +1,13 @@
 :root {
-  --arc-green: #1b7a5d;
-  --arc-light: #2ecc71;
-  --arc-dark: #0a3628;
+  --arc-green: #107048;
+  --arc-light: #10a010;
+  --arc-dark: #063f2b;
   --arc-ink: #12211c;
   --arc-muted: #60736c;
   --arc-line: #dce8e3;
   --arc-paper: #f6faf8;
   --arc-white: #ffffff;
-  --arc-shadow: 0 16px 44px rgba(10, 54, 40, 0.08);
+  --arc-shadow: 0 16px 44px rgba(6, 63, 43, 0.08);
 }
 
 html {
@@ -40,8 +40,8 @@ body.arcambe-refresh,
 
 .arcambe-refresh nav {
   background: rgba(255, 255, 255, 0.94) !important;
-  border-bottom: 1px solid rgba(10, 54, 40, 0.1) !important;
-  box-shadow: 0 10px 30px rgba(10, 54, 40, 0.06) !important;
+  border-bottom: 1px solid rgba(6, 63, 43, 0.1) !important;
+  box-shadow: 0 10px 30px rgba(6, 63, 43, 0.06) !important;
 }
 
 .arcambe-refresh nav > div:first-child {
@@ -62,6 +62,12 @@ body.arcambe-refresh,
 
 .arcambe-refresh nav ul a:hover,
 .arcambe-refresh nav ul a.is-active {
+  color: var(--arc-green) !important;
+}
+
+.arcambe-refresh nav .bg-clip-text {
+  background: none !important;
+  -webkit-text-fill-color: initial !important;
   color: var(--arc-green) !important;
 }
 
@@ -87,8 +93,8 @@ body.arcambe-refresh,
   z-index: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(10, 54, 40, 0.86), rgba(10, 54, 40, 0.58) 48%, rgba(10, 54, 40, 0.22)),
-    linear-gradient(to top, rgba(10, 54, 40, 0.74), transparent 54%);
+    linear-gradient(90deg, rgba(6, 63, 43, 0.86), rgba(6, 63, 43, 0.58) 48%, rgba(6, 63, 43, 0.22)),
+    linear-gradient(to top, rgba(6, 63, 43, 0.74), transparent 54%);
 }
 
 .arcambe-refresh header > :not(.absolute),
@@ -157,14 +163,14 @@ body.arcambe-refresh,
   background: var(--arc-green) !important;
   color: #fff !important;
   border-color: var(--arc-green) !important;
-  box-shadow: 0 12px 28px rgba(27, 122, 93, 0.22) !important;
+  box-shadow: 0 12px 28px rgba(16, 112, 72, 0.22) !important;
 }
 
 .arcambe-refresh nav a[href*="contacto"]:hover,
 .arcambe-refresh a[href*="orcamento"]:hover,
 .arcambe-refresh button[type="submit"]:hover {
   background: var(--arc-dark) !important;
-  box-shadow: 0 16px 34px rgba(10, 54, 40, 0.24) !important;
+  box-shadow: 0 16px 34px rgba(6, 63, 43, 0.24) !important;
 }
 
 .arcambe-refresh .bg-white:not(nav):not(footer),
@@ -208,7 +214,7 @@ body.arcambe-refresh,
 .arcambe-refresh textarea:focus,
 .arcambe-refresh select:focus {
   border-color: var(--arc-green) !important;
-  box-shadow: 0 0 0 4px rgba(27, 122, 93, 0.12) !important;
+  box-shadow: 0 0 0 4px rgba(16, 112, 72, 0.12) !important;
 }
 
 .arcambe-refresh label,
@@ -254,7 +260,7 @@ body.arcambe-refresh,
   color: #fff;
   font-weight: 800;
   font-size: 0.78rem;
-  box-shadow: 0 18px 40px rgba(10, 54, 40, 0.24);
+  box-shadow: 0 18px 40px rgba(6, 63, 43, 0.24);
 }
 
 .arc-floating-cta:hover {

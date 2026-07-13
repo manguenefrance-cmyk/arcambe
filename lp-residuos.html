@@ -17,7 +17,7 @@
             theme: {
                 extend: {
                     fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
-                    colors: { arcambeVerde: '#1b7a5d', arcambeClaro: '#2ecc71', arcambeEscuro: '#0a3628' }
+                    colors: { arcambeVerde: '#107048', arcambeClaro: '#10a010', arcambeEscuro: '#063f2b' }
                 }
             }
         }
@@ -26,15 +26,15 @@
         .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
         .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
         ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:#1b7a5d;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#0f4d3b}
+        ::-webkit-scrollbar-thumb{background:#107048;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#063f2b}
         h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
-        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(46,204,113,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(46,204,113,0)}}
+        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(16,160,16,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,0)}}
         .btn-pulsar{animation:pulse-green 2s infinite}
-        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(27,122,93,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(27,122,93,0)}}
+        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(16,112,72,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,0)}}
         .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
-        .btn-arcambe-pulsar:hover{background-color:#0f4d3b;transform:scale(1.05)}
-        .hero-residuos{background:#050e09;background-image:radial-gradient(ellipse at 10% 50%,rgba(27,122,93,.3) 0%,transparent 60%),radial-gradient(ellipse at 90% 20%,rgba(46,204,113,.08) 0%,transparent 50%)}
-        .grid-overlay{background-image:linear-gradient(rgba(27,122,93,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(27,122,93,.06) 1px,transparent 1px);background-size:60px 60px}
+        .btn-arcambe-pulsar:hover{background-color:#063f2b;transform:scale(1.05)}
+        .hero-residuos{background:#04180f;background-image:radial-gradient(ellipse at 10% 50%,rgba(16,112,72,.3) 0%,transparent 60%),radial-gradient(ellipse at 90% 20%,rgba(16,160,16,.08) 0%,transparent 50%)}
+        .grid-overlay{background-image:linear-gradient(rgba(16,112,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,112,72,.06) 1px,transparent 1px);background-size:60px 60px}
         .step-card{transition:all .4s ease}.step-card:hover{transform:translateY(-6px)}
         .risk-card{transition:all .5s ease}.risk-card:hover{transform:scale(1.03)}
     </style>
@@ -129,7 +129,7 @@
             <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
             <li><a href="servicos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Serviços<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
             <li><a href="sobre.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Sobre<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="orcamento.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(46,204,113,0.4)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Solicitar Orçamento</a></li>
+            <li><a href="orcamento.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(16,160,16,0.28)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Solicitar Orçamento</a></li>
         </ul>
         <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
     </div>
@@ -465,7 +465,7 @@
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-gradient-to-br from-gray-950 via-[#0a1a14] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
+<footer class="bg-gradient-to-br from-gray-950 via-[#063f2b] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
     <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
     <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
     <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
