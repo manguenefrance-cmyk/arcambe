@@ -78,7 +78,7 @@ function emailLayout(title, body, headerSubtitle = "") {
         
         <!-- Footer -->
         <div style="padding:30px;background:#f9fafb;color:#6b7280;font-size:12px;text-align:center;border-top:1px solid #e5e7eb">
-          <p style="margin:0 0 8px;font-weight:bold;color:#374151">ARCAMBE SIG & Soluções Ambientais, LDA.</p>
+          <p style="margin:0 0 8px;font-weight:bold;color:#374151">ARCAMBE – SIG & Soluções Ambientais, SU, LDA.</p>
           <p style="margin:0 0 8px">Maputo, Moçambique</p>
           <p style="margin:0">Este e-mail foi gerado automaticamente.<br>Caso tenha alguma dúvida, contacte <a href="mailto:info@arcambe.com" style="color:#059669;text-decoration:none">info@arcambe.com</a></p>
         </div>

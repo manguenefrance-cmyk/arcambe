@@ -44,7 +44,7 @@
     <link rel="canonical" href="https://arcambe.com/sala-de-aula.php">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
+    <meta name="author" content="ARCAMBE – SIG &amp; Soluções Ambientais, SU, LDA">
     <meta property="og:locale" content="pt_PT">
     <meta property="og:site_name" content="ARCAMBE">
     <meta property="og:title" content="Sala de Aula ARCAMBE | Área do Aluno">
@@ -63,7 +63,7 @@
     {
       "@type": "Organization",
       "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
+      "name": "ARCAMBE – SIG & Soluções Ambientais, SU, LDA",
       "url": "https://arcambe.com/",
       "logo": "https://arcambe.com/logo.png",
       "email": "info@arcambe.com",

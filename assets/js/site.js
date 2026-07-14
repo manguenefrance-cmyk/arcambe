@@ -1,4 +1,5 @@
 (function(){
+  // Meta Pixel integration point: add the real production Pixel ID here later. Do not add placeholder or fake IDs.
   const menuButton=document.querySelector(".menu-toggle");
   const menu=document.getElementById("mobile-menu");
   if(menuButton&&menu){
@@ -15,10 +16,16 @@
   document.querySelectorAll("img").forEach((img,i)=>{if(i>1&&!img.loading)img.loading="lazy";if(!img.decoding)img.decoding="async";});
   const params=new URLSearchParams(location.search);
   const utmFields=["utm_source","utm_medium","utm_campaign","utm_content","utm_term"];
+  const storage=(()=>{try{return window.sessionStorage}catch{return null}})();
+  function rememberUtm(name){
+    const value=params.get(name);
+    if(value&&storage)storage.setItem("arcambe_"+name,value);
+    return value||(storage&&storage.getItem("arcambe_"+name))||"";
+  }
   function setField(name,value){
     document.querySelectorAll('[name="'+name+'"]').forEach((field)=>{if(value!==null&&value!==undefined)field.value=value;});
   }
-  utmFields.forEach((name)=>setField(name,params.get(name)||""));
+  utmFields.forEach((name)=>setField(name,rememberUtm(name)));
   const courseParam=params.get("curso")||params.get("course");
   const priceParam=params.get("preco")||params.get("price");
   const landingParam=params.get("landing_page");
@@ -74,4 +81,14 @@
       if(button){button.disabled=true;button.setAttribute("aria-busy","true");status.textContent="A enviar com segurança...";setTimeout(()=>{button.disabled=false;button.removeAttribute("aria-busy");status.textContent="";},6500);}
     });
   });
+  const sticky=document.querySelector(".mobile-sticky-cta");
+  const formSection=document.getElementById("inscricao");
+  if(sticky&&formSection){
+    document.body.classList.add("has-mobile-course-cta");
+    const toggle=(visible)=>sticky.classList.toggle("is-hidden",visible);
+    if("IntersectionObserver" in window){
+      const observer=new IntersectionObserver((entries)=>toggle(entries.some((entry)=>entry.isIntersecting)),{threshold:.18});
+      observer.observe(formSection);
+    }
+  }
 })();
