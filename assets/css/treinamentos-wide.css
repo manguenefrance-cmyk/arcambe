@@ -1,0 +1,242 @@
+/* Page-specific layout for treinamentos.html.
+   Keeps the page wide on desktop and fixes the video/testimonial presentation. */
+
+.page-treinamentos main > section > .container {
+  width: calc(100vw - 64px) !important;
+  max-width: 1760px !important;
+  margin-inline: auto !important;
+  padding-inline: 0 !important;
+}
+
+.page-treinamentos .trainings-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(320px, .55fr);
+  align-items: end;
+  gap: clamp(36px, 5vw, 88px);
+}
+
+.page-treinamentos .trainings-hero h1 {
+  max-width: 1080px;
+  font-size: clamp(3rem, 5.2vw, 5.7rem);
+  line-height: .98;
+}
+
+.page-treinamentos .training-proof-panel {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 14px 34px rgba(12,31,24,.06);
+}
+
+.page-treinamentos .training-proof-panel > strong {
+  display: block;
+  font-size: 1.35rem;
+  color: var(--green-dark);
+}
+
+.page-treinamentos .training-proof-panel > span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+}
+
+.page-treinamentos .training-proof-panel ul {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  padding: 22px 0 0;
+  margin: 22px 0 0;
+  border-top: 1px solid var(--line);
+}
+
+.page-treinamentos .training-proof-panel li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-treinamentos .training-proof-panel i {
+  width: 20px;
+  color: var(--green);
+}
+
+.page-treinamentos .trainings-catalog .section-title.align-left {
+  width: 100%;
+  max-width: none;
+  margin-inline: 0;
+  text-align: left;
+}
+
+.page-treinamentos .campaign-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 20px;
+  width: 100%;
+}
+
+.page-treinamentos .campaign-grid .course-card {
+  min-width: 0;
+  height: 100%;
+}
+
+.page-treinamentos .campaign-grid .course-card img {
+  width: 100%;
+  height: clamp(190px, 15vw, 260px);
+  object-fit: cover;
+}
+
+.page-treinamentos .campaign-grid .course-body {
+  padding: 24px;
+}
+
+.page-treinamentos .training-video-section .split {
+  display: grid;
+  grid-template-columns: minmax(360px, .78fr) minmax(0, 1.22fr) !important;
+  align-items: center;
+  gap: clamp(42px, 5vw, 88px);
+  width: 100%;
+}
+
+.page-treinamentos .training-video-section h2 {
+  max-width: 660px;
+}
+
+.page-treinamentos .video-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #071621;
+  box-shadow: 0 16px 36px rgba(7,22,33,.12);
+}
+
+.page-treinamentos .video-embed iframe {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  border: 0;
+}
+
+.page-treinamentos .video-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.page-treinamentos .testimonials-section .section-title {
+  width: 100%;
+  max-width: none;
+}
+
+.page-treinamentos .testimonial-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: 24px;
+  width: 100%;
+}
+
+.page-treinamentos .testimonial-card {
+  display: flex !important;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 330px;
+  padding: 30px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(7,22,33,.06);
+}
+
+.page-treinamentos .testimonial-stars {
+  display: flex;
+  gap: 4px;
+  color: #d6a300;
+  font-size: .95rem;
+}
+
+.page-treinamentos .testimonial-quote {
+  margin: 18px 0 12px;
+  color: var(--green);
+  font-size: 1.25rem;
+}
+
+.page-treinamentos .testimonial-card > p {
+  margin: 0;
+  color: #25332f;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.page-treinamentos .testimonial-card footer {
+  display: block;
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+}
+
+.page-treinamentos .testimonial-card footer strong,
+.page-treinamentos .testimonial-card footer span {
+  display: block;
+}
+
+.page-treinamentos .testimonial-card footer strong {
+  color: #111d19;
+}
+
+.page-treinamentos .testimonial-card footer span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+@media (max-width: 1180px) {
+  .page-treinamentos main > section > .container {
+    width: calc(100vw - 40px) !important;
+  }
+
+  .page-treinamentos .trainings-hero-grid,
+  .page-treinamentos .training-video-section .split {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-treinamentos .training-proof-panel {
+    max-width: 720px;
+  }
+
+  .page-treinamentos .campaign-grid,
+  .page-treinamentos .testimonial-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  .page-treinamentos main > section > .container {
+    width: calc(100vw - 28px) !important;
+  }
+
+  .page-treinamentos .trainings-hero h1 {
+    font-size: 2.35rem;
+    line-height: 1.04;
+  }
+
+  .page-treinamentos .campaign-grid,
+  .page-treinamentos .testimonial-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .page-treinamentos .training-proof-panel,
+  .page-treinamentos .testimonial-card {
+    padding: 22px;
+  }
+
+  .page-treinamentos .video-actions .btn {
+    width: 100%;
+  }
+}
