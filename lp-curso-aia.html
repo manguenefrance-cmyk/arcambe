@@ -1,646 +1,151 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+<!doctype html>
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Curso intensivo de AIA/EIA para profissionais que querem elaborar estudos ambientais e compreender o licenciamento em Moçambique.">
-    <meta name="keywords" content="Curso AIA Moçambique, Avaliação de Impacto Ambiental, Formação EIA, Licença Ambiental, MITA, ARCAMBE, Curso Ambiental">
-    <title>Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
-                    colors: { arcambeVerde: '#107048', arcambeClaro: '#10a010', arcambeEscuro: '#063f2b' },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-10px)' } }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
-        .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
-        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:#107048;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#063f2b}
-        h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
-        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(16,160,16,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,0)}}
-        .btn-pulsar{animation:pulse-green 2s infinite}
-        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(16,112,72,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,0)}}
-        .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
-        .btn-arcambe-pulsar:hover{background-color:#063f2b;transform:scale(1.05)}
-        .hero-curso{background:#04180f;background-image:radial-gradient(ellipse at 10% 50%,rgba(16,112,72,.3) 0%,transparent 60%),radial-gradient(ellipse at 90% 20%,rgba(16,160,16,.1) 0%,transparent 50%)}
-        .grid-overlay{background-image:linear-gradient(rgba(16,112,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,112,72,.06) 1px,transparent 1px);background-size:60px 60px}
-        .module-card{transition:all .4s ease}.module-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(16,112,72,.15)}
-    </style>
-    <link rel="canonical" href="https://arcambe.com/lp-curso-aia.html">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
-    <meta property="og:locale" content="pt_PT">
-    <meta property="og:site_name" content="ARCAMBE">
-    <meta property="og:title" content="Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE">
-    <meta property="og:description" content="Curso intensivo de AIA/EIA para profissionais que querem elaborar estudos ambientais e compreender o licenciamento em Moçambique.">
-    <meta property="og:url" content="https://arcambe.com/lp-curso-aia.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arcambe.com/slide_1.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE">
-    <meta name="twitter:description" content="Curso intensivo de AIA/EIA para profissionais que querem elaborar estudos ambientais e compreender o licenciamento em Moçambique.">
-    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://arcambe.com/",
-      "logo": "https://arcambe.com/logo.png",
-      "email": "info@arcambe.com",
-      "telephone": "+258844172237",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Maputo",
-        "addressCountry": "MZ"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Curso de AIA/EIA para profissionais que querem compreender estudos ambientais e licenciamento em Moçambique.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f3d34">
+  <meta name="author" content="ARCAMBE SIG & Soluções Ambientais, LDA">
+  <title>Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="canonical" href="https://arcambe.com/lp-curso-aia.html">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="ARCAMBE">
+  <meta property="og:title" content="Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE">
+  <meta property="og:description" content="Curso de AIA/EIA para profissionais que querem compreender estudos ambientais e licenciamento em Moçambique.">
+  <meta property="og:url" content="https://arcambe.com/lp-curso-aia.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://arcambe.com/slide_1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE">
+  <meta name="twitter:description" content="Curso de AIA/EIA para profissionais que querem compreender estudos ambientais e licenciamento em Moçambique.">
+  <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arcambe.com/#organization",
+        "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
+        "url": "https://arcambe.com/",
+        "logo": "https://arcambe.com/logo.png",
+        "email": "info@arcambe.com",
+        "telephone": "+258 844 172 237",
+        "address": { "@type": "PostalAddress", "addressLocality": "Maputo", "addressCountry": "MZ" },
+        "sameAs": ["https://wa.me/258844172237"]
       },
-      "sameAs": [
-        "https://linkedin.com/company/arcambe-ambiental/",
-        "https://instagram.com/arcambe.oficial",
-        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
-        "https://facebook.com/profile.php?id=61582065789260"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arcambe.com/#website",
-      "name": "ARCAMBE",
-      "url": "https://arcambe.com/",
-      "publisher": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "inLanguage": "pt-PT"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://arcambe.com/lp-curso-aia.html#webpage",
-      "url": "https://arcambe.com/lp-curso-aia.html",
-      "name": "Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE",
-      "description": "Curso intensivo de AIA/EIA para profissionais que querem elaborar estudos ambientais e compreender o licenciamento em Moçambique.",
-      "isPartOf": {
-        "@id": "https://arcambe.com/#website"
-      },
-      "about": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://arcambe.com/slide_1.png"
-      },
-      "inLanguage": "pt-PT"
-    }
-  ]
-}
-    </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+      {
+        "@type": "WebPage",
+        "@id": "https://arcambe.com/lp-curso-aia.html#webpage",
+        "url": "https://arcambe.com/lp-curso-aia.html",
+        "name": "Curso de Avaliação de Impacto Ambiental em Moçambique | ARCAMBE",
+        "description": "Curso de AIA/EIA para profissionais que querem compreender estudos ambientais e licenciamento em Moçambique.",
+        "isPartOf": { "@id": "https://arcambe.com/#website" },
+        "about": { "@id": "https://arcambe.com/#organization" },
+        "inLanguage": "pt"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="arcambe-refresh bg-white text-gray-900 font-sans scroll-smooth">
-
-<!-- NAV -->
-<nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-4 group">
-            <div class="relative">
-                <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                <img src="logo.png" alt="ARCAMBE Logo" class="h-14 md:h-16 relative z-10 transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="flex flex-col">
-                <span class="text-2xl md:text-3xl font-black tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde" style="font-family:Outfit,sans-serif">ARCAMBE</span>
-                <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG &amp; Solu&#231;&#245;es Ambientais, LDA</span>
-            </div>
-        </a>
-        <ul class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm tracking-wide">
-            <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="treinamentos.html" class="relative py-2 group hover:text-orange-500 transition-colors text-orange-600">Treinamentos<span class="absolute bottom-0 left-0 w-full h-0.5 bg-orange-500 transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="sobre.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Sobre<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="inscricao.html" class="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(249,115,22,0.4)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Inscrever-me Agora</a></li>
-        </ul>
-        <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <div id="mm" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
-        <a href="index.html" class="block py-2 text-gray-700 font-semibold">Home</a>
-        <a href="treinamentos.html" class="block py-2 text-orange-600 font-semibold">Treinamentos</a>
-        <a href="sobre.html" class="block py-2 text-gray-700 font-semibold">Sobre</a>
-        <a href="inscricao.html" class="block py-3 text-center bg-orange-500 text-white rounded-full font-bold text-sm">Inscrever-me Agora</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero-curso grid-overlay pt-24 pb-36 px-6 text-white relative overflow-hidden">
-    <div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[160px] opacity-20 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-orange-500 rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8 animate-float">
-                <div>
-                    <span class="inline-flex items-center gap-2 bg-orange-500/30 border border-orange-400/50 text-orange-300 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 block w-fit">
-                        <i class="fa-solid fa-graduation-cap"></i> Curso Intensivo &bull; Certificado ARCAMBE
-                    </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter">
-                        Domine a Avalia&#231;&#227;o de<br><span class="text-arcambeClaro italic">Impacto Ambiental (AIA)</span><br>em Mo&#231;ambique
-                    </h1>
-                </div>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                    Aprenda a elaborar <strong class="text-white">Estudos de Impacto Ambiental (EIA)</strong> e a conduzir processos de licenciamento junto ao
-                    <strong class="text-arcambeClaro">MITA</strong> &#8212; com formadores que fazem isso todos os dias, na realidade mo&#231;ambicana.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Decreto 54/2015 e legisla&#231;&#227;o actual</span>
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Casos pr&#225;ticos reais de Mo&#231;ambique</span>
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Certificado reconhecido no mercado</span>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="inscricao.html" id="hero-cta-inscricao" class="btn-pulsar bg-orange-500 text-white px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-orange-400 transition shadow-2xl flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-graduation-cap"></i> Inscrever-me Agora
-                    </a>
-                    <a href="https://wa.me/258844172237?text=Olá!+Tenho+interesse+no+Curso+de+AIA+da+ARCAMBE.+Podem+dar+mais+informações?" class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Tirar D&#250;vidas
-                    </a>
-                </div>
-            </div>
-            <!-- Course Info Card -->
-            <div class="grid grid-cols-2 gap-5">
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500 col-span-2">
-                    <div class="flex flex-col sm:flex-row items-center justify-around gap-8 sm:gap-0">
-                        <div class="text-center">
-                            <i class="fa-solid fa-calendar-days text-3xl text-arcambeClaro mb-3 block"></i>
-                            <span class="text-2xl font-black text-white">Inscrições<br>Abertas</span>
-                            <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Vagas limitadas</p>
-                        </div>
-                        <div class="hidden sm:block w-px h-16 bg-white/10"></div>
-                        <div class="text-center">
-                            <i class="fa-solid fa-clock text-3xl text-arcambeClaro mb-3 block"></i>
-                            <span class="text-2xl font-black text-white">Online &amp;<br>Presencial</span>
-                            <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Misto</p>
-                        </div>
-                        <div class="hidden sm:block w-px h-16 bg-white/10"></div>
-                        <div class="text-center">
-                            <i class="fa-solid fa-certificate text-3xl text-arcambeClaro mb-3 block"></i>
-                            <span class="text-xl font-black text-white">Com<br>Certificado</span>
-                            <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">ARCAMBE</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-file-contract text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-3xl font-black text-white">EIA</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Elaboração prática</p>
-                </div>
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-building-columns text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-3xl font-black text-white">MITA</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Processos reais</p>
-                </div>
-            </div>
-            </div>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a><header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Página inicial ARCAMBE">
+      <img src="logo.png" alt="ARCAMBE">
+      <span><strong>ARCAMBE</strong><small>SIG & Soluções Ambientais, LDA</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="index.html" >Home</a><a href="sobre.html" >Sobre</a><a href="servicos.html" >Serviços</a><a href="treinamentos.html" aria-current="page">Treinamentos</a><a href="blog.html" >Insights</a><a href="contacto.html" >Contacto</a>
+      <div class="nav-dropdown">
+        <button type="button">Áreas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel">
+          <a href="lp-sig.html"><i class="fa-solid fa-map-location-dot"></i><span>SIG, mapeamento e geodados</span></a><a href="lp-aia.html"><i class="fa-solid fa-leaf"></i><span>Avaliação ambiental e licenciamento</span></a><a href="lp-residuos.html"><i class="fa-solid fa-recycle"></i><span>Gestão de resíduos</span></a><a href="lp-hst.html"><i class="fa-solid fa-helmet-safety"></i><span>HST e segurança ocupacional</span></a>
         </div>
-
-        <div class="max-w-xl mx-auto mt-12 mb-4 p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm relative z-10">
-            <p class="text-arcambeClaro font-black uppercase text-[10px] tracking-[0.3em] mb-8 text-center">O desconto de lançamento termina em:</p>
-
-            <div class="flex justify-center items-center gap-3 md:gap-6">
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="days">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Dias</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="hours">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Horas</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="minutes">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Min</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-arcambeClaro text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="seconds">00</div>
-                    <p class="text-[9px] text-arcambeClaro/50 uppercase font-bold mt-3 tracking-widest">Seg</p>
-                </div>
-            </div>
-        </div>
-    </div>
+      </div>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="orcamento.html">Solicitar orçamento</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel" hidden>
+    <a href="index.html">Home</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a><a href="treinamentos.html">Treinamentos</a><a href="blog.html">Insights</a><a href="contacto.html">Contacto</a>
+    <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    <a class="btn btn-primary" href="orcamento.html">Solicitar orçamento</a>
+  </nav>
+</header><main id="conteudo"><section class="landing-hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Curso técnico</span><h1>Curso de Avaliação de Impacto Ambiental</h1><p>Curso de AIA/EIA para profissionais que querem compreender estudos ambientais e licenciamento em Moçambique.</p><div class="hero-actions"><a class="btn btn-primary" href="inscricao.html?curso=Curso%20de%20Avalia%C3%A7%C3%A3o%20de%20Impacto%20Ambiental">Fazer inscrição</a><a class="btn btn-outline" href="https://wa.me/258844172237" target="_blank">Tirar dúvidas</a></div></div><figure class="hero-media"><img src="rs.jpg" alt="Curso de Avaliação de Impacto Ambiental"></figure></div></section>
+    <section class="section"><div class="section-title"><span>Para quem</span><h2>Profissionais e estudantes que precisam aplicar ferramentas na prática</h2></div><div class="container feature-grid"><article><i class="fa-solid fa-user-check"></i><h3>Estudantes finalistas</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article><article><i class="fa-solid fa-user-check"></i><h3>Técnicos ambientais</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article><article><i class="fa-solid fa-user-check"></i><h3>Profissionais de SIG</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article><article><i class="fa-solid fa-user-check"></i><h3>Consultores</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article><article><i class="fa-solid fa-user-check"></i><h3>Equipas institucionais</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article><article><i class="fa-solid fa-user-check"></i><h3>Investigadores</h3><p>Conteúdo pensado para transformar conceitos em entregáveis técnicos.</p></article></div></section>
+    <section class="section section-muted"><div class="section-title"><span>Programa</span><h2>Módulos principais</h2></div><div class="container module-list"><article><span>01</span><h3>Enquadramento legal</h3></article><article><span>02</span><h3>Triagem e categorização</h3></article><article><span>03</span><h3>Termos de referência</h3></article><article><span>04</span><h3>Levantamento de campo</h3></article><article><span>05</span><h3>Medidas de mitigação</h3></article><article><span>06</span><h3>Relatório e acompanhamento</h3></article></div></section>
+    <section class="section"><div class="container split"><div><span class="eyebrow">Investimento</span><h2>Sob consulta</h2><p>A equipa confirma calendário, vagas reais, materiais e dados de pagamento antes da finalização.</p><a class="btn btn-primary" href="inscricao.html?curso=Curso%20de%20Avalia%C3%A7%C3%A3o%20de%20Impacto%20Ambiental">Inscrever-me</a></div><div class="note-panel"><h3>O que esperar</h3><ul class="check-list"><li><i class="fa-solid fa-check"></i><span>Aulas com foco prático</span></li><li><i class="fa-solid fa-check"></i><span>Exercícios orientados</span></li><li><i class="fa-solid fa-check"></i><span>Casos aplicados ao contexto ambiental</span></li><li><i class="fa-solid fa-check"></i><span>Certificado emitido pela ARCAMBE com carga horária informada</span></li></ul> </div></div></section>
+    <section class="section section-muted"><div class="container contact-layout"><aside class="contact-aside"><h2>Inscrição</h2><p>Este formulário preserva os campos usados pelo fluxo de e-mail: curso, nome, e-mail, WhatsApp, instituição e pagamento.</p></aside><form class="form-panel signup-form" action="/api/contact" method="POST">
+  <input type="hidden" id="curso_input" name="curso" value="Curso de Avaliação de Impacto Ambiental">
+  <div class="form-grid">
+    <label>Nome completo<input type="text" name="name" required placeholder="O seu nome"></label>
+    <label>E-mail<input type="email" name="email" required placeholder="email@exemplo.com"></label>
+    <label>WhatsApp<input type="tel" name="whatsapp" required placeholder="84 417 2237"></label>
+    <label>Instituição<input type="text" name="instituicao" placeholder="Onde estuda ou trabalha"></label>
+  </div>
+  <fieldset class="payment-options">
+    <legend>Método de pagamento preferido</legend>
+    <label><input type="radio" name="pagamento" value="mpesa" required><span>M-Pesa</span></label><label><input type="radio" name="pagamento" value="emola" ><span>e-Mola</span></label><label><input type="radio" name="pagamento" value="paypal" ><span>PayPal</span></label><label><input type="radio" name="pagamento" value="cartao" ><span>Cartão</span></label>
+  </fieldset>
+  <div class="price-note"><span>Investimento de referência</span><strong>5.680 MT</strong><small>A equipa confirmará disponibilidade, calendário e dados de pagamento.</small></div>
+  <button class="btn btn-primary" type="submit">Confirmar inscrição</button>
+</form></div></section>
+    <section class="section"><div class="section-title"><span>Perguntas frequentes</span><h2>Antes de se inscrever</h2></div><div class="container faq"><details><summary>Preciso de experiência prévia?</summary><p>Depende do curso. Quando necessário, a equipa indica os pré-requisitos antes de confirmar a inscrição.</p></details><details><summary>Recebo certificado?</summary><p>Sim, os cursos podem emitir certificado ARCAMBE com identificação da formação e carga horária informada.</p></details><details><summary>Como confirmo o pagamento?</summary><p>Após o envio do formulário, a equipa confirma as opções e dados de pagamento disponíveis.</p></details></div></section></main><section class="footer-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,64 C170,18 326,98 518,58 C725,15 887,3 1065,42 C1228,78 1324,95 1440,53 L1440,110 L0,110 Z"></path></svg>
 </section>
-
-<script>
-    // DEFINE A DATA FINAL (Ajuste aqui para a data real do curso)
-    const targetDate = new Date("April 30, 2026 23:59:59").getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
-
-        if (diff > 0) {
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
-        } else {
-            // Caso o tempo acabe
-            document.getElementById("days").innerText = "00";
-            document.getElementById("hours").innerText = "00";
-            document.getElementById("minutes").innerText = "00";
-            document.getElementById("seconds").innerText = "00";
-        }
-    }
-
-    // Atualiza a cada segundo
-    setInterval(updateTimer, 1000);
-    updateTimer(); // Chama imediata para não começar em 00
-</script>
-
-<!-- FOR WHOM -->
-<section class="py-20 px-6 bg-gray-950 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-arcambeVerde/5 to-transparent pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-14">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Para quem é este curso?</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">Este Curso &#201; para <span class="text-arcambeClaro">Si</span> Se&#8230;</h2>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-user-graduate text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Estudante ou Reci&#233;m-formado</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">&#201;s engenheiro ambiental, bi&#243;logo, ge&#243;grafo ou &#225;rea afim e queres entrar no mercado da consultoria ambiental com conhecimento pr&#225;tico diferenciador.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-briefcase text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Profissional em Atividade</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Trabalhas em ambiente, licenciamento ou &#225;reas correlatas e precisas aprofundar os teus conhecimentos pr&#225;ticos sobre o processo AIA em Mo&#231;ambique.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-building text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">T&#233;cnico de Empresa</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">A tua empresa precisa de licen&#231;a ambiental e queres compreender o processo internamente para acompanhar e interagir com os consultores de forma mais eficaz.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-landmark text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">T&#233;cnico do Governo</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Trabalhas num minist&#233;rio, autarquia ou institui&#231;&#227;o p&#250;blica e precisas entender o processo AIA para avaliar e validar estudos submetidos pelas empresas.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-seedling text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Profissional de ONG</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Trabalhas em organiza&#231;&#245;es de ambiente, conserva&#231;&#227;o ou desenvolvimento e precisas de ferramentas para avaliar e monitorizar impactos de projetos.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-hand-holding-heart text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Qualquer Interessado</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Tens interesse em ambiente, legisla&#231;&#227;o ambiental e desenvolvimento sustent&#225;vel em Mo&#231;ambique e queres aprofundar os teus conhecimentos nesta &#225;rea.</p>
-            </div>
-        </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="logo.png" alt="ARCAMBE"><span>ARCAMBE</span></a>
+      <p>ARCAMBE SIG & Soluções Ambientais, LDA. Consultoria ambiental, SIG, sensoriamento remoto, resíduos, HST e formação técnica em Moçambique.</p>
     </div>
-</section>
-
-<!-- CURRICULUM -->
-<section class="py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-20">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Programa do Curso</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">
-                O Que Vais <span class="text-arcambeVerde">Aprender</span>
-            </h2>
-            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Um programa pr&#225;tico, baseado em casos reais de Mo&#231;ambique, elaborado por profissionais que executam AIAs todos os dias.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-6">
-            <div class="module-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center shrink-0">
-                        <span class="text-arcambeVerde font-black text-lg">01</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Fundamentos da AIA</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Conceitos b&#225;sicos de Avalia&#231;&#227;o de Impacto Ambiental, hist&#243;rico, objetivos e princ&#237;pios internacionais. Quadro legal moçambicano: Lei do Ambiente n.&#186; 20/97 e Decreto 54/2015.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Legisla&#231;&#227;o</span>
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Categorias A, B, C</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center shrink-0">
-                        <span class="text-arcambeVerde font-black text-lg">02</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Elabora&#231;&#227;o do Estudo de Base</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Como caracterizar o ambiente biof&#237;sico e socioecon&#243;mico da &#225;rea do projeto. Fontes de dados, m&#233;todos de recolha em campo e estrutura do relat&#243;rio de base.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Trabalho de campo</span>
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Dados prim&#225;rios</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-card bg-arcambeVerde/5 rounded-[2rem] p-8 border border-arcambeVerde/20">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 shadow-lg shadow-arcambeVerde/20">
-                        <span class="text-white font-black text-lg">03</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Identifica&#231;&#227;o &amp; Avalia&#231;&#227;o de Impactos</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">M&#233;todos de identifica&#231;&#227;o de impactos (check-lists, matrizes de Leopold, redes de intera&#231;&#227;o). Avalia&#231;&#227;o qualitativa e quantitativa de significância de impactos.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">M&#233;todo Leopold</span>
-                            <span class="bg-arcambeVerde text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Matriz de impactos</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center shrink-0">
-                        <span class="text-arcambeVerde font-black text-lg">04</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Medidas de Mitiga&#231;&#227;o &amp; PGA</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Como definir medidas de preven&#231;&#227;o, mitiga&#231;&#227;o e compensa&#231;&#227;o de impactos. Elabora&#231;&#227;o do Plano de Gest&#227;o Ambiental (PGA) operacional e monitoriz&#225;vel.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">PGA</span>
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Mitiga&#231;&#227;o</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center shrink-0">
-                        <span class="text-arcambeVerde font-black text-lg">05</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Consultas P&#250;blicas &amp; Participa&#231;&#227;o</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">Organiza&#231;&#227;o e documenta&#231;&#227;o de consultas p&#250;blicas conforme a lei. Como conduzir reuni&#245;es comunit&#225;rias, elaborar atas, sistematizar coment&#225;rios e responder tecnicamente.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Comunidades</span>
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Participa&#231;&#227;o</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2rem] p-8 border border-gray-100">
-                <div class="flex items-start gap-5">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde/10 flex items-center justify-center shrink-0">
-                        <span class="text-arcambeVerde font-black text-lg">06</span>
-                    </div>
-                    <div>
-                        <h3 class="font-black text-arcambeEscuro text-xl mb-3">Submiss&#227;o ao MITA</h3>
-                        <p class="text-gray-500 text-sm leading-relaxed mb-4">O processo completo de submiss&#227;o junto ao Minist&#233;rio da Terra e Ambiente &#8212; documentos exigidos, prazos legais, resposta a pareceres e acompanhamento at&#233; &#224; aprova&#231;&#227;o.</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">MITA</span>
-                            <span class="bg-arcambeVerde/10 text-arcambeVerde text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wide">Licen&#231;a Ambiental</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h2>Serviços</h2>
+      <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
     </div>
-</section>
-
-<!-- WHY ARCAMBE -->
-<section class="py-24 px-6 bg-arcambeEscuro text-white relative overflow-hidden">
-    <div class="absolute -top-40 right-0 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Por que aprender com a ARCAMBE?</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">Formadores que Fazem <span class="text-arcambeClaro">AIA na Prática</span></h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">N&#227;o ensinamos teoria de livros. Ensinamos o que fazemos todos os dias, com exemplos reais de projetos aprovados no MITA em Mo&#231;ambique.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8">
-            <div class="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-arcambeClaro/30 transition-all duration-400 group">
-                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-file-contract text-white text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="font-black text-white text-lg mb-2">+30 EIAs Elaborados</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Os nossos formadores j&#225; elaboraram mais de 30 Estudos de Impacto Ambiental aprovados pelo MITA &#8212; todos os exemplos do curso s&#227;o reais.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-arcambeClaro/30 transition-all duration-400 group">
-                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-stamp text-white text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="font-black text-white text-lg mb-2">100% de Taxa de Aprova&#231;&#227;o</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Todos os processos AIA que submetemos ao MITA foram aprovados &#8212; sem rejeic&#245;es. Esse &#233; o padr&#227;o que ensinamos no curso.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-arcambeClaro/30 transition-all duration-400 group">
-                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-map-location-dot text-white text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="font-black text-white text-lg mb-2">Foco 100% em Mo&#231;ambique</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">O curso usa a legisla&#231;&#227;o, os formul&#225;rios e os procedimentos reais do MITA. N&#227;o &#233; um curso gen&#233;rico &#8212; &#233; espec&#237;fico para a realidade mo&#231;ambicana.</p>
-                </div>
-            </div>
-            <div class="flex items-start gap-6 p-8 rounded-3xl bg-white/5 border border-white/10 hover:border-arcambeClaro/30 transition-all duration-400 group">
-                <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
-                    <i class="fa-solid fa-certificate text-white text-xl"></i>
-                </div>
-                <div>
-                    <h3 class="font-black text-white text-lg mb-2">Certificado Reconhecido</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">O certificado ARCAMBE &#233; reconhecido no mercado moçambicano de consultoria ambiental, onde os nossos graduados j&#225; trabalham com sucesso.</p>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h2>Treinamentos</h2>
+      <a href="lp-gee.html">Google Earth Engine do Zero ao Avançado</a><a href="lp-qgis.html">Curso técnico com QGIS</a><a href="lp-curso-aia.html">Curso de Avaliação de Impacto Ambiental</a>
+      <a href="inscricao.html">Inscrição em cursos</a>
     </div>
-</section>
-
-<!-- PAYMENT -->
-<section class="py-16 px-6 bg-gray-100 border-y border-gray-200">
-    <div class="max-w-4xl mx-auto text-center">
-        <h4 class="text-xs font-black text-gray-400 uppercase tracking-widest mb-10">Meios de Inscri&#231;&#227;o e Pagamento</h4>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center opacity-70">
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-mobile-screen-button text-3xl mb-2 text-arcambeVerde"></i>
-                <span class="text-[10px] font-bold text-gray-700">M-PESA</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-building-columns text-3xl mb-2 text-arcambeVerde"></i>
-                <span class="text-[10px] font-bold text-gray-700">TRANSFER&#202;NCIA</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <i class="fa-brands fa-whatsapp text-3xl mb-2 text-arcambeVerde"></i>
-                <span class="text-[10px] font-bold text-gray-700">+258 84 417 2237</span>
-            </div>
-            <div class="flex flex-col items-center">
-                <i class="fa-solid fa-envelope text-3xl mb-2 text-arcambeVerde"></i>
-                <span class="text-[10px] font-bold text-gray-700">INFO@ARCAMBE.COM</span>
-            </div>
-        </div>
+    <div>
+      <h2>Links úteis</h2>
+      <a href="sobre.html">Sobre a ARCAMBE</a>
+      <a href="blog.html">Insights técnicos</a>
+      <a href="orcamento.html">Solicitar orçamento</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="py-28 px-6 bg-gradient-to-br from-arcambeEscuro via-[#0f3d26] to-gray-950 text-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/50 to-transparent"></div>
-    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
-    <div class="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-orange-500 rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-        <span class="inline-flex items-center gap-2 bg-orange-500/20 border border-orange-400/40 text-orange-300 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 animate-pulse">
-            <i class="fa-solid fa-graduation-cap"></i>Vagas limitadas &bull; Inscri&#231;&#245;es abertas agora
-        </span>
-        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6">
-            Come&#231;a a Tua Carreira<br><span class="text-arcambeClaro">em AIA</span><br>Hoje Mesmo
-        </h2>
-        <p class="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            O mercado moçambicano precisa de profissionais qualificados em AIA. A tua oportunidade est&#225; aqui &#8212; com os melhores formadores do setor.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-5 justify-center mb-10">
-            <a href="inscricao.html" id="final-cta-inscricao" class="btn-pulsar bg-orange-500 text-white px-12 py-6 rounded-full font-black uppercase text-sm tracking-widest hover:bg-orange-400 transition shadow-2xl flex items-center justify-center gap-3">
-                <i class="fa-solid fa-graduation-cap text-xl"></i>
-                Inscrever-me Agora
-            </a>
-            <a href="https://wa.me/258844172237?text=Olá!+Tenho+interesse+no+Curso+de+AIA+da+ARCAMBE.+Quais+são+os+detalhes?" class="border-2 border-white/30 text-white px-12 py-6 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-3" target="_blank">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                Tirar D&#250;vidas
-            </a>
+    <div>
+      <h2>Contactos</h2>
+      <a href="mailto:info@arcambe.com"><i class="fa-regular fa-envelope"></i>info@arcambe.com</a>
+      <a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>+258 844 172 237</a>
+      <span>Maputo, Moçambique</span>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <label for="newsletter-email">Newsletter técnica</label>
+        <div class="newsletter-row">
+          <input id="newsletter-email" type="email" name="email" required placeholder="email@exemplo.com">
+          <button type="submit" aria-label="Subscrever"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <div class="flex flex-wrap justify-center gap-8 text-xs uppercase tracking-widest font-bold text-gray-500">
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Certificado ARCAMBE</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Casos reais de Mo&#231;ambique</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Online &amp; Presencial</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Vagas limitadas</span>
-        </div>
+      </form>
     </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gradient-to-br from-gray-950 via-[#063f2b] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
-        <div>
-            <img src="logo.png" class="h-16 mb-8 brightness-200 grayscale opacity-80 hover:opacity-100 transition-opacity duration-300">
-            <p class="text-gray-400 text-sm leading-relaxed font-light">ARCAMBE SIG &amp; Solu&#231;&#245;es Ambientais, LDA.<br>Especialistas em licenciamento ambiental e forma&#231;&#227;o t&#233;cnica em Mo&#231;ambique.</p>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>Contactos</h4>
-            <ul class="space-y-5 text-sm text-gray-300">
-                <li class="flex items-center gap-4"><i class="fa-solid fa-envelope text-arcambeVerde text-lg"></i><a href="mailto:info@arcambe.com" class="hover:text-white transition-colors">info@arcambe.com</a></li>
-                <li class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-arcambeVerde text-lg"></i><a href="https://wa.me/258844172237" class="hover:text-white">+258 844 172 237</a></li>
-                <li class="flex items-start gap-4"><i class="fa-solid fa-map-marker-alt text-arcambeVerde text-lg mt-1"></i><span>Maputo, Mo&#231;ambique</span></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Redes Sociais</h4>
-            <div class="flex gap-4">
-                <a href="https://linkedin.com/company/arcambe-ambiental/" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#0077b5] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-gray-300"></i></a>
-                <a href="https://instagram.com/arcambe.oficial" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-gray-300"></i></a>
-                <a href="https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-youtube text-gray-300"></i></a>
-                <a href="https://facebook.com/profile.php?id=61582065789260" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-gray-300"></i></a>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Newsletter</h4>
-            <form action="/api/newsletter" method="POST" class="flex flex-col gap-3">
-
-
-
-
-
-                <div class="relative"><i class="fa-regular fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i><input type="email" name="email" required placeholder="O teu melhor e-mail" class="w-full bg-white/5 border border-white/10 p-4 pl-12 rounded-xl focus:border-arcambeClaro outline-none transition-all text-sm text-white placeholder-gray-500"></div>
-                <button type="submit" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white p-4 rounded-xl font-black uppercase text-xs tracking-widest hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"><span>Subscrever</span><i class="fa-solid fa-arrow-right"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold relative z-10">
-        <p>&#169; 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
-        <p class="mt-4 md:mt-0 flex items-center gap-2">Mo&#231;ambique <span class="w-1 h-1 bg-arcambeClaro rounded-full"></span> Precis&#227;o Digital</p>
-    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
+    <p>Precisão técnica para território, ambiente e operações.</p>
+  </div>
 </footer>
-
-<a href="https://wa.me/258844172237?text=Olá!+Tenho+interesse+no+Curso+de+AIA+da+ARCAMBE." class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    if(document.getElementById("days")) {
-        // Check if a target date is already saved in localStorage to persist the 30-day countdown
-        let targetDateStr = localStorage.getItem('arcambe_countdown_target');
-        let countdownDate;
-
-        if (targetDateStr) {
-            countdownDate = new Date(parseInt(targetDateStr));
-            // If the date is in the past, reset it
-            if (countdownDate.getTime() < new Date().getTime()) {
-                countdownDate = new Date();
-                countdownDate.setDate(countdownDate.getDate() + 30);
-                localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
-            }
-        } else {
-            countdownDate = new Date();
-            countdownDate.setDate(countdownDate.getDate() + 30);
-            localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
-        }
-
-        let timer = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countdownDate.getTime() - now;
-
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
-                return;
-            }
-
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            let daysEl = document.getElementById("days");
-            if (daysEl) {
-                daysEl.innerHTML = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-            }
-        }, 1000);
-    }
-});
-</script>
-<script src="/assets/js/arcambe-2026.js" defer></script>
-<script src="/assets/js/success.js"></script>
-
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/success.js" defer></script>
 </body>
-
 </html>

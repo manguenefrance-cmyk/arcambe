@@ -1,318 +1,147 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+<!doctype html>
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
-    <title>Inscrição em Cursos Técnicos | ARCAMBE</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        arcambeVerde: '#107048',
-                        arcambeClaro: '#10a010',
-                        arcambeEscuro: '#063f2b',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .glass-panel-dark { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #107048; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #063f2b; }
-        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Outfit', sans-serif; }
-        .swiper-pagination-bullet-active { background: #10a010 !important; }
-        @keyframes pulsar {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 160, 16, 0.7); }
-            70% { transform: scale(1.03); box-shadow: 0 0 0 15px rgba(16, 160, 16, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(16, 160, 16, 0); }
-        }
-        .btn-pulsar { animation: pulsar 2s infinite; }
-    </style>
-    <link rel="canonical" href="https://arcambe.com/inscricao.html">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
-    <meta property="og:locale" content="pt_PT">
-    <meta property="og:site_name" content="ARCAMBE">
-    <meta property="og:title" content="Inscrição em Cursos Técnicos | ARCAMBE">
-    <meta property="og:description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
-    <meta property="og:url" content="https://arcambe.com/inscricao.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arcambe.com/slide_1.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Inscrição em Cursos Técnicos | ARCAMBE">
-    <meta name="twitter:description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
-    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://arcambe.com/",
-      "logo": "https://arcambe.com/logo.png",
-      "email": "info@arcambe.com",
-      "telephone": "+258844172237",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Maputo",
-        "addressCountry": "MZ"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f3d34">
+  <meta name="author" content="ARCAMBE SIG & Soluções Ambientais, LDA">
+  <title>Inscrição em Cursos Técnicos | ARCAMBE</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="canonical" href="https://arcambe.com/inscricao.html">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="ARCAMBE">
+  <meta property="og:title" content="Inscrição em Cursos Técnicos | ARCAMBE">
+  <meta property="og:description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
+  <meta property="og:url" content="https://arcambe.com/inscricao.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://arcambe.com/slide_1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Inscrição em Cursos Técnicos | ARCAMBE">
+  <meta name="twitter:description" content="Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.">
+  <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arcambe.com/#organization",
+        "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
+        "url": "https://arcambe.com/",
+        "logo": "https://arcambe.com/logo.png",
+        "email": "info@arcambe.com",
+        "telephone": "+258 844 172 237",
+        "address": { "@type": "PostalAddress", "addressLocality": "Maputo", "addressCountry": "MZ" },
+        "sameAs": ["https://wa.me/258844172237"]
       },
-      "sameAs": [
-        "https://linkedin.com/company/arcambe-ambiental/",
-        "https://instagram.com/arcambe.oficial",
-        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
-        "https://facebook.com/profile.php?id=61582065789260"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arcambe.com/#website",
-      "name": "ARCAMBE",
-      "url": "https://arcambe.com/",
-      "publisher": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "inLanguage": "pt-PT"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://arcambe.com/inscricao.html#webpage",
-      "url": "https://arcambe.com/inscricao.html",
-      "name": "Inscrição em Cursos Técnicos | ARCAMBE",
-      "description": "Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.",
-      "isPartOf": {
-        "@id": "https://arcambe.com/#website"
-      },
-      "about": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://arcambe.com/slide_1.png"
-      },
-      "inLanguage": "pt-PT"
-    }
-  ]
-}
-    </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+      {
+        "@type": "WebPage",
+        "@id": "https://arcambe.com/inscricao.html#webpage",
+        "url": "https://arcambe.com/inscricao.html",
+        "name": "Inscrição em Cursos Técnicos | ARCAMBE",
+        "description": "Faça a sua inscrição nos cursos técnicos da ARCAMBE em SIG, QGIS, Google Earth Engine, AIA, sensoriamento remoto e ambiente.",
+        "isPartOf": { "@id": "https://arcambe.com/#website" },
+        "about": { "@id": "https://arcambe.com/#organization" },
+        "inLanguage": "pt"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="arcambe-refresh bg-gray-50 text-gray-800 scroll-smooth font-sans">
-
-    <nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-4 group">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                    <img src="logo.png" alt="ARCAMBE Logo" class="h-16 md:h-20 relative z-10 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-2xl md:text-3xl font-heading font-black text-arcambeEscuro tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde">ARCAMBE</span>
-                    <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG & Soluções Ambientais, LDA</span>
-                </div>
-            </a>
-
-            <!-- Hamburger Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-[5px] p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200 z-50" aria-label="Abrir menu">
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb1"></span>
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300" id="hb2"></span>
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb3"></span>
-            </button>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a><header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Página inicial ARCAMBE">
+      <img src="logo.png" alt="ARCAMBE">
+      <span><strong>ARCAMBE</strong><small>SIG & Soluções Ambientais, LDA</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="index.html" >Home</a><a href="sobre.html" >Sobre</a><a href="servicos.html" >Serviços</a><a href="treinamentos.html" aria-current="page">Treinamentos</a><a href="blog.html" >Insights</a><a href="contacto.html" >Contacto</a>
+      <div class="nav-dropdown">
+        <button type="button">Áreas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel">
+          <a href="lp-sig.html"><i class="fa-solid fa-map-location-dot"></i><span>SIG, mapeamento e geodados</span></a><a href="lp-aia.html"><i class="fa-solid fa-leaf"></i><span>Avaliação ambiental e licenciamento</span></a><a href="lp-residuos.html"><i class="fa-solid fa-recycle"></i><span>Gestão de resíduos</span></a><a href="lp-hst.html"><i class="fa-solid fa-helmet-safety"></i><span>HST e segurança ocupacional</span></a>
         </div>
-
-        <!-- Menu Mobile Dropdown -->
-        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl shadow-xl">
-            <div class="px-5 py-4 flex flex-col gap-1">
-                <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-house text-arcambeVerde w-5 text-center"></i> Home
-                </a>
-                <a href="sobre.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-circle-info text-arcambeVerde w-5 text-center"></i> Sobre
-                </a>
-                <a href="servicos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-briefcase text-arcambeVerde w-5 text-center"></i> Serviços
-                </a>
-                <a href="blog.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-newspaper text-arcambeVerde w-5 text-center"></i> Blog
-                </a>
-                <a href="treinamentos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-orange-600 font-semibold text-sm hover:bg-orange-50 transition-all duration-200">
-                    <i class="fa-solid fa-graduation-cap text-orange-500 w-5 text-center"></i> Treinamentos
-                </a>
-                <div class="h-px bg-gray-100 my-2"></div>
-                <a href="contacto.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-arcambeVerde to-emerald-500 text-white py-3 px-6 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                    <i class="fa-solid fa-envelope"></i> Contacto
-                </a>
-            </div>
-        </div>
+      </div>
     </nav>
-    <script>
-        // Mobile menu toggle
-        (function(){
-            var btn = document.getElementById('mobile-menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            var hb1 = document.getElementById('hb1');
-            var hb2 = document.getElementById('hb2');
-            var hb3 = document.getElementById('hb3');
-            if(!btn) return;
-            btn.addEventListener('click', function(){
-                var isOpen = !menu.classList.contains('hidden');
-                menu.classList.toggle('hidden');
-                if(!isOpen){
-                    hb1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    hb2.style.opacity = '0';
-                    hb3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-                } else {
-                    hb1.style.transform = '';
-                    hb2.style.opacity = '';
-                    hb3.style.transform = '';
-                }
-            });
-            menu.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click', function(){
-                    menu.classList.add('hidden');
-                    hb1.style.transform = '';
-                    hb2.style.opacity = '';
-                    hb3.style.transform = '';
-                });
-            });
-        })();
-    </script>
-
-    <main class="py-12 px-6">
-        <div class="max-w-4xl mx-auto bg-white rounded-[2rem] shadow-xl overflow-hidden border border-gray-100">
-
-            <div class="bg-arcambeEscuro p-8 text-center text-white">
-                <h1 class="text-2xl md:text-3xl font-black uppercase italic tracking-tight">Finalizar Matrícula</h1>
-                <p class="text-arcambeClaro font-bold text-xs uppercase tracking-widest mt-2">Curso: Google Earth Engine do Zero ao Avançado</p>
-            </div>
-
-            <form action="/api/contact" method="POST" class="p-8 md:p-12 space-y-10">
-                <input type="hidden" id="curso_input" name="curso" value="Google Earth Engine do Zero ao Avançado">
-                <div class="space-y-6">
-                    <h3 class="flex items-center gap-3 font-black text-arcambeEscuro uppercase text-sm tracking-widest">
-                        <span class="w-8 h-8 rounded-full bg-arcambeClaro text-white flex items-center justify-center text-xs">1</span>
-                        Dados do Aluno
-                    </h3>
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 ml-1">Nome Completo</label>
-                            <input type="text" name="name" required placeholder="Seu nome" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde outline-none transition">
-                        </div>
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 ml-1">E-mail</label>
-                            <input type="email" name="email" required placeholder="email@exemplo.com" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde outline-none transition">
-                        </div>
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 ml-1">WhatsApp (+258)</label>
-                            <input type="tel" name="whatsapp" required placeholder="84 417 2237" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde outline-none transition">
-                        </div>
-                        <div class="space-y-1">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 ml-1">Instituição/UEM</label>
-                            <input type="text" name="instituicao" placeholder="Onde estuda ou trabalha" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde outline-none transition">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-8 border-t border-gray-100 space-y-6">
-                    <h3 class="flex items-center gap-3 font-black text-arcambeEscuro uppercase text-sm tracking-widest">
-                        <span class="w-8 h-8 rounded-full bg-arcambeClaro text-white flex items-center justify-center text-xs">2</span>
-                        Método de Pagamento
-                    </h3>
-
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                        <label class="relative cursor-pointer">
-                            <input type="radio" name="pagamento" value="mpesa" class="hidden peer" required>
-                            <div class="p-4 border-2 border-gray-100 rounded-2xl flex flex-col items-center gap-2 peer-checked:border-arcambeVerde peer-checked:bg-arcambeVerde/5 transition">
-                                <i class="fa-solid fa-mobile-screen-button text-2xl text-red-600"></i>
-                                <span class="text-[10px] font-black uppercase">M-Pesa</span>
-                            </div>
-                        </label>
-                        <label class="relative cursor-pointer">
-                            <input type="radio" name="pagamento" value="emola" class="hidden peer">
-                            <div class="p-4 border-2 border-gray-100 rounded-2xl flex flex-col items-center gap-2 peer-checked:border-arcambeVerde peer-checked:bg-arcambeVerde/5 transition">
-                                <i class="fa-solid fa-wallet text-2xl text-orange-500"></i>
-                                <span class="text-[10px] font-black uppercase">e-Mola</span>
-                            </div>
-                        </label>
-                        <label class="relative cursor-pointer">
-                            <input type="radio" name="pagamento" value="paypal" class="hidden peer">
-                            <div class="p-4 border-2 border-gray-100 rounded-2xl flex flex-col items-center gap-2 peer-checked:border-arcambeVerde peer-checked:bg-arcambeVerde/5 transition">
-                                <i class="fa-brands fa-paypal text-2xl text-blue-800"></i>
-                                <span class="text-[10px] font-black uppercase">PayPal</span>
-                            </div>
-                        </label>
-                        <label class="relative cursor-pointer">
-                            <input type="radio" name="pagamento" value="cartao" class="hidden peer">
-                            <div class="p-4 border-2 border-gray-100 rounded-2xl flex flex-col items-center gap-2 peer-checked:border-arcambeVerde peer-checked:bg-arcambeVerde/5 transition">
-                                <i class="fa-solid fa-credit-card text-2xl text-gray-700"></i>
-                                <span class="text-[10px] font-black uppercase">Cartão</span>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <div class="bg-gray-50 rounded-3xl p-8 text-center border border-gray-100">
-                    <p class="text-[10px] font-black uppercase text-gray-400 tracking-widest mb-1">Valor do Investimento:</p>
-                    <h2 class="text-4xl font-black text-arcambeEscuro tracking-tight italic">5.680 MT</h2>
-                    <button type="submit" class="mt-8 w-full max-w-sm mx-auto bg-arcambeVerde text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:bg-arcambeEscuro transition-all btn-pulsar block">
-                        Confirmar Inscrição
-                    </button>
-                    <div class="mt-6 flex justify-center gap-4 text-[9px] font-bold text-gray-400 uppercase tracking-widest">
-                        <span><i class="fa-solid fa-lock text-arcambeClaro mr-1"></i> Pagamento Seguro</span>
-                        <span><i class="fa-solid fa-check text-arcambeClaro mr-1"></i> Acesso Vitalício</span>
-                    </div>
-                </div>
-            </form>
+    <a class="btn btn-primary nav-cta" href="orcamento.html">Solicitar orçamento</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel" hidden>
+    <a href="index.html">Home</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a><a href="treinamentos.html">Treinamentos</a><a href="blog.html">Insights</a><a href="contacto.html">Contacto</a>
+    <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    <a class="btn btn-primary" href="orcamento.html">Solicitar orçamento</a>
+  </nav>
+</header><main id="conteudo"><section class="page-hero"><div class="container narrow"><nav class="breadcrumb"><a href="index.html">Home</a><span>Inscrição</span></nav><h1>Inscrição em cursos ARCAMBE.</h1><p>Preencha os seus dados para reservar interesse no curso. A equipa confirmará disponibilidade, datas, pagamento e materiais necessários.</p></div></section>
+  <section class="section"><div class="container contact-layout"><aside class="contact-aside"><h2>Curso selecionado</h2><p id="selected-course-label">Google Earth Engine do Zero ao Avançado</p><p>Se veio de outra página de curso, o formulário pode ajustar o nome do curso automaticamente pelo parâmetro da ligação.</p></aside><form class="form-panel signup-form" action="/api/contact" method="POST">
+  <input type="hidden" id="curso_input" name="curso" value="Google Earth Engine do Zero ao Avançado">
+  <div class="form-grid">
+    <label>Nome completo<input type="text" name="name" required placeholder="O seu nome"></label>
+    <label>E-mail<input type="email" name="email" required placeholder="email@exemplo.com"></label>
+    <label>WhatsApp<input type="tel" name="whatsapp" required placeholder="84 417 2237"></label>
+    <label>Instituição<input type="text" name="instituicao" placeholder="Onde estuda ou trabalha"></label>
+  </div>
+  <fieldset class="payment-options">
+    <legend>Método de pagamento preferido</legend>
+    <label><input type="radio" name="pagamento" value="mpesa" required><span>M-Pesa</span></label><label><input type="radio" name="pagamento" value="emola" ><span>e-Mola</span></label><label><input type="radio" name="pagamento" value="paypal" ><span>PayPal</span></label><label><input type="radio" name="pagamento" value="cartao" ><span>Cartão</span></label>
+  </fieldset>
+  <div class="price-note"><span>Investimento de referência</span><strong>5.680 MT</strong><small>A equipa confirmará disponibilidade, calendário e dados de pagamento.</small></div>
+  <button class="btn btn-primary" type="submit">Confirmar inscrição</button>
+</form></div></section></main><section class="footer-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,64 C170,18 326,98 518,58 C725,15 887,3 1065,42 C1228,78 1324,95 1440,53 L1440,110 L0,110 Z"></path></svg>
+</section>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="logo.png" alt="ARCAMBE"><span>ARCAMBE</span></a>
+      <p>ARCAMBE SIG & Soluções Ambientais, LDA. Consultoria ambiental, SIG, sensoriamento remoto, resíduos, HST e formação técnica em Moçambique.</p>
+    </div>
+    <div>
+      <h2>Serviços</h2>
+      <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    </div>
+    <div>
+      <h2>Treinamentos</h2>
+      <a href="lp-gee.html">Google Earth Engine do Zero ao Avançado</a><a href="lp-qgis.html">Curso técnico com QGIS</a><a href="lp-curso-aia.html">Curso de Avaliação de Impacto Ambiental</a>
+      <a href="inscricao.html">Inscrição em cursos</a>
+    </div>
+    <div>
+      <h2>Links úteis</h2>
+      <a href="sobre.html">Sobre a ARCAMBE</a>
+      <a href="blog.html">Insights técnicos</a>
+      <a href="orcamento.html">Solicitar orçamento</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div>
+      <h2>Contactos</h2>
+      <a href="mailto:info@arcambe.com"><i class="fa-regular fa-envelope"></i>info@arcambe.com</a>
+      <a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>+258 844 172 237</a>
+      <span>Maputo, Moçambique</span>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <label for="newsletter-email">Newsletter técnica</label>
+        <div class="newsletter-row">
+          <input id="newsletter-email" type="email" name="email" required placeholder="email@exemplo.com">
+          <button type="submit" aria-label="Subscrever"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-    </main>
-
-    <footer class="bg-white py-12 px-6 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <img src="logo.png" alt="ARCAMBE" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                    ARCAMBE SIG & Soluções Ambientais, LDA.
-                </p>
-            </div>
-            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">© 2026 ARCAMBE. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-<script src="/assets/js/arcambe-2026.js" defer></script>
-<script src="/assets/js/success.js"></script>
-
+      </form>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
+    <p>Precisão técnica para território, ambiente e operações.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/success.js" defer></script>
 </body>
 </html>

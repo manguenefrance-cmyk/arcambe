@@ -111,7 +111,7 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body class="arcambe-refresh bg-gray-100 font-sans overflow-hidden">
     <script>
@@ -214,6 +214,6 @@
         </aside>
     </div>
 
-<script src="/assets/js/arcambe-2026.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>
