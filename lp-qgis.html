@@ -1,682 +1,124 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+<!doctype html>
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Domine QGIS do zero ao profissional com exercícios práticos, mapas, geoprocessamento e aplicações ambientais em Moçambique.">
-    <meta name="keywords" content="Curso QGIS Mocambique, SIG, Sistemas de Informacao Geografica, Geoprocessamento, Mapas, ARCAMBE">
-    <title>Curso QGIS Profissional em 30 Dias | ARCAMBE</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
-                    colors: { arcambeVerde: '#107048', arcambeClaro: '#10a010', arcambeEscuro: '#063f2b' }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
-        .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
-        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:#107048;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#063f2b}
-        h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
-        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(16,160,16,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,0)}}
-        .btn-pulsar{animation:pulse-green 2s infinite}
-        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(16,112,72,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,0)}}
-        .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
-        .btn-arcambe-pulsar:hover{background-color:#063f2b;transform:scale(1.05)}
-        .hero-bg{background:#04180f;background-image:radial-gradient(ellipse at 20% 40%,rgba(16,112,72,.25) 0%,transparent 60%),radial-gradient(ellipse at 80% 10%,rgba(16,160,16,.08) 0%,transparent 50%)}
-        .grid-overlay{background-image:linear-gradient(rgba(16,112,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,112,72,.06) 1px,transparent 1px);background-size:60px 60px}
-        .module-card{transition:all .4s cubic-bezier(.175,.885,.32,1.275)}.module-card:hover{transform:translateY(-8px) scale(1.02)}
-        .faq-answer{display:none}.faq-answer.open{display:block}
-    </style>
-    <link rel="canonical" href="https://arcambe.com/lp-qgis.html">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
-    <meta property="og:locale" content="pt_PT">
-    <meta property="og:site_name" content="ARCAMBE">
-    <meta property="og:title" content="Curso QGIS Profissional em 30 Dias | ARCAMBE">
-    <meta property="og:description" content="Domine QGIS do zero ao profissional com exercícios práticos, mapas, geoprocessamento e aplicações ambientais em Moçambique.">
-    <meta property="og:url" content="https://arcambe.com/lp-qgis.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arcambe.com/slide_1.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Curso QGIS Profissional em 30 Dias | ARCAMBE">
-    <meta name="twitter:description" content="Domine QGIS do zero ao profissional com exercícios práticos, mapas, geoprocessamento e aplicações ambientais em Moçambique.">
-    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://arcambe.com/",
-      "logo": "https://arcambe.com/logo.png",
-      "email": "info@arcambe.com",
-      "telephone": "+258844172237",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Maputo",
-        "addressCountry": "MZ"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/arcambe-ambiental/",
-        "https://instagram.com/arcambe.oficial",
-        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
-        "https://facebook.com/profile.php?id=61582065789260"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arcambe.com/#website",
-      "name": "ARCAMBE",
-      "url": "https://arcambe.com/",
-      "publisher": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "inLanguage": "pt-PT"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://arcambe.com/lp-qgis.html#webpage",
-      "url": "https://arcambe.com/lp-qgis.html",
-      "name": "Curso QGIS Profissional em 30 Dias | ARCAMBE",
-      "description": "Domine QGIS do zero ao profissional com exercícios práticos, mapas, geoprocessamento e aplicações ambientais em Moçambique.",
-      "isPartOf": {
-        "@id": "https://arcambe.com/#website"
-      },
-      "about": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://arcambe.com/slide_1.png"
-      },
-      "inLanguage": "pt-PT"
-    }
-  ]
-}
-    </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Formação prática para produzir mapas ambientais, gerir dados geoespaciais e apoiar análises integradas com QGIS e Google Earth.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f3d34">
+  <meta name="author" content="ARCAMBE – SIG & Soluções Ambientais, SU, LDA">
+  <title>Mapeamento Ambiental com QGIS | ARCAMBE</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="canonical" href="https://arcambe.com/lp-qgis.html">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="ARCAMBE">
+  <meta property="og:title" content="Mapeamento Ambiental com QGIS | ARCAMBE">
+  <meta property="og:description" content="Formação prática para produzir mapas ambientais, gerir dados geoespaciais e apoiar análises integradas com QGIS e Google Earth.">
+  <meta property="og:url" content="https://arcambe.com/lp-qgis.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://arcambe.com/course-qgis-visual.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mapeamento Ambiental com QGIS | ARCAMBE">
+  <meta name="twitter:description" content="Formação prática para produzir mapas ambientais, gerir dados geoespaciais e apoiar análises integradas com QGIS e Google Earth.">
+  <meta name="twitter:image" content="https://arcambe.com/course-qgis-visual.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
 </head>
-<body class="arcambe-refresh bg-white text-gray-900 font-sans scroll-smooth">
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a><header class="site-header landing-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Página inicial ARCAMBE">
+      <img src="logo.png" alt="ARCAMBE">
+      <span><strong>ARCAMBE</strong><small>SIG & Soluções Ambientais, SU, LDA</small></span>
+    </a>
+    <nav class="desktop-nav landing-nav" aria-label="Navegação da landing page">
+      <a href="#programa">Programa</a><a href="#metodologia">Metodologia</a><a href="#investimento">Investimento</a><a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="#inscricao">Inscrever-me</a>
+  </div>
+</header><main id="conteudo"><section class="landing-hero course-hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Nova edição 2026</span><h1>Mapeamento Ambiental com QGIS</h1><p>Formação prática para produzir mapas ambientais, gerir dados geoespaciais e apoiar análises integradas com QGIS e Google Earth.</p><div class="hero-actions"><a class="btn btn-primary" href="#inscricao">Inscrever-me</a><a class="btn btn-outline" href="https://wa.me/258844172237" target="_blank">Tirar dúvidas</a></div></div><figure class="hero-media"><img src="course-qgis-visual.jpg" alt="Mapeamento Ambiental com QGIS"></figure></div></section>
+    <section class="facts-bar" aria-label="Informações do curso"><div class="container facts-grid"><div><span>Datas</span><strong>24 de Agosto a 5 de Setembro de 2026</strong></div><div><span>Horário</span><strong>Segunda a sexta, 17:00–20:00; sábados, 08:00–12:00</strong></div><div><span>Modalidade</span><strong>Online intensivo</strong></div><div><span>Investimento</span><strong>5.680 MT</strong></div></div></section>
+    <section class="section"><div class="container split"><div><span class="eyebrow">Resultados</span><h2>O que o participante será capaz de fazer</h2><ul class="check-list"><li><i class="fa-solid fa-check"></i><span>Organizar projectos QGIS com sistemas de coordenadas, camadas vectoriais e dados raster.</span></li><li><i class="fa-solid fa-check"></i><span>Preparar mapas ambientais, topográficos, geológicos e de uso e cobertura da terra.</span></li><li><i class="fa-solid fa-check"></i><span>Processar imagens de satélite, DEM e índices NDVI, EVI e SAVI para leitura ambiental.</span></li><li><i class="fa-solid fa-check"></i><span>Aplicar AHP e análise ambiental integrada para apoiar decisões técnicas.</span></li><li><i class="fa-solid fa-check"></i><span>Exportar mapas finais, layouts e produtos cartográficos prontos para relatórios.</span></li></ul></div><div class="note-panel"><h3>Para quem é este curso</h3><ul class="check-list"><li><i class="fa-solid fa-check"></i><span>Técnicos ambientais, estudantes e consultores que precisam produzir mapas de apoio a estudos e relatórios.</span></li><li><i class="fa-solid fa-check"></i><span>Profissionais de ordenamento territorial, recursos naturais, fiscalização, projectos municipais e monitorização ambiental.</span></li><li><i class="fa-solid fa-check"></i><span>Equipas que já usam mapas, mas precisam melhorar estrutura de dados, simbologia, análise e apresentação final.</span></li></ul></div></div></section>
+    <section id="programa" class="section section-muted"><div class="section-title"><span>Programa</span><h2>Conteúdo estruturado</h2><p>Os módulos abaixo seguem o programa fornecido para esta campanha.</p></div><div class="container"><div class="module-accordion"><details open><summary><span>01</span>QGIS e Google Earth</summary><p>Ambiente de trabalho, navegação, leitura visual, integração de bases espaciais e preparação de projectos.</p></details><details ><summary><span>02</span>Coordenadas e dados geoespaciais</summary><p>Sistemas de referência, georreferenciação, organização de camadas e gestão de atributos.</p></details><details ><summary><span>03</span>Imagens de satélite e DEM</summary><p>Fontes de dados, recorte, composição, relevo, declive e leitura de modelos digitais de elevação.</p></details><details ><summary><span>04</span>NDVI, EVI e SAVI</summary><p>Cálculo e interpretação de índices de vegetação para análise ambiental e monitorização.</p></details><details ><summary><span>05</span>Uso e cobertura da terra</summary><p>Classificação, vetorização, validação visual e produção de mapas temáticos.</p></details><details ><summary><span>06</span>Mapas topográficos e geológicos</summary><p>Representação de relevo, drenagem, unidades geológicas e elementos de contexto territorial.</p></details><details ><summary><span>07</span>AHP e análise integrada</summary><p>Combinação de critérios, ponderação, mapas de adequabilidade e interpretação final.</p></details><details ><summary><span>08</span>Projectos práticos</summary><p>Desenvolvimento orientado de mapas, layouts, legenda, escala, fontes e exportação final.</p></details></div></div></section>
+    <section id="metodologia" class="section"><div class="container split reverse"><div><span class="eyebrow">Metodologia</span><h2>Aprendizagem aplicada, com produto técnico final.</h2><p>Aulas demonstrativas, exercícios guiados, bases de dados reais ou simuladas, revisão de mapas produzidos pelos participantes e projecto prático final.</p></div><div class="note-panel"><h3>Projectos e entregáveis</h3><ul class="check-list"><li><i class="fa-solid fa-check"></i><span>Mapa de localização e enquadramento territorial</span></li><li><i class="fa-solid fa-check"></i><span>Mapa de uso e cobertura da terra</span></li><li><i class="fa-solid fa-check"></i><span>Mapa NDVI/EVI/SAVI</span></li><li><i class="fa-solid fa-check"></i><span>Mapa topográfico ou de declividade</span></li><li><i class="fa-solid fa-check"></i><span>Mapa geológico ou de unidades ambientais</span></li><li><i class="fa-solid fa-check"></i><span>Mapa de análise multicritério com AHP</span></li></ul></div></div></section>
 
-<!-- NAV -->
-<nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-4 group">
-            <div class="relative">
-                <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                <img src="logo.png" alt="ARCAMBE Logo" class="h-14 md:h-16 relative z-10 transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="flex flex-col">
-                <span class="text-2xl md:text-3xl font-black tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde" style="font-family:Outfit,sans-serif">ARCAMBE</span>
-                <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG &amp; Solu&#231;&#245;es Ambientais, LDA</span>
-            </div>
-        </a>
-        <ul class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm tracking-wide">
-            <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="treinamentos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Treinamentos<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="servicos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Servi&#231;os<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="inscricao.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(16,160,16,0.28)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Inscrever Agora</a></li>
-        </ul>
-        <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <div id="mm" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
-        <a href="index.html" class="block py-2 text-gray-700 font-semibold">Home</a>
-        <a href="treinamentos.html" class="block py-2 text-gray-700 font-semibold">Treinamentos</a>
-        <a href="servicos.html" class="block py-2 text-gray-700 font-semibold">Servi&#231;os</a>
-        <a href="inscricao.html" class="block py-3 text-center bg-arcambeVerde text-white rounded-full font-bold text-sm">Inscrever Agora</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero-bg grid-overlay pt-24 pb-36 px-6 text-white relative overflow-hidden">
-    <div class="absolute -top-20 -left-20 w-96 h-96 bg-arcambeVerde rounded-full blur-[140px] opacity-20 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-80 h-80 bg-arcambeClaro rounded-full blur-[160px] opacity-10 pointer-events-none"></div>
-    <div class="max-w-5xl mx-auto text-center relative z-10 space-y-8">
-        <div class="flex justify-center">
-            <span class="inline-flex items-center gap-2 bg-red-600/90 text-white px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest shadow-2xl animate-pulse">
-                <i class="fa-solid fa-fire"></i> Vagas Limitadas &#8212; Inscri&#231;&#245;es Abertas
-            </span>
-        </div>
-        <h1 class="text-4xl md:text-6xl lg:text-7xl font-black leading-tight uppercase italic tracking-tighter">
-            Domine o <span class="text-arcambeClaro">QGIS</span> em 30 Dias<br>
-            <span class="text-white/80 text-3xl md:text-4xl lg:text-5xl font-extrabold">&#8212; Do Zero ao Profissional</span>
-        </h1>
-        <p class="text-lg md:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-            Aprenda a criar mapas profissionais, realizar an&#225;lises espaciais e tornar-se o especialista SIG
-            mais procurado em Mo&#231;ambique &#8212; em apenas <strong class="text-arcambeClaro">30 dias</strong>, mesmo sem experi&#234;ncia anterior.
-        </p>
-        <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <div class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-users text-arcambeClaro"></i><span><strong class="text-white">+150</strong> Profissionais formados</span></div>
-            <div class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-star text-yellow-400"></i><span><strong class="text-white">4.9/5</strong> Avalia&#231;&#227;o m&#233;dia</span></div>
-            <div class="flex items-center gap-2 text-gray-300"><i class="fa-solid fa-certificate text-arcambeClaro"></i><span><strong class="text-white">Certificado</strong> reconhecido</span></div>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="inscricao.html" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-2">
-                <i class="fa-solid fa-rocket"></i> Inscrever Agora
-            </a>
-            <a href="#programa" class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-2">
-                <i class="fa-solid fa-tasks"></i> Ver Programa
-            </a>
-        </div>
-        <div class="flex flex-wrap justify-center gap-8 opacity-60 text-xs uppercase tracking-widest font-bold text-gray-400">
-            <span><i class="fa-solid fa-lock mr-1"></i>Pagamento Seguro</span>
-            <span><i class="fa-solid fa-shield mr-1"></i>Certificado Inclu&#237;do</span>
-            <span><i class="fa-solid fa-wifi mr-1"></i>100% Online</span>
-            <span><i class="fa-solid fa-headset mr-1"></i>Suporte Direto</span>
-        </div>
-
-        <div class="max-w-xl mx-auto mt-12 mb-4 p-8 rounded-[2rem] bg-white/5 border border-white/10 backdrop-blur-sm relative z-10">
-            <p class="text-arcambeClaro font-black uppercase text-[10px] tracking-[0.3em] mb-8 text-center">O desconto de lançamento termina em:</p>
-
-            <div class="flex justify-center items-center gap-3 md:gap-6">
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="days">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Dias</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="hours">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Horas</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-white text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="minutes">00</div>
-                    <p class="text-[9px] text-white/50 uppercase font-bold mt-3 tracking-widest">Min</p>
-                </div>
-
-                <div class="text-white/20 text-3xl font-light mb-8">:</div>
-
-                <div class="text-center">
-                    <div class="bg-arcambeClaro text-arcambeEscuro w-14 h-16 md:w-20 md:h-24 rounded-2xl flex items-center justify-center text-3xl md:text-5xl font-black shadow-xl" id="seconds">00</div>
-                    <p class="text-[9px] text-arcambeClaro/50 uppercase font-bold mt-3 tracking-widest">Seg</p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <section class="section section-muted"><div class="container split"><div><span class="eyebrow">Certificado</span><h2>Conclusão documentada pela ARCAMBE.</h2><p>Certificado de conclusão emitido pela ARCAMBE após participação e entrega das actividades definidas.</p></div><div class="note-panel"><h3>Condições de pagamento</h3><p>O formulário não exige pagamento imediato. A equipa ARCAMBE contacta o candidato para confirmar vaga, método de pagamento e próximos passos.</p><p><strong>Prazo de inscrição:</strong> 21 de Agosto de 2026</p></div></div></section>
+    <section id="inscricao" class="section section-muted registration-section"><div class="container contact-layout"><aside class="contact-aside"><span class="eyebrow">Inscrição</span><h2>Mapeamento Ambiental com QGIS</h2><p><strong>Investimento:</strong> 5.680 MT<br><strong>Datas:</strong> 24 de Agosto a 5 de Setembro de 2026<br><strong>Horário:</strong> Segunda a sexta, 17:00–20:00; sábados, 08:00–12:00<br><strong>Inscrições até:</strong> 21 de Agosto de 2026</p><p>O WhatsApp fica disponível para dúvidas. Para reservar interesse, envie o formulário para a equipa organizar o contacto.</p><a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>Tirar dúvidas por WhatsApp</a></aside><form class="form-panel signup-form" action="/api/contact" method="POST">
+  <input type="hidden" id="curso_input" name="curso" value="Mapeamento Ambiental com QGIS">
+  <input type="hidden" id="course_input" name="course" value="Mapeamento Ambiental com QGIS">
+  <input type="hidden" id="preco_input" name="preco" value="5.680 MT">
+  <input type="hidden" id="price_input" name="price" value="5.680 MT">
+  <input type="hidden" id="landing_page_input" name="landing_page" value="lp-qgis.html">
+  <input type="hidden" name="mensagem" value="Inscrição no curso Mapeamento Ambiental com QGIS">
+  <input type="hidden" name="utm_source" value="">
+  <input type="hidden" name="utm_medium" value="">
+  <input type="hidden" name="utm_campaign" value="">
+  <input type="hidden" name="utm_content" value="">
+  <input type="hidden" name="utm_term" value="">
+  <div class="form-grid lead-form-grid">
+    <label>Nome completo<input type="text" name="name" required placeholder="O seu nome"></label>
+    <label>WhatsApp<input type="tel" name="whatsapp" required placeholder="84 417 2237"></label>
+    <label>E-mail<input type="email" name="email" required placeholder="email@exemplo.com"></label>
+    <label>Instituição <span class="optional-label">opcional</span><input type="text" name="instituicao" placeholder="Onde estuda ou trabalha"></label>
+  </div>
+  <fieldset class="payment-options">
+    <legend>Método de pagamento preferido (opcional)</legend>
+    <label><input type="radio" name="pagamento" value="mpesa"><span>M-Pesa</span></label><label><input type="radio" name="pagamento" value="emola"><span>e-Mola</span></label><label><input type="radio" name="pagamento" value="paypal"><span>PayPal</span></label><label><input type="radio" name="pagamento" value="cartao"><span>Cartão</span></label>
+  </fieldset>
+  <div id="investimento" class="price-note"><span>Investimento do curso</span><strong>5.680 MT</strong><small>Preço confirmado para a Nova edição 2026. A equipa confirma dados de pagamento após receber o formulário.</small></div>
+  <p class="consent-note">Ao enviar, autoriza a ARCAMBE a usar estes dados para contactar sobre a sua inscrição no curso selecionado.</p>
+  <button class="btn btn-primary" type="submit">Confirmar inscrição</button>
+</form></div></section>
+    <section id="faq" class="section"><div class="section-title"><span>FAQ</span><h2>Perguntas frequentes</h2></div><div class="container faq"><details><summary>Preciso dominar QGIS antes?</summary><p>Não. O curso parte da organização do ambiente de trabalho e evolui para análises ambientais aplicadas.</p></details><details><summary>Vou produzir mapas durante o curso?</summary><p>Sim. A componente prática é central e os participantes trabalham em produtos cartográficos ao longo das aulas.</p></details><details><summary>O Google Earth substitui o QGIS?</summary><p>Não. O Google Earth é usado como apoio visual e de referência; o processamento e a produção técnica ficam no QGIS.</p></details></div></section>
+    <section class="cta-band final-course-cta"><div class="container"><h2>Pronto para reservar a sua inscrição?</h2><p>Envie os seus dados essenciais e a equipa ARCAMBE confirma disponibilidade, pagamento e próximos passos.</p><a class="btn btn-light" href="#inscricao">Inscrever-me — 5.680 MT</a></div></section>
+    <a class="mobile-sticky-cta" href="#inscricao">Inscrever-me — 5.680 MT</a></main><section class="footer-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,64 C170,18 326,98 518,58 C725,15 887,3 1065,42 C1228,78 1324,95 1440,53 L1440,110 L0,110 Z"></path></svg>
 </section>
-
-<script>
-    // DEFINE A DATA FINAL (Ajuste aqui para a data real do curso)
-    const targetDate = new Date("April 30, 2026 23:59:59").getTime();
-
-    function updateTimer() {
-        const now = new Date().getTime();
-        const diff = targetDate - now;
-
-        if (diff > 0) {
-            const d = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const m = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const s = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = d.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = h.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = m.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = s.toString().padStart(2, '0');
-        } else {
-            // Caso o tempo acabe
-            document.getElementById("days").innerText = "00";
-            document.getElementById("hours").innerText = "00";
-            document.getElementById("minutes").innerText = "00";
-            document.getElementById("seconds").innerText = "00";
-        }
-    }
-
-    // Atualiza a cada segundo
-    setInterval(updateTimer, 1000);
-    updateTimer(); // Chama imediata para não começar em 00
-</script>
-
-<!-- PAIN SECTION -->
-<section class="py-24 px-6 bg-gray-950 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-arcambeEscuro/30 to-transparent pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Reconhece alguma destas situa&#231;&#245;es?</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">3 Problemas que o <span class="text-arcambeClaro">QGIS Resolve</span></h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Se se identifica com pelo menos um destes problemas, este curso foi feito especialmente para si.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-panel rounded-3xl p-8 group hover:border-red-500/40 transition-all duration-500 relative overflow-hidden">
-                <div class="absolute inset-0 bg-red-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-red-900/40 flex items-center justify-center mb-6"><i class="fa-solid fa-clock text-2xl text-red-400"></i></div>
-                    <span class="text-red-400 font-black text-xs uppercase tracking-widest">Problema #1</span>
-                    <h3 class="text-xl font-black mt-3 mb-4 leading-snug">Fazer mapas manualmente com horas e horas de trabalho</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Produzir mapas no Excel ou Corel leva horas e o resultado &#233; amador. Com QGIS, o que demorava 8 horas, demora 20 minutos &#8212; com qualidade profissional.</p>
-                    <div class="mt-6 p-4 bg-arcambeVerde/10 rounded-xl border border-arcambeVerde/20"><p class="text-arcambeClaro text-xs font-bold"><i class="fa-solid fa-check mr-2"></i>QGIS resolve: Automatize a produ&#231;&#227;o cartogr&#225;fica.</p></div>
-                </div>
-            </div>
-            <div class="glass-panel rounded-3xl p-8 group hover:border-orange-500/40 transition-all duration-500 relative overflow-hidden">
-                <div class="absolute inset-0 bg-orange-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-orange-900/40 flex items-center justify-center mb-6"><i class="fa-solid fa-users-gear text-2xl text-orange-400"></i></div>
-                    <span class="text-orange-400 font-black text-xs uppercase tracking-widest">Problema #2</span>
-                    <h3 class="text-xl font-black mt-3 mb-4 leading-snug">Depender de outros para an&#225;lises espaciais dos seus dados</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Cada vez que precisa de uma an&#225;lise territorial, tem de contratar algu&#233;m ou esperar semanas. Isso trava projetos, aumenta custos e retira o controlo sobre o trabalho.</p>
-                    <div class="mt-6 p-4 bg-arcambeVerde/10 rounded-xl border border-arcambeVerde/20"><p class="text-arcambeClaro text-xs font-bold"><i class="fa-solid fa-check mr-2"></i>QGIS resolve: Fa&#231;a as suas pr&#243;prias an&#225;lises com autonomia.</p></div>
-                </div>
-            </div>
-            <div class="glass-panel rounded-3xl p-8 group hover:border-yellow-500/40 transition-all duration-500 relative overflow-hidden">
-                <div class="absolute inset-0 bg-yellow-900/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
-                <div class="relative z-10">
-                    <div class="w-16 h-16 rounded-2xl bg-yellow-900/40 flex items-center justify-center mb-6"><i class="fa-solid fa-chart-line text-2xl text-yellow-400"></i></div>
-                    <span class="text-yellow-400 font-black text-xs uppercase tracking-widest">Problema #3</span>
-                    <h3 class="text-xl font-black mt-3 mb-4 leading-snug">Perder oportunidades por n&#227;o ter habilidades SIG no curr&#237;culo</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed">Vagas em ONGs, governo, minera&#231;&#227;o e consultoria pedem SIG. Sem essa compet&#234;ncia, fica para tr&#225;s enquanto outros profissionais avan&#231;am na carreira.</p>
-                    <div class="mt-6 p-4 bg-arcambeVerde/10 rounded-xl border border-arcambeVerde/20"><p class="text-arcambeClaro text-xs font-bold"><i class="fa-solid fa-check mr-2"></i>QGIS resolve: Destaque-se com uma habilidade de alta procura.</p></div>
-                </div>
-            </div>
-        </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="logo.png" alt="ARCAMBE"><span>ARCAMBE</span></a>
+      <p>ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Consultoria ambiental, SIG, sensoriamento remoto, resíduos, HST e formação técnica em Moçambique.</p>
     </div>
-</section>
-
-<!-- MODULES -->
-<section id="programa" class="py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">O que vai aprender</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Programa Completo em <span class="text-arcambeVerde">6 M&#243;dulos</span></h2>
-            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Cada m&#243;dulo foi desenhado para lev&#225;-lo progressivamente do b&#225;sico ao n&#237;vel profissional &#8212; com exerc&#237;cios pr&#225;ticos reais do mercado mo&#231;ambicano.</p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="module-card bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-2xl">
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0"><span class="text-white font-black text-lg">01</span></div>
-                    <div><span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest">M&#243;dulo 1</span><h3 class="font-black text-arcambeEscuro text-xl">Fundamentos do QGIS</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Instala&#231;&#227;o e interface do QGIS</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Sistemas de refer&#234;ncia de coordenadas</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Importar e gerir dados geogr&#225;ficos</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Plugins essenciais para Mo&#231;ambique</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeVerde"></i>4 aulas &middot; ~3 horas</div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-2xl">
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0"><span class="text-white font-black text-lg">02</span></div>
-                    <div><span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest">M&#243;dulo 2</span><h3 class="font-black text-arcambeEscuro text-xl">Dados Vetoriais</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Pontos, linhas e pol&#237;gonos</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Digitaliza&#231;&#227;o e edi&#231;&#227;o de fei&#231;&#245;es</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Tabelas de atributos e consultas</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Geoprocessamento vetorial</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeVerde"></i>5 aulas &middot; ~4 horas</div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-2xl">
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeVerde flex items-center justify-center shrink-0"><span class="text-white font-black text-lg">03</span></div>
-                    <div><span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest">M&#243;dulo 3</span><h3 class="font-black text-arcambeEscuro text-xl">Dados Raster</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Imagens de sat&#233;lite e MDT</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Classifica&#231;&#227;o de uso do solo</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>&#193;lgebra de mapas e calculadora raster</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>&#205;ndices de vegeta&#231;&#227;o (NDVI)</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeVerde"></i>5 aulas &middot; ~4 horas</div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-2xl">
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeEscuro flex items-center justify-center shrink-0"><span class="text-arcambeClaro font-black text-lg">04</span></div>
-                    <div><span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest">M&#243;dulo 4</span><h3 class="font-black text-arcambeEscuro text-xl">An&#225;lise Espacial</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Buffer, overlay e intersec&#231;&#227;o</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>An&#225;lise de redes e rotas</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Interpola&#231;&#227;o espacial (Kriging)</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>An&#225;lise de aptid&#227;o territorial</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeVerde"></i>6 aulas &middot; ~5 horas</div>
-            </div>
-            <div class="module-card bg-gray-50 rounded-[2.5rem] p-8 border border-gray-100 hover:border-arcambeVerde/30 hover:shadow-2xl">
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeEscuro flex items-center justify-center shrink-0"><span class="text-arcambeClaro font-black text-lg">05</span></div>
-                    <div><span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest">M&#243;dulo 5</span><h3 class="font-black text-arcambeEscuro text-xl">Cartografia Profissional</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-600">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Composi&#231;&#227;o de mapas no Print Layout</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Simbologia e estilo de camadas</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Legendas, norte e escala gr&#225;fica</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Exporta&#231;&#227;o para relat&#243;rios e PDFs</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeVerde"></i>5 aulas &middot; ~4 horas</div>
-            </div>
-            <div class="module-card bg-arcambeEscuro rounded-[2.5rem] p-8 border border-arcambeVerde/30 hover:shadow-2xl relative overflow-hidden">
-                <div class="absolute top-4 right-4"><span class="bg-arcambeClaro text-arcambeEscuro px-3 py-1 rounded-full text-[9px] font-black uppercase tracking-widest">Culmina&#231;&#227;o</span></div>
-                <div class="flex items-start gap-4 mb-6">
-                    <div class="w-14 h-14 rounded-2xl bg-arcambeClaro flex items-center justify-center shrink-0"><span class="text-arcambeEscuro font-black text-lg">06</span></div>
-                    <div><span class="text-arcambeClaro text-xs font-bold uppercase tracking-widest">M&#243;dulo 6</span><h3 class="font-black text-white text-xl">Projeto Final Real</h3></div>
-                </div>
-                <ul class="space-y-2 text-sm text-gray-300">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Projeto completo de A a Z</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Dados reais de Mo&#231;ambique</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Relat&#243;rio t&#233;cnico SIG</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-arcambeClaro text-xs"></i>Apresenta&#231;&#227;o para avalia&#231;&#227;o final</li>
-                </ul>
-                <div class="mt-6 text-xs text-gray-400 font-semibold uppercase tracking-widest flex items-center gap-2"><i class="fa-regular fa-clock text-arcambeClaro"></i>4 aulas &middot; Projeto pr&#225;tico</div>
-            </div>
-        </div>
+    <div>
+      <h2>Serviços</h2>
+      <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
     </div>
-</section>
-
-<!-- INSTRUCTOR -->
-<section class="py-24 px-6 bg-arcambeEscuro text-white overflow-hidden relative">
-    <div class="max-w-5xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Quem vai ensinar</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">O Seu Instrutor</h2>
-        </div>
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="flex justify-center">
-                <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-br from-arcambeClaro/30 to-arcambeVerde/20 rounded-[3rem] blur-2xl"></div>
-                    <img src="Francisco.png" alt="Francisco Manguene &#8212; Instrutor QGIS ARCAMBE" class="relative w-72 h-80 object-cover object-top rounded-[2.5rem] border-2 border-arcambeVerde/40 shadow-2xl">
-                    <div class="absolute -bottom-4 -right-4 bg-arcambeClaro text-arcambeEscuro px-4 py-2 rounded-2xl font-black text-xs uppercase tracking-widest shadow-xl"><i class="fa-solid fa-graduation-cap mr-1"></i>UEM</div>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <div>
-                    <h3 class="text-3xl font-black">Francisco Manguene</h3>
-                    <p class="text-arcambeClaro font-bold uppercase tracking-widest text-sm mt-1">Especialista SIG &amp; Consultor Ambiental</p>
-                </div>
-                <p class="text-gray-300 leading-relaxed text-lg">Fundador da ARCAMBE, Francisco &#233; especialista em Sistemas de Informa&#231;&#227;o Geogr&#225;fica e Avalia&#231;&#227;o de Impacto Ambiental, com forma&#231;&#227;o na <strong class="text-white">Universidade Eduardo Mondlane (UEM)</strong>. Com anos de experi&#234;ncia no mercado mo&#231;ambicano, j&#225; formou centenas de profissionais das &#225;reas de ambiente, planeamento e engenharia.</p>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass-panel rounded-2xl p-4 text-center"><span class="text-3xl font-black text-arcambeClaro">+5</span><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Anos de experi&#234;ncia</p></div>
-                    <div class="glass-panel rounded-2xl p-4 text-center"><span class="text-3xl font-black text-arcambeClaro">+150</span><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Profissionais formados</p></div>
-                    <div class="glass-panel rounded-2xl p-4 text-center"><span class="text-3xl font-black text-arcambeClaro">UEM</span><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Form. acad&#233;mica</p></div>
-                    <div class="glass-panel rounded-2xl p-4 text-center"><span class="text-3xl font-black text-arcambeClaro">4.9&#9733;</span><p class="text-xs text-gray-400 uppercase tracking-widest mt-1">Avalia&#231;&#227;o dos alunos</p></div>
-                </div>
-                <div class="flex flex-wrap gap-3">
-                    <span class="bg-arcambeVerde/20 border border-arcambeVerde/30 text-arcambeClaro px-4 py-1.5 rounded-full text-xs font-bold">QGIS Expert</span>
-                    <span class="bg-arcambeVerde/20 border border-arcambeVerde/30 text-arcambeClaro px-4 py-1.5 rounded-full text-xs font-bold">Google Earth Engine</span>
-                    <span class="bg-arcambeVerde/20 border border-arcambeVerde/30 text-arcambeClaro px-4 py-1.5 rounded-full text-xs font-bold">Avalia&#231;&#227;o Ambiental</span>
-                    <span class="bg-arcambeVerde/20 border border-arcambeVerde/30 text-arcambeClaro px-4 py-1.5 rounded-full text-xs font-bold">Python GIS</span>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h2>Treinamentos</h2>
+      <a href="lp-qgis.html">Mapeamento Ambiental com QGIS</a><a href="lp-curso-aia.html">Procedimentos de AIA</a><a href="lp-curso-sso.html">Fundamentos de SSO</a><a href="lp-sensoriamento-remoto.html">Sensoriamento Remoto com QGIS</a>
+      <a href="inscricao.html">Inscrição em cursos</a>
     </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="py-24 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">O que dizem os nossos alunos</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Resultados <span class="text-arcambeVerde">Reais</span></h2>
-            <div class="flex justify-center gap-1 mt-4">
-                <i class="fa-solid fa-star text-yellow-400 text-xl"></i><i class="fa-solid fa-star text-yellow-400 text-xl"></i><i class="fa-solid fa-star text-yellow-400 text-xl"></i><i class="fa-solid fa-star text-yellow-400 text-xl"></i><i class="fa-solid fa-star text-yellow-400 text-xl"></i>
-                <span class="ml-2 text-gray-500 font-bold text-sm self-center">4.9 / 5</span>
-            </div>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col">
-                <div class="flex gap-1 mb-4"><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i></div>
-                <i class="fa-solid fa-quote-left text-arcambeVerde/20 text-5xl mb-4"></i>
-                <p class="text-gray-700 leading-relaxed flex-1 italic">"Antes do curso, demorava dias a criar mapas para relat&#243;rios de impacto ambiental. Agora fa&#231;o em poucas horas, com qualidade que impressionou a minha chefia. O investimento valeu cada centavo!"</p>
-                <div class="mt-8 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-arcambeVerde to-arcambeClaro flex items-center justify-center text-white font-black text-lg">A</div>
-                    <div><p class="font-black text-arcambeEscuro">Ana Simone Machava</p><p class="text-xs text-gray-500 uppercase tracking-widest">T&#233;cnica Ambiental &middot; Maputo</p></div>
-                </div>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col">
-                <div class="flex gap-1 mb-4"><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i></div>
-                <i class="fa-solid fa-quote-left text-arcambeVerde/20 text-5xl mb-4"></i>
-                <p class="text-gray-700 leading-relaxed flex-1 italic">"O Francisco explica de forma simples e pr&#225;tica. Aprendi mais em 30 dias do que em dois semestres na universidade. J&#225; coloquei o QGIS no curr&#237;culo e recebi uma proposta de trabalho numa empresa de consultoria."</p>
-                <div class="mt-8 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-arcambeEscuro to-arcambeVerde flex items-center justify-center text-white font-black text-lg">C</div>
-                    <div><p class="font-black text-arcambeEscuro">Carlos Eduardo Nhantumbo</p><p class="text-xs text-gray-500 uppercase tracking-widest">Engenheiro Civil &middot; Beira</p></div>
-                </div>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-lg border border-gray-100 hover:shadow-2xl transition-all duration-500 flex flex-col">
-                <div class="flex gap-1 mb-4"><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i><i class="fa-solid fa-star text-yellow-400"></i></div>
-                <i class="fa-solid fa-quote-left text-arcambeVerde/20 text-5xl mb-4"></i>
-                <p class="text-gray-700 leading-relaxed flex-1 italic">"Trabalho numa ONG e precis&#225;vamos urgentemente de mapas de interven&#231;&#227;o. Ap&#243;s o curso, tornei-me a refer&#234;ncia SIG da organiza&#231;&#227;o. O suporte do Francisco durante e ap&#243;s o curso &#233; excelente!"</p>
-                <div class="mt-8 flex items-center gap-4">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-emerald-500 to-arcambeClaro flex items-center justify-center text-white font-black text-lg">F</div>
-                    <div><p class="font-black text-arcambeEscuro">F&#225;tima Zita Chirindza</p><p class="text-xs text-gray-500 uppercase tracking-widest">Coordenadora ONG &middot; Inhambane</p></div>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h2>Links úteis</h2>
+      <a href="sobre.html">Sobre a ARCAMBE</a>
+      <a href="blog.html">Insights técnicos</a>
+      <a href="orcamento.html">Solicitar orçamento</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-</section>
-
-<!-- PRICING -->
-<section id="inscricao" class="py-24 px-6 bg-gradient-to-br from-arcambeEscuro via-[#0f3d26] to-gray-950 text-white relative overflow-hidden">
-    <div class="absolute -top-40 right-0 w-[600px] h-[600px] bg-arcambeVerde rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
-    <div class="max-w-2xl mx-auto relative z-10">
-        <div class="text-center mb-12">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Garanta a sua vaga</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">Investimento no <span class="text-arcambeClaro">Seu Futuro</span></h2>
+    <div>
+      <h2>Contactos</h2>
+      <a href="mailto:info@arcambe.com"><i class="fa-regular fa-envelope"></i>info@arcambe.com</a>
+      <a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>+258 844 172 237</a>
+      <span>Maputo, Moçambique</span>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <label for="newsletter-email">Newsletter técnica</label>
+        <div class="newsletter-row">
+          <input id="newsletter-email" type="email" name="email" required placeholder="email@exemplo.com">
+          <button type="submit" aria-label="Subscrever"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <div class="bg-white text-gray-900 rounded-[3rem] p-10 shadow-[0_0_80px_rgba(16,160,16,0.2)] border-2 border-arcambeVerde/30">
-            <div class="text-center mb-8">
-                <span class="bg-arcambeClaro text-arcambeEscuro px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-widest inline-block shadow-lg"><i class="fa-solid fa-crown mr-1"></i>Edi&#231;&#227;o Completa &#8212; Melhor Op&#231;&#227;o</span>
-            </div>
-            <h3 class="text-center text-2xl font-black text-arcambeEscuro mb-2">QGIS do Zero ao Profissional</h3>
-            <p class="text-center text-gray-500 text-sm mb-8">Tudo o que precisa para dominar o QGIS e transformar a sua carreira</p>
-            <div class="grid grid-cols-2 gap-4 mb-8">
-                <div class="bg-gray-50 rounded-2xl p-4 text-center"><i class="fa-solid fa-calendar text-arcambeVerde text-xl mb-2 block"></i><p class="font-black text-arcambeEscuro">30 Dias</p><p class="text-xs text-gray-500">Dura&#231;&#227;o do curso</p></div>
-                <div class="bg-gray-50 rounded-2xl p-4 text-center"><i class="fa-solid fa-laptop text-arcambeVerde text-xl mb-2 block"></i><p class="font-black text-arcambeEscuro">Online + Ao Vivo</p><p class="text-xs text-gray-500">Modalidade</p></div>
-                <div class="bg-gray-50 rounded-2xl p-4 text-center"><i class="fa-solid fa-book-open text-arcambeVerde text-xl mb-2 block"></i><p class="font-black text-arcambeEscuro">6 M&#243;dulos</p><p class="text-xs text-gray-500">Conte&#250;do estruturado</p></div>
-                <div class="bg-gray-50 rounded-2xl p-4 text-center"><i class="fa-solid fa-certificate text-arcambeVerde text-xl mb-2 block"></i><p class="font-black text-arcambeEscuro">Certificado</p><p class="text-xs text-gray-500">Reconhecido ARCAMBE</p></div>
-            </div>
-            <div class="space-y-3 mb-8">
-                <p class="font-black text-arcambeEscuro text-xs uppercase tracking-widest mb-4">O que est&#225; inclu&#237;do:</p>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">6 m&#243;dulos com aulas ao vivo e gravadas</span></div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">Exerc&#237;cios pr&#225;ticos com dados de Mo&#231;ambique</span></div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">Projecto final com avalia&#231;&#227;o personalizada</span></div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">Certificado digital ARCAMBE</span></div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">Grupo VIP de suporte no WhatsApp</span></div>
-                <div class="flex items-center gap-3"><i class="fa-solid fa-check-circle text-arcambeClaro"></i><span class="text-sm">Acesso a grava&#231;&#245;es por 3 meses</span></div>
-                <div class="flex items-center gap-3 bg-arcambeClaro/10 p-3 rounded-xl border border-arcambeClaro/20"><i class="fa-solid fa-gift text-arcambeVerde"></i><span class="text-sm font-bold">B&#211;NUS: Mini-curso de Python para SIG</span></div>
-            </div>
-            <a href="inscricao.html" class="btn-arcambe-pulsar w-full bg-arcambeVerde text-white py-5 rounded-2xl font-black uppercase tracking-widest text-sm shadow-xl hover:bg-arcambeEscuro transition block text-center">
-                <i class="fa-solid fa-rocket mr-2"></i>INSCREVER-ME AGORA
-            </a>
-            <div class="mt-8 pt-8 border-t border-gray-100">
-                <p class="text-[10px] font-black uppercase text-gray-400 mb-4 tracking-widest text-center">Aceitamos em Mo&#231;ambique:</p>
-                <div class="flex flex-wrap justify-center gap-8 opacity-70">
-                    <div class="flex flex-col items-center gap-1"><i class="fa-solid fa-mobile-screen-button text-2xl text-red-600"></i><span class="text-[9px] font-bold">M-PESA</span></div>
-                    <div class="flex flex-col items-center gap-1"><i class="fa-solid fa-wallet text-2xl text-orange-500"></i><span class="text-[9px] font-bold">E-MOLA</span></div>
-                    <div class="flex flex-col items-center gap-1"><i class="fa-solid fa-building-columns text-2xl text-blue-800"></i><span class="text-[9px] font-bold">TRANSFER&#202;NCIA</span></div>
-                </div>
-            </div>
-        </div>
-        <p class="text-center text-gray-400 text-xs mt-6 font-light"><i class="fa-solid fa-lock mr-1"></i>Pagamento 100% seguro. D&#250;vidas? Fale connosco via WhatsApp.</p>
+      </form>
     </div>
-</section>
-
-<!-- FAQ -->
-<section class="py-24 px-6 bg-white">
-    <div class="max-w-3xl mx-auto">
-        <div class="text-center mb-16">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Tire as suas d&#250;vidas</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Perguntas <span class="text-arcambeVerde">Frequentes</span></h2>
-        </div>
-        <div class="space-y-4" id="faq-container">
-            <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-6 text-left font-bold text-arcambeEscuro hover:bg-gray-50 transition-colors">
-                    <span>Preciso de experi&#234;ncia pr&#233;via em SIG ou inform&#225;tica?</span>
-                    <i class="fa-solid fa-chevron-down text-arcambeVerde transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer px-6 pb-6"><p class="text-gray-600 leading-relaxed">N&#227;o &#233; necess&#225;ria nenhuma experi&#234;ncia pr&#233;via. O curso come&#231;a do absoluto zero &#8212; desde instalar o QGIS at&#233; &#224;s an&#225;lises mais avan&#231;adas. Basta ter um computador e vontade de aprender.</p></div>
-            </div>
-            <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-6 text-left font-bold text-arcambeEscuro hover:bg-gray-50 transition-colors">
-                    <span>O QGIS &#233; gratuito? Preciso de comprar algum software?</span>
-                    <i class="fa-solid fa-chevron-down text-arcambeVerde transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer px-6 pb-6"><p class="text-gray-600 leading-relaxed">Sim! O QGIS &#233; 100% gratuito e de c&#243;digo aberto. N&#227;o vai pagar nada pelo software. Todos os dados e materiais do curso tamb&#233;m s&#227;o fornecidos gratuitamente.</p></div>
-            </div>
-            <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-6 text-left font-bold text-arcambeEscuro hover:bg-gray-50 transition-colors">
-                    <span>Como funcionam as aulas? S&#227;o ao vivo ou gravadas?</span>
-                    <i class="fa-solid fa-chevron-down text-arcambeVerde transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer px-6 pb-6"><p class="text-gray-600 leading-relaxed">O curso tem aulas ao vivo via Zoom/Google Meet. Todas as sess&#245;es s&#227;o gravadas e ficam dispon&#237;veis por 3 meses. H&#225; tamb&#233;m um grupo de suporte no WhatsApp.</p></div>
-            </div>
-            <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-6 text-left font-bold text-arcambeEscuro hover:bg-gray-50 transition-colors">
-                    <span>O certificado &#233; reconhecido? Posso coloc&#225;-lo no curr&#237;culo?</span>
-                    <i class="fa-solid fa-chevron-down text-arcambeVerde transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer px-6 pb-6"><p class="text-gray-600 leading-relaxed">Sim! Ao concluir o curso e o projecto final, recebe um Certificado de Conclus&#227;o da ARCAMBE SIG &amp; Solu&#231;&#245;es Ambientais, LDA. Pode &#8212; e deve &#8212; colocar no LinkedIn e curr&#237;culo.</p></div>
-            </div>
-            <div class="border border-gray-200 rounded-2xl overflow-hidden">
-                <button onclick="toggleFAQ(this)" class="w-full flex justify-between items-center p-6 text-left font-bold text-arcambeEscuro hover:bg-gray-50 transition-colors">
-                    <span>Quais as formas de pagamento dispon&#237;veis?</span>
-                    <i class="fa-solid fa-chevron-down text-arcambeVerde transition-transform duration-300"></i>
-                </button>
-                <div class="faq-answer px-6 pb-6"><p class="text-gray-600 leading-relaxed">Aceitamos M-Pesa, E-Mola e transfer&#234;ncia banc&#225;ria. O pagamento deve ser efetuado antes do in&#237;cio do curso para garantir a vaga. Em caso de d&#250;vidas, contacte-nos via WhatsApp.</p></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="py-20 px-6 bg-arcambeVerde text-white text-center relative overflow-hidden">
-    <div class="absolute inset-0 opacity-10" style="background:repeating-linear-gradient(45deg,#fff 0,#fff 1px,transparent 0,transparent 50%) 0/20px 20px;"></div>
-    <div class="max-w-3xl mx-auto relative z-10">
-        <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter mb-4">N&#227;o perca esta oportunidade</h2>
-        <p class="text-white/80 text-lg mb-8 max-w-xl mx-auto">As vagas s&#227;o limitadas e enchem rapidamente. Garanta agora o seu lugar e comece a transforma&#231;&#227;o da sua carreira em SIG.</p>
-        <a href="inscricao.html" class="btn-pulsar inline-block bg-white text-arcambeEscuro px-12 py-5 rounded-full font-black uppercase tracking-widest text-sm hover:bg-arcambeEscuro hover:text-white transition-all duration-300 shadow-2xl">
-            <i class="fa-solid fa-rocket mr-2"></i>Garantir a Minha Vaga Agora
-        </a>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gradient-to-br from-gray-950 via-[#063f2b] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
-        <div>
-            <img src="logo.png" class="h-16 mb-8 brightness-200 grayscale opacity-80 hover:opacity-100 transition-opacity duration-300">
-            <p class="text-gray-400 text-sm leading-relaxed font-light">ARCAMBE SIG &amp; Solu&#231;&#245;es Ambientais, LDA.<br>Especialistas em intelig&#234;ncia de dados geogr&#225;ficos e sustentabilidade.</p>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>Contactos</h4>
-            <ul class="space-y-5 text-sm text-gray-300">
-                <li class="flex items-center gap-4"><i class="fa-solid fa-envelope text-arcambeVerde text-lg"></i><a href="mailto:info@arcambe.com" class="hover:text-white transition-colors">info@arcambe.com</a></li>
-                <li class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-arcambeVerde text-lg"></i><a href="https://wa.me/258844172237" class="hover:text-white">+258 844 172 237</a></li>
-                <li class="flex items-start gap-4"><i class="fa-solid fa-map-marker-alt text-arcambeVerde text-lg mt-1"></i><span>Maputo, Mo&#231;ambique</span></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Redes Sociais</h4>
-            <div class="flex gap-4">
-                <a href="https://linkedin.com/company/arcambe-ambiental/" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#0077b5] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-gray-300"></i></a>
-                <a href="https://instagram.com/arcambe.oficial" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-gray-300"></i></a>
-                <a href="https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-youtube text-gray-300"></i></a>
-                <a href="https://facebook.com/profile.php?id=61582065789260" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-gray-300"></i></a>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Newsletter</h4>
-            <form action="/api/newsletter" method="POST" class="flex flex-col gap-3">
-
-
-
-
-
-                <div class="relative"><i class="fa-regular fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i><input type="email" name="email" required placeholder="O teu melhor e-mail" class="w-full bg-white/5 border border-white/10 p-4 pl-12 rounded-xl focus:border-arcambeClaro outline-none transition-all text-sm text-white placeholder-gray-500"></div>
-                <button type="submit" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white p-4 rounded-xl font-black uppercase text-xs tracking-widest hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"><span>Subscrever</span><i class="fa-solid fa-arrow-right"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold relative z-10">
-        <p>&#169; 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
-        <p class="mt-4 md:mt-0 flex items-center gap-2">Mo&#231;ambique <span class="w-1 h-1 bg-arcambeClaro rounded-full"></span> Precis&#227;o Digital</p>
-    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Todos os direitos reservados.</p>
+    <p>Precisão técnica para território, ambiente e operações.</p>
+  </div>
 </footer>
-
-<a href="https://wa.me/258844172237?text=Ol%C3%A1!+Quero+saber+mais+sobre+o+curso+QGIS+da+ARCAMBE" class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-<script>
-function toggleFAQ(btn){
-    var answer=btn.nextElementSibling,icon=btn.querySelector('i'),isOpen=answer.classList.contains('open');
-    document.querySelectorAll('.faq-answer.open').forEach(function(el){el.classList.remove('open');});
-    document.querySelectorAll('#faq-container button i').forEach(function(ic){ic.style.transform='';});
-    if(!isOpen){answer.classList.add('open');icon.style.transform='rotate(180deg)';}
-}
-</script>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    if(document.getElementById("days")) {
-        // Check if a target date is already saved in localStorage to persist the 30-day countdown
-        let targetDateStr = localStorage.getItem('arcambe_countdown_target');
-        let countdownDate;
-
-        if (targetDateStr) {
-            countdownDate = new Date(parseInt(targetDateStr));
-            // If the date is in the past, reset it
-            if (countdownDate.getTime() < new Date().getTime()) {
-                countdownDate = new Date();
-                countdownDate.setDate(countdownDate.getDate() + 30);
-                localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
-            }
-        } else {
-            countdownDate = new Date();
-            countdownDate.setDate(countdownDate.getDate() + 30);
-            localStorage.setItem('arcambe_countdown_target', countdownDate.getTime().toString());
-        }
-
-        let timer = setInterval(function() {
-            let now = new Date().getTime();
-            let distance = countdownDate.getTime() - now;
-
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById("days").innerHTML = "00";
-                document.getElementById("hours").innerHTML = "00";
-                document.getElementById("minutes").innerHTML = "00";
-                document.getElementById("seconds").innerHTML = "00";
-                return;
-            }
-
-            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            let daysEl = document.getElementById("days");
-            if (daysEl) {
-                daysEl.innerHTML = days < 10 ? "0" + days : days;
-                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
-                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
-                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
-            }
-        }, 1000);
-    }
-});
-</script>
-<script src="/assets/js/arcambe-2026.js" defer></script>
-<script src="/assets/js/success.js"></script>
-
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/success.js" defer></script>
 </body>
-
 </html>

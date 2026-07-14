@@ -1,309 +1,145 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+<!doctype html>
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
-    <title>Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        heading: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        arcambeVerde: '#107048',
-                        arcambeClaro: '#10a010',
-                        arcambeEscuro: '#063f2b',
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                    },
-                    keyframes: {
-                        float: {
-                            '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-10px)' },
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.1); }
-        .glass-panel-dark { background: rgba(0, 0, 0, 0.3); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #f1f1f1; }
-        ::-webkit-scrollbar-thumb { background: #107048; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #063f2b; }
-        h1, h2, h3, h4, h5, h6, .font-heading { font-family: 'Outfit', sans-serif; }
-    </style>
-    <link rel="canonical" href="https://arcambe.com/orcamento.html">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
-    <meta property="og:locale" content="pt_PT">
-    <meta property="og:site_name" content="ARCAMBE">
-    <meta property="og:title" content="Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE">
-    <meta property="og:description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
-    <meta property="og:url" content="https://arcambe.com/orcamento.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arcambe.com/slide_1.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE">
-    <meta name="twitter:description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
-    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://arcambe.com/",
-      "logo": "https://arcambe.com/logo.png",
-      "email": "info@arcambe.com",
-      "telephone": "+258844172237",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Maputo",
-        "addressCountry": "MZ"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f3d34">
+  <meta name="author" content="ARCAMBE – SIG & Soluções Ambientais, SU, LDA">
+  <title>Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="canonical" href="https://arcambe.com/orcamento.html">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="ARCAMBE">
+  <meta property="og:title" content="Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE">
+  <meta property="og:description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
+  <meta property="og:url" content="https://arcambe.com/orcamento.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://arcambe.com/slide_1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE">
+  <meta name="twitter:description" content="Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.">
+  <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arcambe.com/#organization",
+        "name": "ARCAMBE – SIG & Soluções Ambientais, SU, LDA",
+        "url": "https://arcambe.com/",
+        "logo": "https://arcambe.com/logo.png",
+        "email": "info@arcambe.com",
+        "telephone": "+258 844 172 237",
+        "address": { "@type": "PostalAddress", "addressLocality": "Maputo", "addressCountry": "MZ" },
+        "sameAs": ["https://wa.me/258844172237"]
       },
-      "sameAs": [
-        "https://linkedin.com/company/arcambe-ambiental/",
-        "https://instagram.com/arcambe.oficial",
-        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
-        "https://facebook.com/profile.php?id=61582065789260"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arcambe.com/#website",
-      "name": "ARCAMBE",
-      "url": "https://arcambe.com/",
-      "publisher": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "inLanguage": "pt-PT"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://arcambe.com/orcamento.html#webpage",
-      "url": "https://arcambe.com/orcamento.html",
-      "name": "Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE",
-      "description": "Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.",
-      "isPartOf": {
-        "@id": "https://arcambe.com/#website"
-      },
-      "about": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://arcambe.com/slide_1.png"
-      },
-      "inLanguage": "pt-PT"
-    }
-  ]
-}
-    </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+      {
+        "@type": "WebPage",
+        "@id": "https://arcambe.com/orcamento.html#webpage",
+        "url": "https://arcambe.com/orcamento.html",
+        "name": "Solicitar Orçamento | Consultoria Ambiental e SIG ARCAMBE",
+        "description": "Solicite um orçamento para serviços de SIG, drones, avaliação ambiental, licenciamento, resíduos e HST com a equipa técnica da ARCAMBE.",
+        "isPartOf": { "@id": "https://arcambe.com/#website" },
+        "about": { "@id": "https://arcambe.com/#organization" },
+        "inLanguage": "pt"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="arcambe-refresh bg-gray-50 text-gray-800 font-sans">
-
-    <nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="flex items-center gap-4 group">
-                <div class="relative">
-                    <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                    <img src="logo.png" alt="ARCAMBE Logo" class="h-16 md:h-20 relative z-10 transition-transform duration-500 group-hover:scale-105 group-hover:rotate-1">
-                </div>
-                <div class="flex flex-col">
-                    <span class="text-2xl md:text-3xl font-heading font-black text-arcambeEscuro tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde">ARCAMBE</span>
-                    <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG & Soluções Ambientais, LDA</span>
-                </div>
-            </a>
-
-            <!-- Hamburger Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden flex flex-col justify-center gap-[5px] p-2 rounded-xl hover:bg-gray-100 transition-colors duration-200 z-50" aria-label="Abrir menu">
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb1"></span>
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300" id="hb2"></span>
-                <span class="w-6 h-[2px] bg-arcambeEscuro rounded-full transition-all duration-300 origin-center" id="hb3"></span>
-            </button>
-        </div>
-
-        <!-- Menu Mobile Dropdown -->
-        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-100 bg-white/95 backdrop-blur-xl shadow-xl">
-            <div class="px-5 py-4 flex flex-col gap-1">
-                <a href="index.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-house text-arcambeVerde w-5 text-center"></i> Home
-                </a>
-                <a href="sobre.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-circle-info text-arcambeVerde w-5 text-center"></i> Sobre
-                </a>
-                <a href="servicos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-briefcase text-arcambeVerde w-5 text-center"></i> Serviços
-                </a>
-                <a href="blog.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-gray-700 font-semibold text-sm hover:bg-arcambeVerde/8 hover:text-arcambeVerde transition-all duration-200">
-                    <i class="fa-solid fa-newspaper text-arcambeVerde w-5 text-center"></i> Blog
-                </a>
-                <a href="treinamentos.html" class="flex items-center gap-3 py-3 px-4 rounded-xl text-orange-600 font-semibold text-sm hover:bg-orange-50 transition-all duration-200">
-                    <i class="fa-solid fa-graduation-cap text-orange-500 w-5 text-center"></i> Treinamentos
-                </a>
-                <div class="h-px bg-gray-100 my-2"></div>
-                <a href="contacto.html" class="flex items-center justify-center gap-2 bg-gradient-to-r from-arcambeVerde to-emerald-500 text-white py-3 px-6 rounded-xl font-bold text-sm uppercase tracking-wider shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
-                    <i class="fa-solid fa-envelope"></i> Contacto
-                </a>
-            </div>
-        </div>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a><header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Página inicial ARCAMBE">
+      <img src="logo.png" alt="ARCAMBE">
+      <span><strong>ARCAMBE</strong><small>SIG & Soluções Ambientais, SU, LDA</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="index.html" >Home</a><a href="sobre.html" >Sobre</a><a href="servicos.html" >Serviços</a><a href="treinamentos.html" >Treinamentos</a><a href="blog.html" >Insights</a><a href="contacto.html" >Contacto</a>
+      <div class="nav-dropdown">
+        <button type="button">Áreas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel"><a href="lp-sig.html"><i class="fa-solid fa-map-location-dot"></i><span>SIG, mapeamento e geodados</span></a><a href="lp-aia.html"><i class="fa-solid fa-leaf"></i><span>Avaliação ambiental e licenciamento</span></a><a href="lp-residuos.html"><i class="fa-solid fa-recycle"></i><span>Gestão de resíduos</span></a><a href="lp-hst.html"><i class="fa-solid fa-helmet-safety"></i><span>HST e segurança ocupacional</span></a></div>
+      </div>
+      <div class="nav-dropdown">
+        <button type="button">Cursos <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel"><a href="lp-qgis.html"><i class="fa-solid fa-graduation-cap"></i><span>Mapeamento Ambiental com QGIS</span></a><a href="lp-curso-aia.html"><i class="fa-solid fa-graduation-cap"></i><span>Procedimentos de AIA</span></a><a href="lp-curso-sso.html"><i class="fa-solid fa-graduation-cap"></i><span>Fundamentos de SSO</span></a><a href="lp-sensoriamento-remoto.html"><i class="fa-solid fa-graduation-cap"></i><span>Sensoriamento Remoto com QGIS</span></a></div>
+      </div>
     </nav>
-    <script>
-        // Mobile menu toggle
-        (function(){
-            var btn = document.getElementById('mobile-menu-btn');
-            var menu = document.getElementById('mobile-menu');
-            var hb1 = document.getElementById('hb1');
-            var hb2 = document.getElementById('hb2');
-            var hb3 = document.getElementById('hb3');
-            if(!btn) return;
-            btn.addEventListener('click', function(){
-                var isOpen = !menu.classList.contains('hidden');
-                menu.classList.toggle('hidden');
-                if(!isOpen){
-                    hb1.style.transform = 'rotate(45deg) translate(5px, 5px)';
-                    hb2.style.opacity = '0';
-                    hb3.style.transform = 'rotate(-45deg) translate(5px, -5px)';
-                } else {
-                    hb1.style.transform = '';
-                    hb2.style.opacity = '';
-                    hb3.style.transform = '';
-                }
-            });
-            menu.querySelectorAll('a').forEach(function(a){
-                a.addEventListener('click', function(){
-                    menu.classList.add('hidden');
-                    hb1.style.transform = '';
-                    hb2.style.opacity = '';
-                    hb3.style.transform = '';
-                });
-            });
-        })();
-    </script>
-    <main class="py-24 px-6 relative overflow-hidden bg-gray-50 min-h-screen flex items-center">
-        <div class="absolute top-0 right-0 w-[40rem] h-[40rem] bg-arcambeVerde/5 rounded-full blur-[100px] -z-0"></div>
-        <div class="absolute bottom-0 left-0 w-[30rem] h-[30rem] bg-arcambeClaro/5 rounded-full blur-[80px] -z-0"></div>
-
-        <div class="max-w-5xl mx-auto bg-white rounded-[2.5rem] shadow-[0_20px_60px_rgba(0,0,0,0.05)] overflow-hidden border border-gray-100 grid md:grid-cols-3 relative z-10 w-full">
-
-            <div class="bg-gradient-to-br from-[#063f2b] to-gray-900 p-12 text-white relative overflow-hidden">
-                <div class="absolute -top-10 -right-10 w-32 h-32 bg-arcambeVerde rounded-full blur-[50px] opacity-20"></div>
-                <div class="relative z-10 flex flex-col h-full justify-between">
-                    <div>
-                        <h1 class="text-3xl font-heading font-black uppercase tracking-tight leading-tight">Vamos trabalhar <span class="text-arcambeClaro">juntos?</span></h1>
-                        <p class="text-gray-400 text-sm mt-4 leading-relaxed font-light">Conte-nos sobre o seu projeto. A nossa equipa técnica responderá com uma proposta detalhada em até 48h.</p>
-                    </div>
-
-                    <div class="space-y-6 mt-12 mb-12">
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
-                                <i class="fa-solid fa-envelope"></i>
-                            </div>
-                            <span class="text-sm font-light">comercial@arcambe.com</span>
-                        </div>
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
-                                <i class="fa-solid fa-phone"></i>
-                            </div>
-                            <span class="text-sm font-light">+258 84 417 2237</span>
-                        </div>
-                        <div class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full glass-panel-dark flex items-center justify-center text-arcambeVerde group-hover:bg-arcambeVerde group-hover:text-white transition-all duration-300">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <span class="text-xs font-bold uppercase tracking-widest text-arcambeClaro">Maputo, Moçambique</span>
-                        </div>
-                    </div>
-
-                    <div class="pt-8 border-t border-white/10 italic text-[11px] text-gray-500 leading-relaxed font-light">
-                        "Soluções geoespaciais e ambientais com rigor científico e inovação tecnológica."
-                    </div>
-                </div>
-            </div>
-
-            <div class="md:col-span-2 p-10 md:p-14 bg-white">
-                <form action="/api/contact" method="POST" class="space-y-8">
-
-
-
-
-
-
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Nome / Empresa</label>
-                            <input type="text" name="cliente" required placeholder="Sua Empresa" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">E-mail Corporativo</label>
-                            <input type="email" name="email" required placeholder="contacto@empresa.com" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light">
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Serviço Desejado</label>
-                        <div class="relative">
-                            <select name="service" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all appearance-none font-light">
-                                <option value="mapeamento">Mapeamento e Drones (UAV)</option>
-                                <option value="monitoramento">Monitoramento Ambiental</option>
-                                <option value="aia">Avaliação de Impacto Ambiental (AIA)</option>
-                                <option value="sig">Implementação de SIG Corporativo</option>
-                                <option value="outro">Outros Serviços Ambientais</option>
-                            </select>
-                            <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none text-xs"></i>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2">
-                        <label class="text-[10px] font-bold uppercase text-gray-500 tracking-widest">Descrição do Projeto / Localização</label>
-                        <textarea name="detalhes" rows="5" placeholder="Descreva brevemente a área e o objetivo do serviço..." class="w-full p-4 bg-gray-50 border border-gray-200 rounded-xl focus:border-arcambeVerde focus:ring-4 focus:ring-arcambeVerde/10 focus:bg-white outline-none transition-all font-light resize-none"></textarea>
-                    </div>
-
-                    <div class="pt-4">
-                        <button type="submit" class="w-full bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white py-5 rounded-xl font-heading font-black uppercase tracking-widest text-sm shadow-[0_10px_30px_rgba(16,160,16,0.22)] hover:-translate-y-1 hover:shadow-[0_15px_40px_rgba(16,160,16,0.28)] transition-all duration-300 flex justify-center items-center gap-3">
-                            Enviar Solicitação <i class="fa-regular fa-paper-plane text-lg"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
+    <a class="btn btn-primary nav-cta" href="orcamento.html">Solicitar orçamento</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel" hidden>
+    <a href="index.html">Home</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a><a href="treinamentos.html">Treinamentos</a><a href="blog.html">Insights</a><a href="contacto.html">Contacto</a>
+    <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    <a href="lp-qgis.html">Mapeamento Ambiental com QGIS</a><a href="lp-curso-aia.html">Procedimentos de AIA</a><a href="lp-curso-sso.html">Fundamentos de SSO</a><a href="lp-sensoriamento-remoto.html">Sensoriamento Remoto com QGIS</a>
+    <a class="btn btn-primary" href="orcamento.html">Solicitar orçamento</a>
+  </nav>
+</header><main id="conteudo"><section class="page-hero"><div class="container narrow"><nav class="breadcrumb"><a href="index.html">Home</a><span>Orçamento</span></nav><h1>Solicite uma proposta técnica.</h1><p>Descreva o serviço pretendido e os dados já disponíveis. A ARCAMBE mantém o mesmo fluxo de submissão por e-mail para responder ao pedido.</p></div></section>
+  <section class="section"><div class="container contact-layout"><aside class="contact-aside"><h2>Antes de enviar</h2><p>Inclua, se possível, localização, sector, área aproximada, tipo de documento necessário e prazo esperado.</p><ul class="check-list"><li><i class="fa-solid fa-check"></i><span>SIG e mapeamento</span></li><li><i class="fa-solid fa-check"></i><span>AIA e licenciamento</span></li><li><i class="fa-solid fa-check"></i><span>Resíduos e HST</span></li></ul></aside><form class="form-panel" action="/api/contact" method="POST">
+  <div class="form-grid">
+    <label>Empresa ou cliente<input type="text" name="cliente" required placeholder="Nome da empresa ou responsável"></label>
+    <label>E-mail<input type="email" name="email" required placeholder="contacto@empresa.com"></label>
+    <label>Telefone / WhatsApp<input type="tel" name="telefone" placeholder="+258"></label>
+    <label>Serviço desejado<select name="service"><option value="mapeamento" >Mapeamento e Drones (UAV)</option><option value="monitoramento" >Monitoramento Ambiental</option><option value="aia" >Avaliação de Impacto Ambiental (AIA)</option><option value="sig" >Implementação de SIG Corporativo</option><option value="residuos" >Gestão de Resíduos</option><option value="hst" >HST e Segurança Ocupacional</option><option value="outro" >Outros Serviços Ambientais</option></select></label>
+  </div>
+  <label>Detalhes do pedido<textarea name="detalhes" rows="6" placeholder="Descreva a localização, objectivo, prazos e documentos já disponíveis."></textarea></label>
+  <button class="btn btn-primary" type="submit">Solicitar proposta</button>
+</form></div></section></main><section class="footer-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,64 C170,18 326,98 518,58 C725,15 887,3 1065,42 C1228,78 1324,95 1440,53 L1440,110 L0,110 Z"></path></svg>
+</section>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="logo.png" alt="ARCAMBE"><span>ARCAMBE</span></a>
+      <p>ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Consultoria ambiental, SIG, sensoriamento remoto, resíduos, HST e formação técnica em Moçambique.</p>
+    </div>
+    <div>
+      <h2>Serviços</h2>
+      <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    </div>
+    <div>
+      <h2>Treinamentos</h2>
+      <a href="lp-qgis.html">Mapeamento Ambiental com QGIS</a><a href="lp-curso-aia.html">Procedimentos de AIA</a><a href="lp-curso-sso.html">Fundamentos de SSO</a><a href="lp-sensoriamento-remoto.html">Sensoriamento Remoto com QGIS</a>
+      <a href="inscricao.html">Inscrição em cursos</a>
+    </div>
+    <div>
+      <h2>Links úteis</h2>
+      <a href="sobre.html">Sobre a ARCAMBE</a>
+      <a href="blog.html">Insights técnicos</a>
+      <a href="orcamento.html">Solicitar orçamento</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+    <div>
+      <h2>Contactos</h2>
+      <a href="mailto:info@arcambe.com"><i class="fa-regular fa-envelope"></i>info@arcambe.com</a>
+      <a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>+258 844 172 237</a>
+      <span>Maputo, Moçambique</span>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <label for="newsletter-email">Newsletter técnica</label>
+        <div class="newsletter-row">
+          <input id="newsletter-email" type="email" name="email" required placeholder="email@exemplo.com">
+          <button type="submit" aria-label="Subscrever"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-    </main>
-
-    <footer class="bg-white py-12 px-6 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8 text-center md:text-left">
-            <div class="flex flex-col md:flex-row items-center gap-6">
-                <img src="logo.png" alt="ARCAMBE" class="h-12 opacity-80 hover:opacity-100 transition-opacity">
-                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">
-                    ARCAMBE SIG & Soluções Ambientais, LDA.
-                </p>
-            </div>
-            <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest">© 2026 ARCAMBE. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-<script src="/assets/js/arcambe-2026.js" defer></script>
-<script src="/assets/js/success.js"></script>
-
+      </form>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Todos os direitos reservados.</p>
+    <p>Precisão técnica para território, ambiente e operações.</p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/success.js" defer></script>
 </body>
 </html>

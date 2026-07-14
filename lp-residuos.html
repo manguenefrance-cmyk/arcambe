@@ -1,519 +1,150 @@
-<!DOCTYPE html>
-<html lang="pt-pt">
+<!doctype html>
+<html lang="pt">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
-    <meta name="keywords" content="PGRS Moçambique, Gestão de Resíduos, Economia Circular, GTRS, MITA, Sustentabilidade, ARCAMBE">
-    <title>Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique</title>
-    <link rel="icon" type="image/jpeg" href="/favicon.jpg">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter','sans-serif'], heading: ['Outfit','sans-serif'] },
-                    colors: { arcambeVerde: '#107048', arcambeClaro: '#10a010', arcambeEscuro: '#063f2b' }
-                }
-            }
-        }
-    </script>
-    <style>
-        .glass-panel{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
-        .glass-panel-dark{background:rgba(0,0,0,.3);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.05)}
-        ::-webkit-scrollbar{width:8px}::-webkit-scrollbar-track{background:#f1f1f1}
-        ::-webkit-scrollbar-thumb{background:#107048;border-radius:4px}::-webkit-scrollbar-thumb:hover{background:#063f2b}
-        h1,h2,h3,h4,h5,h6{font-family:'Outfit',sans-serif}
-        @keyframes pulse-green{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 15px rgba(16,160,16,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,160,16,0)}}
-        .btn-pulsar{animation:pulse-green 2s infinite}
-        @keyframes pulsar-arcambe{0%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,.7)}70%{transform:scale(1.05);box-shadow:0 0 0 20px rgba(16,112,72,0)}100%{transform:scale(1);box-shadow:0 0 0 0 rgba(16,112,72,0)}}
-        .btn-arcambe-pulsar{animation:pulsar-arcambe 2s infinite;display:inline-block;transition:all .3s ease}
-        .btn-arcambe-pulsar:hover{background-color:#063f2b;transform:scale(1.05)}
-        .hero-residuos{background:#04180f;background-image:radial-gradient(ellipse at 10% 50%,rgba(16,112,72,.3) 0%,transparent 60%),radial-gradient(ellipse at 90% 20%,rgba(16,160,16,.08) 0%,transparent 50%)}
-        .grid-overlay{background-image:linear-gradient(rgba(16,112,72,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(16,112,72,.06) 1px,transparent 1px);background-size:60px 60px}
-        .step-card{transition:all .4s ease}.step-card:hover{transform:translateY(-6px)}
-        .risk-card{transition:all .5s ease}.risk-card:hover{transform:scale(1.03)}
-    </style>
-    <link rel="canonical" href="https://arcambe.com/lp-residuos.html">
-    <meta name="robots" content="index, follow, max-image-preview:large">
-    <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
-    <meta property="og:locale" content="pt_PT">
-    <meta property="og:site_name" content="ARCAMBE">
-    <meta property="og:title" content="Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique">
-    <meta property="og:description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
-    <meta property="og:url" content="https://arcambe.com/lp-residuos.html">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://arcambe.com/slide_1.png">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique">
-    <meta name="twitter:description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
-    <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
-    <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
-      "url": "https://arcambe.com/",
-      "logo": "https://arcambe.com/logo.png",
-      "email": "info@arcambe.com",
-      "telephone": "+258844172237",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Maputo",
-        "addressCountry": "MZ"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
+  
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#0f3d34">
+  <meta name="author" content="ARCAMBE – SIG & Soluções Ambientais, SU, LDA">
+  <title>Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique</title>
+  <link rel="icon" type="image/jpeg" href="/favicon.jpg">
+  <link rel="canonical" href="https://arcambe.com/lp-residuos.html">
+  <meta property="og:locale" content="pt_PT">
+  <meta property="og:site_name" content="ARCAMBE">
+  <meta property="og:title" content="Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique">
+  <meta property="og:description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
+  <meta property="og:url" content="https://arcambe.com/lp-residuos.html">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://arcambe.com/slide_1.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique">
+  <meta name="twitter:description" content="Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.">
+  <meta name="twitter:image" content="https://arcambe.com/slide_1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="/assets/css/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://arcambe.com/#organization",
+        "name": "ARCAMBE – SIG & Soluções Ambientais, SU, LDA",
+        "url": "https://arcambe.com/",
+        "logo": "https://arcambe.com/logo.png",
+        "email": "info@arcambe.com",
+        "telephone": "+258 844 172 237",
+        "address": { "@type": "PostalAddress", "addressLocality": "Maputo", "addressCountry": "MZ" },
+        "sameAs": ["https://wa.me/258844172237"]
       },
-      "sameAs": [
-        "https://linkedin.com/company/arcambe-ambiental/",
-        "https://instagram.com/arcambe.oficial",
-        "https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg",
-        "https://facebook.com/profile.php?id=61582065789260"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://arcambe.com/#website",
-      "name": "ARCAMBE",
-      "url": "https://arcambe.com/",
-      "publisher": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "inLanguage": "pt-PT"
-    },
-    {
-      "@type": "WebPage",
-      "@id": "https://arcambe.com/lp-residuos.html#webpage",
-      "url": "https://arcambe.com/lp-residuos.html",
-      "name": "Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique",
-      "description": "Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.",
-      "isPartOf": {
-        "@id": "https://arcambe.com/#website"
-      },
-      "about": {
-        "@id": "https://arcambe.com/#organization"
-      },
-      "primaryImageOfPage": {
-        "@type": "ImageObject",
-        "url": "https://arcambe.com/slide_1.png"
-      },
-      "inLanguage": "pt-PT"
-    }
-  ]
-}
-    </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+      {
+        "@type": "WebPage",
+        "@id": "https://arcambe.com/lp-residuos.html#webpage",
+        "url": "https://arcambe.com/lp-residuos.html",
+        "name": "Gestão de Resíduos e Economia Circular | ARCAMBE Moçambique",
+        "description": "Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.",
+        "isPartOf": { "@id": "https://arcambe.com/#website" },
+        "about": { "@id": "https://arcambe.com/#organization" },
+        "inLanguage": "pt"
+      }
+    ]
+  }
+  </script>
 </head>
-<body class="arcambe-refresh bg-white text-gray-900 font-sans scroll-smooth">
-
-<!-- NAV -->
-<nav class="bg-white/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] sticky top-0 z-50 border-b border-gray-100">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <a href="index.html" class="flex items-center gap-4 group">
-            <div class="relative">
-                <div class="absolute inset-0 bg-arcambeVerde rounded-full blur-md opacity-0 group-hover:opacity-30 transition-opacity duration-500"></div>
-                <img src="logo.png" alt="ARCAMBE Logo" class="h-14 md:h-16 relative z-10 transition-transform duration-500 group-hover:scale-105">
-            </div>
-            <div class="flex flex-col">
-                <span class="text-2xl md:text-3xl font-black tracking-tight leading-none bg-clip-text text-transparent bg-gradient-to-r from-arcambeEscuro to-arcambeVerde" style="font-family:Outfit,sans-serif">ARCAMBE</span>
-                <span class="text-[9px] md:text-[11px] font-bold text-arcambeVerde uppercase tracking-[0.25em] leading-tight mt-1 opacity-90">SIG &amp; Soluções Ambientais, LDA</span>
-            </div>
-        </a>
-        <ul class="hidden md:flex items-center space-x-8 font-semibold text-gray-600 text-sm tracking-wide">
-            <li><a href="index.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Home<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="servicos.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Serviços<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="sobre.html" class="relative py-2 group hover:text-arcambeVerde transition-colors">Sobre<span class="absolute bottom-0 left-0 w-full h-0.5 bg-arcambeVerde transform scale-x-0 origin-left transition-transform duration-300 group-hover:scale-x-100"></span></a></li>
-            <li><a href="orcamento.html" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white px-7 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(16,160,16,0.28)] hover:-translate-y-0.5 transition-all duration-300 font-bold tracking-wider text-xs uppercase">Solicitar Orçamento</a></li>
-        </ul>
-        <button class="md:hidden text-arcambeEscuro text-2xl" onclick="document.getElementById('mm').classList.toggle('hidden')"><i class="fa-solid fa-bars"></i></button>
-    </div>
-    <div id="mm" class="hidden md:hidden border-t border-gray-100 bg-white px-6 py-4 space-y-3">
-        <a href="index.html" class="block py-2 text-gray-700 font-semibold">Home</a>
-        <a href="servicos.html" class="block py-2 text-gray-700 font-semibold">Serviços</a>
-        <a href="sobre.html" class="block py-2 text-gray-700 font-semibold">Sobre</a>
-        <a href="orcamento.html" class="block py-3 text-center bg-arcambeVerde text-white rounded-full font-bold text-sm">Solicitar Orçamento</a>
-    </div>
-</nav>
-
-<!-- HERO -->
-<section class="hero-residuos grid-overlay pt-24 pb-36 px-6 text-white relative overflow-hidden">
-    <div class="absolute -top-20 -left-20 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[160px] opacity-20 pointer-events-none"></div>
-    <div class="absolute bottom-0 right-0 w-96 h-96 bg-arcambeClaro rounded-full blur-[180px] opacity-8 pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-8">
-                <div>
-                    <span class="inline-flex items-center gap-2 bg-arcambeVerde/40 border border-arcambeVerde/50 text-arcambeClaro px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-6 block w-fit">
-                        <i class="fa-solid fa-recycle"></i> Consultoria em Gestão de Resíduos
-                    </span>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter">
-                        A Sua Empresa Gere<br><span class="text-arcambeClaro italic">Resíduos com Conformidade Legal?</span>
-                    </h1>
-                </div>
-                <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
-                    A ARCAMBE elabora <strong class="text-white">Planos de Gestão de Resíduos Sólidos (PGRS)</strong> e implementa estratégias de
-                    <strong class="text-arcambeClaro">Economia Circular</strong> conformes com a legislação moçambicana e as exigências do MITA.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>PGRS conforme legislação nacional</span>
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Equipa multidisciplinar</span>
-                    <span class="flex items-center gap-2 text-sm text-gray-300"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Conformidade com o MITA garantida</span>
-                </div>
-                <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="orcamento.html" id="hero-cta-orcamento" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-10 py-5 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-2">
-                        <i class="fa-solid fa-file-invoice"></i> Solicitar Orçamento
-                    </a>
-                    <a href="https://wa.me/258844172237?text=Olá!+Preciso+de+apoio+com+Gestão+de+Resíduos+para+a+minha+empresa.+Podem+ajudar?" class="border-2 border-white/30 text-white px-10 py-5 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-2" target="_blank">
-                        <i class="fa-brands fa-whatsapp"></i> Falar Connosco
-                    </a>
-                </div>
-            </div>
-            <!-- Stats -->
-            <div class="grid grid-cols-2 gap-5">
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-file-contract text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-4xl font-black text-white">+20</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">PGRS elaborados</p>
-                </div>
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-leaf text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-4xl font-black text-white">100%</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Conformidade legal</p>
-                </div>
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-industry text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-4xl font-black text-white">+5</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Setores atendidos</p>
-                </div>
-                <div class="glass-panel rounded-3xl p-7 text-center hover:border-arcambeVerde/40 transition-all duration-500">
-                    <i class="fa-solid fa-award text-4xl text-arcambeClaro mb-4 block"></i>
-                    <span class="text-4xl font-black text-white">MITA</span>
-                    <p class="text-xs text-gray-400 uppercase tracking-widest mt-2">Processo certificado</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+<a class="skip-link" href="#conteudo">Saltar para o conteúdo</a><header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="index.html" aria-label="Página inicial ARCAMBE">
+      <img src="logo.png" alt="ARCAMBE">
+      <span><strong>ARCAMBE</strong><small>SIG & Soluções Ambientais, SU, LDA</small></span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="index.html" >Home</a><a href="sobre.html" >Sobre</a><a href="servicos.html" >Serviços</a><a href="treinamentos.html" >Treinamentos</a><a href="blog.html" >Insights</a><a href="contacto.html" >Contacto</a>
+      <div class="nav-dropdown">
+        <button type="button">Áreas <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel"><a href="lp-sig.html"><i class="fa-solid fa-map-location-dot"></i><span>SIG, mapeamento e geodados</span></a><a href="lp-aia.html"><i class="fa-solid fa-leaf"></i><span>Avaliação ambiental e licenciamento</span></a><a href="lp-residuos.html"><i class="fa-solid fa-recycle"></i><span>Gestão de resíduos</span></a><a href="lp-hst.html"><i class="fa-solid fa-helmet-safety"></i><span>HST e segurança ocupacional</span></a></div>
+      </div>
+      <div class="nav-dropdown">
+        <button type="button">Cursos <i class="fa-solid fa-chevron-down" aria-hidden="true"></i></button>
+        <div class="dropdown-panel"><a href="lp-qgis.html"><i class="fa-solid fa-graduation-cap"></i><span>Mapeamento Ambiental com QGIS</span></a><a href="lp-curso-aia.html"><i class="fa-solid fa-graduation-cap"></i><span>Procedimentos de AIA</span></a><a href="lp-curso-sso.html"><i class="fa-solid fa-graduation-cap"></i><span>Fundamentos de SSO</span></a><a href="lp-sensoriamento-remoto.html"><i class="fa-solid fa-graduation-cap"></i><span>Sensoriamento Remoto com QGIS</span></a></div>
+      </div>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="orcamento.html">Solicitar orçamento</a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-controls="mobile-menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <nav id="mobile-menu" class="mobile-nav" aria-label="Menu móvel" hidden>
+    <a href="index.html">Home</a><a href="sobre.html">Sobre</a><a href="servicos.html">Serviços</a><a href="treinamentos.html">Treinamentos</a><a href="blog.html">Insights</a><a href="contacto.html">Contacto</a>
+    <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
+    <a href="lp-qgis.html">Mapeamento Ambiental com QGIS</a><a href="lp-curso-aia.html">Procedimentos de AIA</a><a href="lp-curso-sso.html">Fundamentos de SSO</a><a href="lp-sensoriamento-remoto.html">Sensoriamento Remoto com QGIS</a>
+    <a class="btn btn-primary" href="orcamento.html">Solicitar orçamento</a>
+  </nav>
+</header><main id="conteudo"><section class="landing-hero"><div class="container hero-grid"><div class="hero-copy"><span class="eyebrow">Gestão de Resíduos</span><h1>Planos e diagnósticos para gerir resíduos com mais controlo.</h1><p>Planos de gestão de resíduos, diagnóstico ambiental, conformidade legal e soluções de economia circular para empresas em Moçambique.</p><div class="hero-actions"><a class="btn btn-primary" href="orcamento.html">Solicitar orçamento</a><a class="btn btn-outline" href="https://wa.me/258844172237" target="_blank">Falar por WhatsApp</a></div></div><figure class="hero-media"><img src="servico-residuos.png" alt="Gestão de Resíduos"></figure></div></section>
+    <section class="section"><div class="section-title"><span>Contexto</span><h2>Uma gestão de resíduos sem diagnóstico claro pode gerar custos, risco ambiental e dificuldade de licenciamento.</h2></div><div class="container feature-grid"><article><i class="fa-solid fa-circle-check"></i><h3>Indústrias e fábricas</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article><article><i class="fa-solid fa-circle-check"></i><h3>Construção civil</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article><article><i class="fa-solid fa-circle-check"></i><h3>Agro-indústria</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article><article><i class="fa-solid fa-circle-check"></i><h3>Turismo</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article><article><i class="fa-solid fa-circle-check"></i><h3>Saúde e laboratórios</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article><article><i class="fa-solid fa-circle-check"></i><h3>Municípios</h3><p>Aplicação adaptada ao sector, escala e documentação necessária.</p></article></div></section>
+    <section class="section section-muted"><div class="section-title"><span>Entregáveis</span><h2>O que a ARCAMBE pode entregar</h2></div><div class="container feature-grid"><article><i class="fa-solid fa-file-lines"></i><h3>PGRS</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article><article><i class="fa-solid fa-file-lines"></i><h3>Caracterização gravimétrica</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article><article><i class="fa-solid fa-file-lines"></i><h3>Guia técnico de resíduos</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article><article><i class="fa-solid fa-file-lines"></i><h3>Plano de acondicionamento</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article><article><i class="fa-solid fa-file-lines"></i><h3>Formação de colaboradores</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article><article><i class="fa-solid fa-file-lines"></i><h3>Relatórios de monitorização</h3><p>Documento, dado ou apoio técnico produzido com organização e revisão.</p></article></div></section>
+    <section class="section"><div class="section-title"><span>Processo</span><h2>Como o trabalho evolui</h2></div><div class="container process-grid"><article><span>01</span><h3>Diagnóstico</h3><p>Etapa documentada para manter o cliente informado e reduzir incertezas.</p></article><article><span>02</span><h3>Caracterização</h3><p>Etapa documentada para manter o cliente informado e reduzir incertezas.</p></article><article><span>03</span><h3>Plano de gestão</h3><p>Etapa documentada para manter o cliente informado e reduzir incertezas.</p></article><article><span>04</span><h3>Implementação</h3><p>Etapa documentada para manter o cliente informado e reduzir incertezas.</p></article><article><span>05</span><h3>Monitorização</h3><p>Etapa documentada para manter o cliente informado e reduzir incertezas.</p></article></div></section>
+    <section class="section section-muted"><div class="container contact-layout"><aside class="contact-aside"><h2>Pedido de proposta</h2><p>Envie o contexto do serviço. O formulário mantém os mesmos campos aceites pela API de contacto.</p></aside><form class="form-panel" action="/api/contact" method="POST">
+  <div class="form-grid">
+    <label>Empresa ou cliente<input type="text" name="cliente" required placeholder="Nome da empresa ou responsável"></label>
+    <label>E-mail<input type="email" name="email" required placeholder="contacto@empresa.com"></label>
+    <label>Telefone / WhatsApp<input type="tel" name="telefone" placeholder="+258"></label>
+    <label>Serviço desejado<select name="service"><option value="mapeamento" >Mapeamento e Drones (UAV)</option><option value="monitoramento" >Monitoramento Ambiental</option><option value="aia" >Avaliação de Impacto Ambiental (AIA)</option><option value="sig" >Implementação de SIG Corporativo</option><option value="residuos" selected>Gestão de Resíduos</option><option value="hst" >HST e Segurança Ocupacional</option><option value="outro" >Outros Serviços Ambientais</option></select></label>
+  </div>
+  <label>Detalhes do pedido<textarea name="detalhes" rows="6" placeholder="Descreva a localização, objectivo, prazos e documentos já disponíveis."></textarea></label>
+  <button class="btn btn-primary" type="submit">Solicitar proposta</button>
+</form></div></section>
+    <section class="section"><div class="section-title"><span>Perguntas frequentes</span><h2>Dúvidas comuns</h2></div><div class="container faq"><details><summary>O PGRS é igual para todas as empresas?</summary><p>Não. O plano depende dos resíduos gerados, operações, localização e exigências aplicáveis.</p></details><details><summary>Inclui formação?</summary><p>Pode incluir sessões de sensibilização e procedimentos operacionais.</p></details><details><summary>Apoiam a implementação?</summary><p>Sim, o serviço pode incluir acompanhamento após a entrega do plano.</p></details></div></section>
+    <section class="cta-band"><div class="container"><h2>Vamos estruturar o próximo passo?</h2><p>A ARCAMBE responde com orientação técnica adequada ao seu caso.</p><a class="btn btn-light" href="orcamento.html">Solicitar proposta</a></div></section></main><section class="footer-wave" aria-hidden="true">
+  <svg viewBox="0 0 1440 110" preserveAspectRatio="none"><path d="M0,64 C170,18 326,98 518,58 C725,15 887,3 1065,42 C1228,78 1324,95 1440,53 L1440,110 L0,110 Z"></path></svg>
 </section>
-
-<!-- RISK SECTION -->
-<section class="py-24 px-6 bg-gray-950 text-white relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-red-950/20 to-transparent pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <div class="inline-flex items-center gap-3 bg-red-600/20 border border-red-500/30 text-red-400 px-6 py-3 rounded-full text-xs font-black uppercase tracking-widest mb-6">
-                <i class="fa-solid fa-triangle-exclamation animate-pulse"></i> Atenção: Riscos Reais para a sua Empresa
-            </div>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">
-                Sem Gestão de Resíduos Conforme,<br>a Sua Empresa Arrisca:
-            </h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">A gestão inadequada de resíduos em Moçambique é uma violação da Lei do Ambiente n.º 20/97 e do Regulamento de Gestão de Resíduos. As consequências são imediatas e graves.</p>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8 mb-16">
-            <div class="risk-card bg-red-950/40 border border-red-500/30 rounded-3xl p-8 text-center group hover:border-red-400/60">
-                <div class="w-20 h-20 rounded-full bg-red-600/20 border border-red-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-red-600/30 transition-colors">
-                    <i class="fa-solid fa-gavel text-3xl text-red-400"></i>
-                </div>
-                <h3 class="text-2xl font-black text-red-300 mb-3">Sanções Legais &amp; Multas</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">A deposição ilegal de resíduos e a ausência de PGRS aprovado podem resultar em coimas pesadas, suspensão de atividade e até responsabilidade criminal para os gestores da empresa.</p>
-                <div class="mt-6 bg-red-900/30 rounded-xl p-3"><p class="text-red-300 text-xs font-bold uppercase tracking-widest">Lei do Ambiente n.º 20/97 · Reg. Resíduos</p></div>
-            </div>
-            <div class="risk-card bg-orange-950/40 border border-orange-500/30 rounded-3xl p-8 text-center group hover:border-orange-400/60">
-                <div class="w-20 h-20 rounded-full bg-orange-600/20 border border-orange-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-orange-600/30 transition-colors">
-                    <i class="fa-solid fa-ban text-3xl text-orange-400"></i>
-                </div>
-                <h3 class="text-2xl font-black text-orange-300 mb-3">Perda de Licenciamento</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">A renovação de licenças ambientais e de funcionamento pode ser recusada se a empresa não apresentar um PGRS válido. Sem licença, a empresa não pode operar legalmente.</p>
-                <div class="mt-6 bg-orange-900/30 rounded-xl p-3"><p class="text-orange-300 text-xs font-bold uppercase tracking-widest">Risco: paralização da atividade empresarial</p></div>
-            </div>
-            <div class="risk-card bg-yellow-950/40 border border-yellow-500/30 rounded-3xl p-8 text-center group hover:border-yellow-400/60">
-                <div class="w-20 h-20 rounded-full bg-yellow-600/20 border border-yellow-500/30 flex items-center justify-center mx-auto mb-6 group-hover:bg-yellow-600/30 transition-colors">
-                    <i class="fa-solid fa-hand-holding text-3xl text-yellow-400"></i>
-                </div>
-                <h3 class="text-2xl font-black text-yellow-300 mb-3">Custos Operacionais Elevados</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Sem um plano de gestão eficiente, os resíduos tornam-se um passivo ambiental crescente. A Economia Circular, bem implementada, transforma resíduos em oportunidades de poupança e receita.</p>
-                <div class="mt-6 bg-yellow-900/30 rounded-xl p-3"><p class="text-yellow-300 text-xs font-bold uppercase tracking-widest">Impacto: ineficiência e custos evitáveis</p></div>
-            </div>
-        </div>
-        <div class="text-center">
-            <p class="text-gray-300 text-lg mb-6">Não espere uma inspeção ou notificação para agir. <strong class="text-white">Regularize a gestão de resíduos da sua empresa agora.</strong></p>
-            <a href="orcamento.html" id="risk-cta" class="btn-arcambe-pulsar inline-block bg-arcambeVerde text-white px-10 py-5 rounded-full font-black uppercase tracking-widest text-sm shadow-2xl">
-                <i class="fa-solid fa-shield mr-2"></i>Proteger o Meu Negócio Agora
-            </a>
-        </div>
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="footer-brand" href="index.html"><img src="logo.png" alt="ARCAMBE"><span>ARCAMBE</span></a>
+      <p>ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Consultoria ambiental, SIG, sensoriamento remoto, resíduos, HST e formação técnica em Moçambique.</p>
     </div>
-</section>
-
-<!-- PROCESS STEPS -->
-<section class="py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-20">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">Como trabalhamos</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">
-                O Nosso Processo PGRS em <span class="text-arcambeVerde">5 Etapas</span>
-            </h2>
-            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">Do diagnóstico ao plano aprovado — gerimos todo o processo para si, com total transparência e conformidade legal.</p>
-        </div>
-        <div class="relative">
-            <div class="hidden lg:block absolute top-16 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-arcambeVerde via-arcambeClaro to-arcambeVerde opacity-30"></div>
-            <div class="grid lg:grid-cols-5 gap-6">
-                <div class="step-card text-center group">
-                    <div class="relative inline-block mb-6">
-                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
-                            <i class="fa-solid fa-magnifying-glass text-2xl text-arcambeClaro"></i>
-                        </div>
-                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">1</span>
-                    </div>
-                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Diagnóstico</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Visita técnica às instalações, inventário de resíduos gerados por tipo, quantidade e destino atual.</p>
-                </div>
-                <div class="step-card text-center group">
-                    <div class="relative inline-block mb-6">
-                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
-                            <i class="fa-solid fa-balance-scale text-2xl text-arcambeClaro"></i>
-                        </div>
-                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">2</span>
-                    </div>
-                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Caracterização</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Análise gravimétrica dos resíduos, identificação de perigos ambientais e mapeamento de pontos críticos nas operações.</p>
-                </div>
-                <div class="step-card text-center group">
-                    <div class="relative inline-block mb-6">
-                        <div class="w-20 h-20 rounded-full bg-arcambeVerde border-4 border-arcambeClaro flex items-center justify-center mx-auto shadow-lg shadow-arcambeClaro/30">
-                            <i class="fa-solid fa-file-alt text-2xl text-white"></i>
-                        </div>
-                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeEscuro text-arcambeClaro rounded-full text-xs font-black flex items-center justify-center">3</span>
-                    </div>
-                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Elaboração do PGRS</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Redação do Plano de Gestão de Resíduos Sólidos conforme os requisitos do MITA, com medidas de minimização e valorização.</p>
-                </div>
-                <div class="step-card text-center group">
-                    <div class="relative inline-block mb-6">
-                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
-                            <i class="fa-solid fa-paper-plane text-2xl text-arcambeClaro"></i>
-                        </div>
-                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">4</span>
-                    </div>
-                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Implementação</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Apoio na implementação do plano, formação dos colaboradores e estabelecimento de parcerias com operadores de resíduos licenciados.</p>
-                </div>
-                <div class="step-card text-center group">
-                    <div class="relative inline-block mb-6">
-                        <div class="w-20 h-20 rounded-full bg-arcambeEscuro border-4 border-arcambeVerde flex items-center justify-center mx-auto group-hover:bg-arcambeVerde transition-colors duration-500 shadow-lg shadow-arcambeVerde/20">
-                            <i class="fa-solid fa-circle-check text-2xl text-arcambeClaro"></i>
-                        </div>
-                        <span class="absolute -top-2 -right-2 w-7 h-7 bg-arcambeClaro text-arcambeEscuro rounded-full text-xs font-black flex items-center justify-center">5</span>
-                    </div>
-                    <h3 class="font-black text-arcambeEscuro text-base mb-3 uppercase tracking-wide">Monitorização</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Relatórios periódicos de conformidade, revisão do plano e apoio contínuo para manter a empresa em conformidade.</p>
-                </div>
-            </div>
-        </div>
+    <div>
+      <h2>Serviços</h2>
+      <a href="lp-sig.html">SIG, mapeamento e geodados</a><a href="lp-aia.html">Avaliação ambiental e licenciamento</a><a href="lp-residuos.html">Gestão de resíduos</a><a href="lp-hst.html">HST e segurança ocupacional</a>
     </div>
-</section>
-
-<!-- WHAT'S INCLUDED -->
-<section class="py-24 px-6 bg-arcambeEscuro text-white relative overflow-hidden">
-    <div class="absolute -top-40 right-0 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[200px] opacity-10 pointer-events-none"></div>
-    <div class="max-w-6xl mx-auto relative z-10">
-        <div class="text-center mb-16">
-            <p class="text-arcambeClaro font-bold uppercase tracking-widest text-xs mb-4">Tudo incluído no serviço</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter">O Que Recebe com o <span class="text-arcambeClaro">Serviço ARCAMBE</span></h2>
-            <p class="text-gray-400 mt-4 max-w-2xl mx-auto">Um serviço completo, sem custos ocultos, com toda a documentação exigida pelo MITA incluída.</p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-file-contract text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">PGRS Completo</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Plano de Gestão de Resíduos Sólidos completo, com identificação, classificação, acondicionamento, transporte e destino final de todos os resíduos gerados.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-chart-bar text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Caracterização Gravimétrica</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Análise laboratorial e de campo da composição dos resíduos por fração (orgânica, plástico, papel, vidro, perigosos) — dados precisos para o plano.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-recycle text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Estratégia de Economia Circular</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Identificação de oportunidades de valorização de resíduos, reutilização de subprodutos e modelos de negócio circular adaptados ao setor da sua empresa.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-book text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">GTRS — Guia Técnico</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Elaboração do Guia Técnico de Resíduos Sólidos conforme a legislação nacional, documento exigido para o licenciamento ambiental da sua empresa.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-users text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Formação de Colaboradores</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Sessões de formação e sensibilização para toda a equipa sobre triagem, manuseamento seguro e boas práticas de gestão de resíduos.</p>
-            </div>
-            <div class="glass-panel rounded-3xl p-7 group hover:border-arcambeClaro/40 transition-all duration-500">
-                <i class="fa-solid fa-clipboard-list text-3xl text-arcambeClaro mb-5 block"></i>
-                <h3 class="font-black text-white text-lg mb-3">Relatórios de Monitorização</h3>
-                <p class="text-gray-400 text-sm leading-relaxed">Relatórios periódicos de acompanhamento do desempenho ambiental em gestão de resíduos, para manter a conformidade com o MITA e as condições de licença.</p>
-            </div>
-        </div>
+    <div>
+      <h2>Treinamentos</h2>
+      <a href="lp-qgis.html">Mapeamento Ambiental com QGIS</a><a href="lp-curso-aia.html">Procedimentos de AIA</a><a href="lp-curso-sso.html">Fundamentos de SSO</a><a href="lp-sensoriamento-remoto.html">Sensoriamento Remoto com QGIS</a>
+      <a href="inscricao.html">Inscrição em cursos</a>
     </div>
-</section>
-
-<!-- WHO NEEDS IT -->
-<section class="py-24 px-6 bg-gray-50">
-    <div class="max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <p class="text-arcambeVerde font-bold uppercase tracking-widest text-xs mb-4">O nosso serviço serve para si?</p>
-            <h2 class="text-3xl md:text-5xl font-black uppercase italic tracking-tighter text-arcambeEscuro">Empresas que <span class="text-arcambeVerde">Precisam de PGRS</span></h2>
-            <p class="text-gray-500 mt-4 max-w-2xl mx-auto">De acordo com a legislação moçambicana, todas as atividades que gerem resíduos industriais, hospitalares ou perigosos necessitam de um PGRS aprovado.</p>
-        </div>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-blue-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-industry text-2xl text-blue-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Indústrias &amp; Fábricas</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Unidades industriais de qualquer dimensão com geração de resíduos sólidos industriais, incluindo resíduos perigosos e especiais.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS obrigatório</span>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-orange-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-hard-hat text-2xl text-orange-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Construção Civil</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Obras de construção e reabilitação que gerem entulho, betão, metais, madeira e resíduos de demolição em grandes quantidades.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS obrigatório</span>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-green-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-seedling text-2xl text-green-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Agro-indústria</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Unidades de processamento agrícola, frigoríficos, indústrias sucro-alcooleiras e pesqueiras com geração de resíduos orgânicos e industriais.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS obrigatório</span>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-teal-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-hotel text-2xl text-teal-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Hotéis &amp; Turismo</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Empreendimentos turísticos, resorts, hotéis e lodges com gestão de resíduos sólidos urbanos e requisitos de conformidade ambiental para certificação.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS recomendado</span>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-red-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-hospital text-2xl text-red-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Saúde &amp; Farmacêutica</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Clínicas, hospitais, farmácias e laboratórios com gestão de resíduos hospitalares infecciosos, cortantes e resíduos farmacêuticos.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS obrigatório</span>
-            </div>
-            <div class="bg-white rounded-[2.5rem] p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-arcambeVerde/20 transition-all duration-500 group">
-                <div class="w-16 h-16 rounded-2xl bg-yellow-100 flex items-center justify-center mb-6 group-hover:bg-arcambeVerde group-hover:scale-110 transition-all duration-300">
-                    <i class="fa-solid fa-city text-2xl text-yellow-600 group-hover:text-white transition-colors"></i>
-                </div>
-                <h3 class="font-black text-arcambeEscuro text-xl mb-3">Municípios &amp; Autarquias</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-4">Governos locais e autarquias que precisam de planear e implementar sistemas municipais de recolha, triagem e destino final de resíduos sólidos urbanos.</p>
-                <span class="text-arcambeVerde text-xs font-bold uppercase tracking-widest"><i class="fa-solid fa-check mr-1"></i>PGRS municipal obrigatório</span>
-            </div>
-        </div>
-        <div class="mt-12 bg-arcambeVerde/10 border border-arcambeVerde/20 rounded-3xl p-8 text-center">
-            <i class="fa-solid fa-circle-question text-arcambeVerde text-3xl mb-4 block"></i>
-            <h3 class="font-black text-arcambeEscuro text-xl mb-3">Não tem a certeza se a sua empresa precisa de PGRS?</h3>
-            <p class="text-gray-600 text-sm mb-6">Contacte-nos gratuitamente para uma pré-avaliação. Em menos de 24 horas dizemos-lhe o que é exigido e o que está em risco.</p>
-            <a href="https://wa.me/258844172237?text=Olá!+Gostava+de+saber+se+a+minha+empresa+precisa+de+PGRS." class="inline-flex items-center gap-2 bg-arcambeVerde text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-arcambeEscuro transition-colors shadow-lg" target="_blank">
-                <i class="fa-brands fa-whatsapp text-lg"></i>Falar Gratuitamente com um Especialista
-            </a>
-        </div>
+    <div>
+      <h2>Links úteis</h2>
+      <a href="sobre.html">Sobre a ARCAMBE</a>
+      <a href="blog.html">Insights técnicos</a>
+      <a href="orcamento.html">Solicitar orçamento</a>
+      <a href="contacto.html">Contacto</a>
     </div>
-</section>
-
-<!-- FINAL CTA -->
-<section class="py-28 px-6 bg-gradient-to-br from-arcambeEscuro via-[#0f3d26] to-gray-950 text-white relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/50 to-transparent"></div>
-    <div class="absolute -top-40 -left-40 w-[500px] h-[500px] bg-arcambeVerde rounded-full blur-[180px] opacity-10 pointer-events-none"></div>
-    <div class="absolute -bottom-40 -right-40 w-[400px] h-[400px] bg-arcambeClaro rounded-full blur-[200px] opacity-5 pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto text-center relative z-10">
-        <span class="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/40 text-red-300 px-5 py-2 rounded-full text-[10px] font-black uppercase tracking-widest mb-8 animate-pulse">
-            <i class="fa-solid fa-triangle-exclamation"></i>Operação sem PGRS é risco legal imediato
-        </span>
-        <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter mb-6">
-            Regularize a Gestão<br><span class="text-arcambeClaro">de Resíduos da Sua</span><br>Empresa Hoje
-        </h2>
-        <p class="text-gray-300 text-xl leading-relaxed mb-10 max-w-2xl mx-auto">
-            Cada dia sem um PGRS aprovado é um dia de risco acrescido. A ARCAMBE tem a experiência e os recursos para resolver isto — rapidamente e com rigor.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-5 justify-center mb-10">
-            <a href="orcamento.html" id="final-cta" class="btn-pulsar bg-arcambeClaro text-arcambeEscuro px-12 py-6 rounded-full font-black uppercase text-sm tracking-widest hover:bg-white transition shadow-2xl flex items-center justify-center gap-3">
-                <i class="fa-solid fa-file-invoice text-xl"></i>
-                Solicitar Orçamento Gratuito
-            </a>
-            <a href="https://wa.me/258844172237?text=Olá!+Preciso+urgente+de+apoio+com+a+Gestão+de+Resíduos+da+minha+empresa." class="border-2 border-white/30 text-white px-12 py-6 rounded-full font-bold uppercase text-sm tracking-widest hover:border-arcambeClaro hover:text-arcambeClaro transition-all duration-300 flex items-center justify-center gap-3" target="_blank">
-                <i class="fa-brands fa-whatsapp text-xl"></i>
-                Falar por WhatsApp
-            </a>
+    <div>
+      <h2>Contactos</h2>
+      <a href="mailto:info@arcambe.com"><i class="fa-regular fa-envelope"></i>info@arcambe.com</a>
+      <a href="https://wa.me/258844172237" target="_blank"><i class="fa-brands fa-whatsapp"></i>+258 844 172 237</a>
+      <span>Maputo, Moçambique</span>
+      <form class="newsletter-form" action="/api/newsletter" method="POST">
+        <label for="newsletter-email">Newsletter técnica</label>
+        <div class="newsletter-row">
+          <input id="newsletter-email" type="email" name="email" required placeholder="email@exemplo.com">
+          <button type="submit" aria-label="Subscrever"><i class="fa-solid fa-arrow-right"></i></button>
         </div>
-        <div class="flex flex-wrap justify-center gap-8 text-xs uppercase tracking-widest font-bold text-gray-500">
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Orçamento sem compromisso</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Resposta em 24 horas</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Equipa moçambicana</span>
-            <span class="flex items-center gap-2"><i class="fa-solid fa-check-circle text-arcambeClaro"></i>Processo 100% gerido</span>
-        </div>
+      </form>
     </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-gradient-to-br from-gray-950 via-[#063f2b] to-gray-900 text-white pt-24 pb-12 px-6 relative overflow-hidden">
-    <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-arcambeVerde/30 to-transparent"></div>
-    <div class="absolute -top-40 -right-40 w-96 h-96 bg-arcambeVerde rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
-    <div class="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 border-b border-white/5 pb-20 relative z-10">
-        <div>
-            <img src="logo.png" class="h-16 mb-8 brightness-200 grayscale opacity-80 hover:opacity-100 transition-opacity duration-300">
-            <p class="text-gray-400 text-sm leading-relaxed font-light">ARCAMBE SIG &amp; Soluções Ambientais, LDA.<br>Especialistas em gestão de resíduos, economia circular e sustentabilidade em Moçambique.</p>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8 flex items-center gap-2"><span class="w-2 h-2 rounded-full bg-arcambeClaro animate-pulse"></span>Contactos</h4>
-            <ul class="space-y-5 text-sm text-gray-300">
-                <li class="flex items-center gap-4"><i class="fa-solid fa-envelope text-arcambeVerde text-lg"></i><a href="mailto:info@arcambe.com" class="hover:text-white transition-colors">info@arcambe.com</a></li>
-                <li class="flex items-center gap-4"><i class="fa-brands fa-whatsapp text-arcambeVerde text-lg"></i><a href="https://wa.me/258844172237" class="hover:text-white">+258 844 172 237</a></li>
-                <li class="flex items-start gap-4"><i class="fa-solid fa-map-marker-alt text-arcambeVerde text-lg mt-1"></i><span>Maputo, Moçambique</span></li>
-            </ul>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Redes Sociais</h4>
-            <div class="flex gap-4">
-                <a href="https://linkedin.com/company/arcambe-ambiental/" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#0077b5] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-linkedin-in text-gray-300"></i></a>
-                <a href="https://instagram.com/arcambe.oficial" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-instagram text-gray-300"></i></a>
-                <a href="https://www.youtube.com/channel/UCgX5xgCYxpC6WSgp7eu0jCg" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#FF0000] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-youtube text-gray-300"></i></a>
-                <a href="https://facebook.com/profile.php?id=61582065789260" target="_blank" class="w-12 h-12 glass-panel-dark rounded-xl flex items-center justify-center hover:bg-[#1877F2] hover:-translate-y-1 transition-all duration-300"><i class="fa-brands fa-facebook-f text-gray-300"></i></a>
-            </div>
-        </div>
-        <div>
-            <h4 class="text-arcambeClaro font-bold uppercase text-xs tracking-[0.2em] mb-8">Newsletter</h4>
-            <form action="/api/newsletter" method="POST" class="flex flex-col gap-3">
-
-
-
-
-
-                <div class="relative"><i class="fa-regular fa-envelope absolute left-4 top-1/2 -translate-y-1/2 text-gray-500"></i><input type="email" name="email" required placeholder="O teu melhor e-mail" class="w-full bg-white/5 border border-white/10 p-4 pl-12 rounded-xl focus:border-arcambeClaro outline-none transition-all text-sm text-white placeholder-gray-500"></div>
-                <button type="submit" class="bg-gradient-to-r from-arcambeVerde to-emerald-600 text-white p-4 rounded-xl font-black uppercase text-xs tracking-widest hover:-translate-y-0.5 transition-all duration-300 flex items-center justify-center gap-2"><span>Subscrever</span><i class="fa-solid fa-arrow-right"></i></button>
-            </form>
-        </div>
-    </div>
-    <div class="max-w-7xl mx-auto mt-10 flex flex-col md:flex-row justify-between items-center text-[10px] text-gray-500 uppercase tracking-widest font-bold relative z-10">
-        <p>&#169; 2026 ARCAMBE SIG. Todos os direitos reservados.</p>
-        <p class="mt-4 md:mt-0 flex items-center gap-2">Moçambique <span class="w-1 h-1 bg-arcambeClaro rounded-full"></span> Precisão Digital</p>
-    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2026 ARCAMBE – SIG & Soluções Ambientais, SU, LDA. Todos os direitos reservados.</p>
+    <p>Precisão técnica para território, ambiente e operações.</p>
+  </div>
 </footer>
-
-<a href="https://wa.me/258844172237?text=Olá!+Preciso+de+apoio+com+a+Gestão+de+Resíduos+da+minha+empresa." class="fixed bottom-6 right-6 bg-[#25d366] text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-[9999] hover:scale-110 transition btn-pulsar" target="_blank">
-    <i class="fa-brands fa-whatsapp"></i>
-</a>
-<script src="/assets/js/arcambe-2026.js" defer></script>
-<script src="/assets/js/success.js"></script>
-
+<script src="/assets/js/site.js" defer></script>
+<script src="/assets/js/success.js" defer></script>
 </body>
 </html>

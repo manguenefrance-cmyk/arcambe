@@ -44,7 +44,7 @@
     <link rel="canonical" href="https://arcambe.com/sala-de-aula.php">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#0b4a39">
-    <meta name="author" content="ARCAMBE SIG &amp; Soluções Ambientais, LDA">
+    <meta name="author" content="ARCAMBE – SIG &amp; Soluções Ambientais, SU, LDA">
     <meta property="og:locale" content="pt_PT">
     <meta property="og:site_name" content="ARCAMBE">
     <meta property="og:title" content="Sala de Aula ARCAMBE | Área do Aluno">
@@ -63,7 +63,7 @@
     {
       "@type": "Organization",
       "@id": "https://arcambe.com/#organization",
-      "name": "ARCAMBE SIG & Soluções Ambientais, LDA",
+      "name": "ARCAMBE – SIG & Soluções Ambientais, SU, LDA",
       "url": "https://arcambe.com/",
       "logo": "https://arcambe.com/logo.png",
       "email": "info@arcambe.com",
@@ -111,7 +111,7 @@
   ]
 }
     </script>
-    <link rel="stylesheet" href="/assets/css/arcambe-2026.css">
+    <link rel="stylesheet" href="/assets/css/site.css">
 </head>
 <body class="arcambe-refresh bg-gray-100 font-sans overflow-hidden">
     <script>
@@ -170,19 +170,19 @@
                         <i class="fa-solid fa-file-arrow-down text-arcambeVerde text-sm"></i> Recursos da Aula
                     </h3>
                     <div class="space-y-3">
-                        <a href="materiais/guia_sig.pdf" target="_blank" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
+                        <a href="contacto.html" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
                             <i class="fa-solid fa-file-pdf text-red-500 text-xl mr-3 transition-transform group-hover:scale-110"></i>
                             <div>
                                 <p class="text-[11px] font-bold text-gray-800 leading-none">Guia Prático QGIS</p>
-                                <span class="text-[9px] text-gray-400 font-medium">PDF • 5.8 MB</span>
+                                <span class="text-[9px] text-gray-400 font-medium">Solicitar material</span>
                             </div>
                         </a>
 
-                        <a href="materiais/script_gee.txt" download class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
+                        <a href="contacto.html" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
                             <i class="fa-solid fa-code text-blue-500 text-xl mr-3 transition-transform group-hover:scale-110"></i>
                             <div>
                                 <p class="text-[11px] font-bold text-gray-800 leading-none">Script GEE - NDVI</p>
-                                <span class="text-[9px] text-gray-400 font-medium">Javascript • 15 KB</span>
+                                <span class="text-[9px] text-gray-400 font-medium">Solicitar ficheiro</span>
                             </div>
                         </a>
                     </div>
@@ -214,6 +214,6 @@
         </aside>
     </div>
 
-<script src="/assets/js/arcambe-2026.js" defer></script>
+<script src="/assets/js/site.js" defer></script>
 </body>
 </html>
