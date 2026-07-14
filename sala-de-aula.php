@@ -170,19 +170,19 @@
                         <i class="fa-solid fa-file-arrow-down text-arcambeVerde text-sm"></i> Recursos da Aula
                     </h3>
                     <div class="space-y-3">
-                        <a href="materiais/guia_sig.pdf" target="_blank" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
+                        <a href="contacto.html" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
                             <i class="fa-solid fa-file-pdf text-red-500 text-xl mr-3 transition-transform group-hover:scale-110"></i>
                             <div>
                                 <p class="text-[11px] font-bold text-gray-800 leading-none">Guia Prático QGIS</p>
-                                <span class="text-[9px] text-gray-400 font-medium">PDF • 5.8 MB</span>
+                                <span class="text-[9px] text-gray-400 font-medium">Solicitar material</span>
                             </div>
                         </a>
 
-                        <a href="materiais/script_gee.txt" download class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
+                        <a href="contacto.html" class="flex items-center p-3 bg-gray-50 border border-gray-100 rounded-xl hover:border-arcambeVerde hover:shadow-md transition group">
                             <i class="fa-solid fa-code text-blue-500 text-xl mr-3 transition-transform group-hover:scale-110"></i>
                             <div>
                                 <p class="text-[11px] font-bold text-gray-800 leading-none">Script GEE - NDVI</p>
-                                <span class="text-[9px] text-gray-400 font-medium">Javascript • 15 KB</span>
+                                <span class="text-[9px] text-gray-400 font-medium">Solicitar ficheiro</span>
                             </div>
                         </a>
                     </div>

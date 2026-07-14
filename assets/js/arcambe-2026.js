@@ -63,14 +63,39 @@
   }
 
   document.querySelectorAll("form").forEach(function (form) {
+    var action = form.getAttribute("action") || "";
+    if ((action.indexOf("/api/contact") === 0 || action.indexOf("/api/newsletter") === 0) && !form.querySelector("[name=\"website\"]")) {
+      var honeypot = document.createElement("input");
+      honeypot.type = "text";
+      honeypot.name = "website";
+      honeypot.tabIndex = -1;
+      honeypot.autocomplete = "off";
+      honeypot.setAttribute("aria-hidden", "true");
+      honeypot.style.cssText = "position:absolute;left:-9999px;width:1px;height:1px;opacity:0;";
+      form.insertBefore(honeypot, form.firstChild);
+    }
+
+    var status = form.querySelector(".arc-form-status");
+    if (!status && (action.indexOf("/api/contact") === 0 || action.indexOf("/api/newsletter") === 0)) {
+      status = document.createElement("p");
+      status.className = "arc-form-status";
+      status.setAttribute("aria-live", "polite");
+      form.appendChild(status);
+    }
+
     form.addEventListener("submit", function () {
       var button = form.querySelector("button[type=\"submit\"]");
       if (!button || button.dataset.locked === "true") return;
       button.dataset.locked = "true";
       button.setAttribute("aria-busy", "true");
+      button.disabled = true;
+      if (!button.dataset.originalText) button.dataset.originalText = button.textContent;
+      if (status) status.textContent = "A enviar com segurança...";
       window.setTimeout(function () {
         button.dataset.locked = "false";
         button.removeAttribute("aria-busy");
+        button.disabled = false;
+        if (status) status.textContent = "";
       }, 6500);
     });
   });
