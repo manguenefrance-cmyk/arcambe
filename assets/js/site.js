@@ -1,4 +1,4 @@
-(function(){
+﻿(function(){
   // Meta Pixel integration point: add the real production Pixel ID here later. Do not add placeholder or fake IDs.
   const menuButton=document.querySelector(".menu-toggle");
   const menu=document.getElementById("mobile-menu");
@@ -92,3 +92,32 @@
     }
   }
 })();
+
+// Gallery Slider
+function moveSlider(dir) {
+  var sliders = ['gslider', 'slider-alunos', 'slider-qgis'];
+  sliders.forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) {
+      var slideW = el.querySelector('.gslide') ? el.querySelector('.gslide').offsetWidth + 18 : 320;
+      el.scrollBy({ left: dir * slideW * 3, behavior: 'smooth' });
+    }
+  });
+}
+// Attach buttons dynamically
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.gprev').forEach(function(btn) {
+    btn.onclick = function() {
+      var s = btn.closest('.gslider-wrap').querySelector('.gslider');
+      var w = (s.querySelector('.gslide') ? s.querySelector('.gslide').offsetWidth + 18 : 320) * 3;
+      s.scrollBy({ left: -w, behavior: 'smooth' });
+    };
+  });
+  document.querySelectorAll('.gnext').forEach(function(btn) {
+    btn.onclick = function() {
+      var s = btn.closest('.gslider-wrap').querySelector('.gslider');
+      var w = (s.querySelector('.gslide') ? s.querySelector('.gslide').offsetWidth + 18 : 320) * 3;
+      s.scrollBy({ left: w, behavior: 'smooth' });
+    };
+  });
+});
