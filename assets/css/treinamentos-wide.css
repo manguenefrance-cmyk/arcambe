@@ -86,7 +86,8 @@
 
 .page-treinamentos .campaign-grid .course-card img {
   width: 100%;
-  height: clamp(190px, 15vw, 260px);
+  aspect-ratio: 16 / 9;
+  height: auto;
   object-fit: cover;
 }
 
