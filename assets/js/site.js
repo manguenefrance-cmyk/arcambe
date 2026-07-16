@@ -93,31 +93,105 @@
   }
 })();
 
-// Gallery Slider
-function moveSlider(dir) {
-  var sliders = ['gslider', 'slider-alunos', 'slider-qgis'];
-  sliders.forEach(function(id) {
-    var el = document.getElementById(id);
-    if (el) {
-      var slideW = el.querySelector('.gslide') ? el.querySelector('.gslide').offsetWidth + 18 : 320;
-      el.scrollBy({ left: dir * slideW * 3, behavior: 'smooth' });
-    }
+
+// ══════════════════════════════════════════
+// GALLERY SLIDER — Premium with drag, dots, autoplay
+// ══════════════════════════════════════════
+(function(){
+  document.addEventListener('DOMContentLoaded',function(){
+    document.querySelectorAll('.gslider-outer').forEach(function(wrap){
+      var slider = wrap.querySelector('.gslider');
+      if(!slider) return;
+      var slides = slider.querySelectorAll('.gslide');
+      var prevBtn = wrap.querySelector('.gprev');
+      var nextBtn = wrap.querySelector('.gnext');
+      var dotsWrap = wrap.parentElement.querySelector('[id^="gslider-dots"]');
+      var perView = getPerView();
+      var current = 0;
+      var totalPages = Math.ceil(slides.length / perView);
+      var autoTimer;
+
+      function getPerView(){
+        if(window.innerWidth <= 680) return 1;
+        if(window.innerWidth <= 1050) return 2;
+        return 3;
+      }
+
+      // Build dots
+      function buildDots(){
+        if(!dotsWrap) return;
+        perView = getPerView();
+        totalPages = Math.ceil(slides.length / perView);
+        dotsWrap.innerHTML = '';
+        for(var i=0;i<Math.min(totalPages,12);i++){
+          var d = document.createElement('button');
+          d.className = 'gdot' + (i===0?' active':'');
+          d.setAttribute('aria-label','Página '+(i+1));
+          d.dataset.page = i;
+          d.onclick = function(){ goTo(parseInt(this.dataset.page)); };
+          dotsWrap.appendChild(d);
+        }
+      }
+
+      function updateDots(){
+        if(!dotsWrap) return;
+        dotsWrap.querySelectorAll('.gdot').forEach(function(d,i){
+          d.classList.toggle('active', i===current);
+        });
+      }
+
+      function goTo(page){
+        perView = getPerView();
+        totalPages = Math.ceil(slides.length / perView);
+        current = Math.max(0, Math.min(page, totalPages-1));
+        var slideW = slides[0].offsetWidth + 16;
+        slider.scrollTo({ left: current * perView * slideW, behavior:'smooth' });
+        updateDots();
+        resetAuto();
+      }
+
+      if(prevBtn) prevBtn.onclick = function(){ goTo(current - 1); };
+      if(nextBtn) nextBtn.onclick = function(){ goTo(current + 1); };
+
+      // Drag to scroll
+      var isDown=false, startX, scrollL;
+      slider.addEventListener('mousedown',function(e){
+        isDown=true; slider.classList.add('dragging');
+        startX=e.pageX-slider.offsetLeft; scrollL=slider.scrollLeft;
+      });
+      slider.addEventListener('mouseleave',function(){ isDown=false; slider.classList.remove('dragging'); });
+      slider.addEventListener('mouseup',function(){ isDown=false; slider.classList.remove('dragging'); });
+      slider.addEventListener('mousemove',function(e){
+        if(!isDown) return; e.preventDefault();
+        var x=e.pageX-slider.offsetLeft, walk=(x-startX)*1.8;
+        slider.scrollLeft=scrollL-walk;
+      });
+
+      // Autoplay every 5s
+      function startAuto(){
+        autoTimer = setInterval(function(){
+          if(current >= totalPages-1) current=-1;
+          goTo(current+1);
+        }, 5000);
+      }
+      function resetAuto(){ clearInterval(autoTimer); startAuto(); }
+
+      // Touch support
+      slider.addEventListener('touchstart',function(){ clearInterval(autoTimer); },{passive:true});
+      slider.addEventListener('touchend',function(){ resetAuto(); },{passive:true});
+
+      // Sync dots on manual scroll
+      slider.addEventListener('scroll',function(){
+        if(isDown) return;
+        perView = getPerView();
+        var slideW = slides[0].offsetWidth + 16;
+        var newPage = Math.round(slider.scrollLeft / (perView * slideW));
+        if(newPage !== current){ current=newPage; updateDots(); }
+      });
+
+      window.addEventListener('resize',function(){ buildDots(); goTo(0); });
+      buildDots();
+      startAuto();
+    });
   });
-}
-// Attach buttons dynamically
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.gprev').forEach(function(btn) {
-    btn.onclick = function() {
-      var s = btn.closest('.gslider-wrap').querySelector('.gslider');
-      var w = (s.querySelector('.gslide') ? s.querySelector('.gslide').offsetWidth + 18 : 320) * 3;
-      s.scrollBy({ left: -w, behavior: 'smooth' });
-    };
-  });
-  document.querySelectorAll('.gnext').forEach(function(btn) {
-    btn.onclick = function() {
-      var s = btn.closest('.gslider-wrap').querySelector('.gslider');
-      var w = (s.querySelector('.gslide') ? s.querySelector('.gslide').offsetWidth + 18 : 320) * 3;
-      s.scrollBy({ left: w, behavior: 'smooth' });
-    };
-  });
-});
+})();

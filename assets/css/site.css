@@ -10,7 +10,7 @@
 
 .trainings-hero{padding:64px 0;background:linear-gradient(135deg,#f7faf8 0,#fff 52%,#e8f4ee 100%)}.trainings-hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:46px;align-items:end}.trainings-hero h1{max-width:980px}.training-proof-panel{background:#fff;border:1px solid var(--line);border-radius:8px;padding:26px;box-shadow:var(--shadow)}.training-proof-panel strong{display:block;font-size:1.8rem;line-height:1.1;color:var(--green-dark)}.training-proof-panel span{display:block;color:var(--muted);margin-top:8px}.training-proof-panel ul{list-style:none;display:grid;gap:10px;padding:18px 0 0;margin:18px 0 0;border-top:1px solid var(--line)}.training-proof-panel li{display:flex;gap:10px;align-items:center;color:#31413b;font-weight:700}.training-proof-panel i{color:var(--green)}.trainings-catalog{background:#fff}.section-title.align-left{width:auto;max-width:780px;margin:0 0 34px;text-align:left}.trainings-catalog .course-card{box-shadow:0 16px 36px rgba(12,31,24,.07)}.video-embed{position:relative;aspect-ratio:16/9;background:#071621;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}.video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.video-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}.testimonial-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.testimonial-card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:24px;box-shadow:0 10px 26px rgba(12,31,24,.05);display:flex;flex-direction:column}.testimonial-card.featured{background:var(--navy);color:#fff;border-color:var(--navy)}.stars{display:flex;gap:3px;color:#f4b400;margin-bottom:18px}.quote-icon{font-size:2rem;color:rgba(15,107,79,.22);margin-bottom:12px}.testimonial-card.featured .quote-icon{color:rgba(255,255,255,.24)}.testimonial-card blockquote{margin:0;color:#4d5d57;font-style:italic;flex:1}.testimonial-card.featured blockquote{color:#d8e2dd}.testimonial-card footer{border-top:1px solid var(--line);margin-top:22px;padding-top:18px}.testimonial-card.featured footer{border-color:rgba(255,255,255,.16)}.testimonial-card footer strong,.testimonial-card footer span{display:block}.testimonial-card footer span{color:var(--muted);font-size:.82rem;text-transform:uppercase;font-weight:800;letter-spacing:.04em}.testimonial-card.featured footer span{color:#aab8b2}@media (min-width:1280px){.trainings-catalog .campaign-grid{gap:26px}}@media (max-width:1050px){.trainings-hero-grid,.testimonial-grid{grid-template-columns:1fr}.training-proof-panel{max-width:620px}.section-title.align-left{text-align:center;margin-inline:auto}}@media (max-width:680px){.trainings-hero{padding:42px 0}.training-proof-panel{padding:20px}.training-proof-panel strong{font-size:1.45rem}.video-actions .btn{width:100%}.testimonial-card{padding:20px}}
 
-@media (min-width:1181px){.hero-grid{gap:64px}.split{gap:58px}.service-grid,.course-grid,.insight-grid{gap:26px}.campaign-grid{gap:26px}.course-card img{height:auto}.course-body{padding:24px}.footer-grid{gap:38px}}
+@media (min-width:1181px){.hero-grid{gap:64px}.split{gap:58px}.service-grid,.course-grid,.insight-grid{gap:26px}.campaign-grid{gap:26px}.course-body{padding:24px}.footer-grid{gap:38px}}
 
 @media (min-width:1180px){.trainings-catalog>.container{width:calc(100% - 48px);max-width:none}}
 
@@ -25,14 +25,30 @@
 
 
 
-/* ── Gallery Slider ── */
-.gslider-wrap{position:relative;padding:0 48px}
-.gslider{display:flex;gap:18px;overflow:hidden;scroll-behavior:smooth}
-.gslide{flex:0 0 calc(33.333% - 12px);border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(7,22,33,.1)}
-.gslide img{width:100%;height:280px;object-fit:cover;display:block;transition:transform .4s ease}
-.gslide img:hover{transform:scale(1.04)}
-.gslider-btn{position:absolute;top:50%;transform:translateY(-50%);background:#fff;border:1px solid var(--line);border-radius:50%;width:44px;height:44px;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 16px rgba(7,22,33,.12);z-index:10;font-size:1rem;color:var(--navy);transition:.2s}
-.gslider-btn:hover{background:var(--green);color:#fff;border-color:var(--green)}
-.gprev{left:0}.gnext{right:0}
-@media(max-width:1050px){.gslide{flex:0 0 calc(50% - 9px)}}
-@media(max-width:680px){.gslider-wrap{padding:0 38px}.gslide{flex:0 0 100%}.gslide img{height:220px}}
+.gslide{flex:0 0 100%}.gslide img{height:220px}}
+
+/* ══════════════════════════════════════════
+   GALLERY SLIDER — Premium UI
+══════════════════════════════════════════ */
+.gallery-section{background:var(--navy);padding:80px 0 64px;overflow:hidden}
+.gallery-section .section-title span{color:#4dd4a0}
+.gallery-section .section-title h2{color:#fff}
+.gallery-section .section-title p{color:#9ab5ab}
+.gslider-outer{position:relative;padding:0 64px;margin-top:32px}
+.gslider{display:flex;gap:16px;overflow:hidden;scroll-behavior:smooth;cursor:grab;user-select:none}
+.gslider.dragging{cursor:grabbing;scroll-behavior:auto}
+.gslide{flex:0 0 calc(33.333% - 11px);border-radius:12px;overflow:hidden;position:relative;box-shadow:0 12px 36px rgba(0,0,0,.4);transition:transform .3s ease,box-shadow .3s ease}
+.gslide:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.55)}
+.gslide img{width:100%;height:300px;object-fit:cover;display:block;transition:transform .5s ease}
+.gslide:hover img{transform:scale(1.06)}
+.gslide-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(7,22,33,.75) 0%,transparent 55%);opacity:0;transition:opacity .3s ease}
+.gslide:hover .gslide-overlay{opacity:1}
+.gslider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.18);border-radius:50%;width:52px;height:52px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;font-size:1.05rem;color:#fff;transition:.25s ease}
+.gslider-btn:hover{background:var(--green);border-color:var(--green);transform:translateY(-50%) scale(1.08)}
+.gprev{left:4px}.gnext{right:4px}
+.gslider-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+.gdot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.25);border:none;cursor:pointer;padding:0;transition:.3s}
+.gdot.active{background:var(--green);width:24px;border-radius:4px}
+@media(max-width:1050px){.gslide{flex:0 0 calc(50% - 8px)}.gslide img{height:240px}.gslider-outer{padding:0 52px}}
+@media(max-width:680px){.gslide{flex:0 0 85%}.gslide img{height:210px}.gslider-outer{padding:0 40px}.gallery-section{padding:56px 0 44px}}
+

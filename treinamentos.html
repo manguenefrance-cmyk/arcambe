@@ -25,8 +25,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="/assets/css/site.css?v=4">
-  <link rel="stylesheet" href="/assets/css/treinamentos-wide.css?v=30260714-1">
+  <link rel="stylesheet" href="/assets/css/site.css?v=5">
+  <link rel="stylesheet" href="/assets/css/treinamentos-wide.css?v=5-1">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -173,21 +173,24 @@
     </div>
   </section>
 
-  <section id="galeria" class="section section-muted">
+  
+
+
+
+<section id="galeria" class="section gallery-section">
   <div class="section-title">
-    <span>Galeria Pr�tica</span>
-    <h2>Mapas e Trabalhos dos Alunos</h2>
-    <p>Exemplos reais desenvolvidos pelos alunos e consultores da ARCAMBE durante o curso de Mapeamento Ambiental com QGIS.</p>
+    <span>Galeria Prática</span>
+    <h2>Mapas &amp; Trabalhos dos Alunos</h2>
+    <p>Produções reais de análise espacial e trabalho de campo realizadas pelas turmas ARCAMBE.</p>
   </div>
-  <div class="container gslider-wrap">
-    <button class="gslider-btn gprev" aria-label="Anterior" onclick="moveSlider(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-    <div class="gslider" id="gslider">
+  <div class="gslider-outer">
+    <button class="gslider-btn gprev" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+    <div class="gslider" id="gslider-main">
       <div class="gslide"><img src="/assets/gallery/img-001.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-002.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-003.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-004.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-005.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-006.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-007.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-008.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-009.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
@@ -204,13 +207,13 @@
       <div class="gslide"><img src="/assets/gallery/img-020.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-021.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-022.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-023.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-024.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-025.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-026.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-027.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-028.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
-      <div class="gslide"><img src="/assets/gallery/img-029.jpeg" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-023.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-024.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-025.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-026.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-027.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-028.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-029.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-030.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-031.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-032.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
@@ -258,9 +261,90 @@
       <div class="gslide"><img src="/assets/gallery/img-074.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-075.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
       <div class="gslide"><img src="/assets/gallery/img-076.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-077.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-078.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-079.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-080.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-081.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-082.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-083.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-084.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-085.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-086.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-087.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-088.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-089.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-090.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-091.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-092.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-093.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-094.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-095.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-096.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-097.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-098.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-099.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-100.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-101.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-102.png" alt="Mapa produzido pelos alunos" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-103.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-104.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-105.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-106.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-107.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-108.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-109.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-110.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-111.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-112.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-113.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-114.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-115.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-116.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-117.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-118.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-119.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-120.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-121.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-122.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-123.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-124.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-125.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-126.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-127.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-128.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-129.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-130.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-131.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-132.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-133.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-134.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-135.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-136.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-137.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-138.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-139.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-140.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-141.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-142.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-143.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-144.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-145.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-146.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-147.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-148.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-149.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-150.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-151.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-152.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-153.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-154.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-155.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
+      <div class="gslide"><img src="/assets/gallery/img-156.jpeg" alt="Trabalho de campo - turma ARCAMBE" loading="lazy"></div>
     </div>
-    <button class="gslider-btn gnext" aria-label="Seguinte" onclick="moveSlider(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    <button class="gslider-btn gnext" aria-label="Seguinte"><i class="fa-solid fa-chevron-right"></i></button>
   </div>
+  <div class="gslider-dots" id="gslider-dots-main"></div>
 </section>
 
 <section class="section testimonials-section">
@@ -352,10 +436,13 @@
     <p>Precisão técnica para território, ambiente e operações.</p>
   </div>
 </footer>
-<script src="/assets/js/site.js?v=4" defer></script>
+<script src="/assets/js/site.js?v=5" defer></script>
 <script src="/assets/js/success.js" defer></script>
 </body>
 </html>
+
+
+
 
 
 
