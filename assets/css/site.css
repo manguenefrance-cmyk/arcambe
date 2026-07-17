@@ -252,16 +252,19 @@
 }
 
 .social-links {
-  display: flex;
+  display: flex !important;
+  flex-direction: row !important;
   gap: 16px;
   margin-top: 24px;
 }
 .social-links a {
-  color: var(--muted);
-  font-size: 1.4rem;
+  display: inline-flex !important;
+  margin: 0 !important;
+  color: var(--muted) !important;
+  font-size: 1.4rem !important;
   transition: color 0.2s, transform 0.2s;
 }
 .social-links a:hover {
-  color: var(--green);
+  color: var(--green) !important;
   transform: translateY(-2px);
 }
