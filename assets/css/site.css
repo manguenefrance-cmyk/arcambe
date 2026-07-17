@@ -250,3 +250,18 @@
   font-weight: 700;
   display: block;
 }
+
+.social-links {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+}
+.social-links a {
+  color: var(--muted);
+  font-size: 1.4rem;
+  transition: color 0.2s, transform 0.2s;
+}
+.social-links a:hover {
+  color: var(--green);
+  transform: translateY(-2px);
+}
