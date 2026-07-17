@@ -143,6 +143,19 @@ html, body {
    ══════════════════════════════════════════════ */
 @media (max-width: 680px) {
 
+  .fab-container {
+    bottom: 80px; /* Above the mobile-sticky-cta */
+    right: 14px;
+    gap: 10px;
+  }
+  .fab-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 1.2rem;
+  }
+  .fab-btn span { display: none; }
+
+
   /* Container: smaller side padding */
   .container {
     width: calc(100% - 28px) !important;

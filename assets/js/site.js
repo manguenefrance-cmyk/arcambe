@@ -195,3 +195,50 @@
     });
   });
 })();
+
+
+// ══════════════════════════════════════════
+// COUNTDOWN TIMER
+// ══════════════════════════════════════════
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    const timers = document.querySelectorAll('.countdown-timer');
+    if(timers.length === 0) return;
+    
+    function updateTimers() {
+      const now = new Date().getTime();
+      
+      timers.forEach(timer => {
+        const deadlineStr = timer.getAttribute('data-deadline');
+        if(!deadlineStr) return;
+        
+        const deadline = new Date(deadlineStr).getTime();
+        const distance = deadline - now;
+        
+        if(distance < 0) {
+          timer.classList.add('expired');
+          timer.querySelector('strong').textContent = 'Inscrições Encerradas';
+          return;
+        }
+        
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        const elDays = timer.querySelector('.days');
+        const elHours = timer.querySelector('.hours');
+        const elMins = timer.querySelector('.minutes');
+        const elSecs = timer.querySelector('.seconds');
+        
+        if(elDays) elDays.textContent = days < 10 ? '0'+days : days;
+        if(elHours) elHours.textContent = hours < 10 ? '0'+hours : hours;
+        if(elMins) elMins.textContent = minutes < 10 ? '0'+minutes : minutes;
+        if(elSecs) elSecs.textContent = seconds < 10 ? '0'+seconds : seconds;
+      });
+    }
+    
+    updateTimers();
+    setInterval(updateTimers, 1000);
+  });
+})();
